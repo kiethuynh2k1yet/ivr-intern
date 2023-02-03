@@ -1,3 +1,4 @@
+import Header from "components/header/Header";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useMemo } from "react";
@@ -16,6 +17,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const dispath = useDispatch();
 
   const Layout = useMemo(() => {
+    <Header />;
     return Fragment; // custom layout here
   }, []);
 
