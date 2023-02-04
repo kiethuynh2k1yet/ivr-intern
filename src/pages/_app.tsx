@@ -18,6 +18,7 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     <Provider store={store}>
       <ThemeWrapper component={<Component {...pageProps} />}>
         <GlobalStyle />
+        {/* thông báo  */}
         <ToastContainer />
       </ThemeWrapper>
     </Provider>

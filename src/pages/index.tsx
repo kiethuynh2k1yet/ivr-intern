@@ -1,6 +1,10 @@
-const Home = () => {
-  const isLogin = true;
-  return <div>Hello world</div>;
-};
-
-export default Home;
+import Authentication from "components/authentication/authentication";
+import Header from "components/header/header";
+export default function Home() {
+  return (
+    <>
+      <Header />
+      <Authentication />
+    </>
+  );
+}
