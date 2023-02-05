@@ -12,9 +12,9 @@ export default function Home() {
       <Header />
       {/* <Authentication /> */}
       {/* <Gift /> */}
-      {/* <Delivery /> */}
+      <Delivery />
       {/* <Checkout /> */}
-      <Confirm />
+      {/* <Confirm /> */}
     </>
   );
 }

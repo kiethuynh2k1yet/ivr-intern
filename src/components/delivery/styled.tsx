@@ -34,15 +34,27 @@ export const StyledLabel = styled.label`
   font-size: 16px;
   line-height: 24px;
   display: flex;
+  margin-top: 24px;
 `;
 
-export const StyledOption = styled.option``;
+export const StyledSelect = styled.select`
+  width: 100%;
+  border-bottom: 1px solid black;
+  color: #5f6c68;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  padding-bottom: 12px;
+  margin-top: 16px;
+  appearance: menulist;
+`;
 
 export const StyledInput = styled.input`
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
   color: #5f6c68;
+  margin-top: 16px;
 `;
 
 export const StyledNote = styled.p`
@@ -51,17 +63,36 @@ export const StyledNote = styled.p`
   font-size: 14px;
   line-height: 24px;
   /* or 171% */
-
-  text-decoration-line: underline;
+  margin-top: 24px;
 
   color: #5f6c68;
 `;
-
-export const Agree = styled.p`
+export const Underline = styled.span`
+  text-decoration-line: underline;
+`;
+export const Agree = styled.label`
   color: #5f6c68;
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+`;
+
+export const StyledCheckbox = styled.input.attrs({ type: "checkbox" })`
+  &: ${Agree}:before {
+    content: "\123";
+    border: 0.1em solid red;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: 0.2s;
+  }
+  border: 1px solid #0096a9;
 `;
 
 export const ButtonContainer = styled.div`
@@ -92,9 +123,10 @@ export const OrangeWrapper = styled.div`
   align-items: flex-end;
   background: #e87722;
   @media (max-width: 768px) {
-    top: 100px;
+    top: 280px;
     left: 0;
-    width: 100%;
+    width: 375px;
+    height: 282px;
   }
 `;
 export const GiftContainer = styled.div`

@@ -28,16 +28,21 @@ export default function Checkout() {
 
   return (
     <>
-      <StepContainer>
-        <Stepper>
-          {steps.map((i, key) => (
-            <StepperItem key={key}>
-              <Step>{key}</Step>
-              <StepTitle key={key}>{i}</StepTitle>
-            </StepperItem>
-          ))}
-        </Stepper>
-      </StepContainer>
+      {activeStep === 2 ? (
+        <StepContainer style={{ display: "none" }} />
+      ) : (
+        <StepContainer>
+          <Stepper>
+            {steps.map((i, key) => (
+              <StepperItem key={key}>
+                <Step />
+                <StepTitle key={key}>{i}</StepTitle>
+              </StepperItem>
+            ))}
+          </Stepper>
+        </StepContainer>
+      )}
+
       {activeStep === steps.length ? (
         <div>
           <p> Thank you for your order.</p>

@@ -14,6 +14,9 @@ import {
   GiftTitle,
   GiftContainer,
   SubGiftTitle,
+  StyledSelect,
+  StyledCheckbox,
+  Underline,
 } from "./styled";
 export default function Delivery() {
   return (
@@ -25,19 +28,18 @@ export default function Delivery() {
             thông tin đã nhập (nếu có) trước khi hoàn tất các bước chọn quà.
           </Desc>
           <StyledLabel>Chọn nhà mạng</StyledLabel>
-          <select name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="opel">Opel</option>
-            <option value="audi">Audi</option>
-          </select>
+          <StyledSelect name="cars" id="cars">
+            <option value="mobifone">Mobifone</option>
+            <option value="vinaphone">Vinaphone</option>
+            <option value="viettel">Viettel</option>
+          </StyledSelect>
           <StyledLabel>Số điện thoại của Bên mua bảo hiểm</StyledLabel>
           <StyledInput type="text" value="0913473757" />
           <StyledNote>
-            Ghi chú: Để nạp tiền cho số điện thoại khác, Quý khách vui lòng chọn
-            hình thức EVOUCHER URBOX ở bước chọn quà.
+            <Underline>Ghi chú:</Underline> Để nạp tiền cho số điện thoại khác,
+            Quý khách vui lòng chọn hình thức EVOUCHER URBOX ở bước chọn quà.
           </StyledNote>
-          <StyledInput type="checkbox" />
+          <StyledCheckbox type="checkbox" />
           <Agree>
             Tôi đồng ý FWD cung cấp những thông tin trên cho Nhà cung cấp dịch
             vụ nhằm mục đích liên hệ và giao quà.
