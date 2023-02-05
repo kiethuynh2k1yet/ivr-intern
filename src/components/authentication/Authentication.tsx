@@ -13,10 +13,14 @@ import {
   ButtonContainer,
 } from "./styled";
 export default function Authentication() {
-  const date = useRef("");
-  const identify = useRef(" ");
-  const handleClick = () => {
-    console.log("alo");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [date, setDate] = useState("");
+  const [identify, setIdentify] = useState("");
+  const handleClick = (e) => {
+    if (date === "") {
+      e.preventDefault();
+      setErrorMessage("Lỗi");
+    }
   };
   return (
     <Container>
@@ -29,23 +33,25 @@ export default function Authentication() {
             <StyledInput
               type="text"
               placeholder="Vui lòng nhập"
-              required
-              ref={date}
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
             />
             <Demo>Minh họa: 29/01/2019</Demo>
-
+            {errorMessage && <p className="error"> {errorMessage} </p>}
             <StyledLabel>Số CMND/CCCD/Hộ chiếu:</StyledLabel>
             <StyledInput
               type="text"
               placeholder="(9-12 ký tự liền nhau)"
-              required
-              ref={identify}
+              value={identify}
+              onChange={(e) => setIdentify(e.target.value)}
             />
+            {errorMessage && <p className="error"> {errorMessage} </p>}
+
+            <ButtonContainer>
+              <StyledButton>Tiếp tục</StyledButton>
+            </ButtonContainer>
           </Infomation>
         </WrapperInfo>
-        <ButtonContainer>
-          <StyledButton>Tiếp tục</StyledButton>
-        </ButtonContainer>
       </Wrapper>
     </Container>
   );

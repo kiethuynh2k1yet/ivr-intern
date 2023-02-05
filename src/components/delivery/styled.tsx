@@ -9,6 +9,11 @@ export const Wrapper = styled.div`
   background: #ffffff;
   box-shadow: 0px 0px 20px rgba(24, 48, 40, 0.15);
   padding: 40px 112px 0 240px;
+  @media (max-width: 768px) {
+   padding:0;
+   width:500px;
+   position:relative;
+   top:300px;
 `;
 
 export const Desc = styled.p`
@@ -83,6 +88,11 @@ export const OrangeWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   background: #e87722;
+  @media (max-width: 768px) {
+    top: 100px;
+    left: 0;
+    width: 100%;
+  }
 `;
 export const GiftContainer = styled.div`
   margin-left: 48px;
