@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Gift from "components/gift/gift";
 import Delivery from "components/delivery/delivery";
 import Confirm from "./../confirm/Confirm";
-import { Stepper, StepperItem } from "./styled";
+import { Stepper, StepperItem, Step, StepContainer, StepTitle } from "./styled";
 export default function Checkout() {
   const steps = ["Chọn quà", "Thông tin giao quà", "Xác nhận"];
   function getStepContent(step) {
@@ -28,15 +28,16 @@ export default function Checkout() {
 
   return (
     <>
-      <Stepper>
-        {steps.map((i, key) => (
-          <StepperItem key={key}>
-            <div>{key + 1}</div>
-            <p key={key}>{i}</p>
-          </StepperItem>
-        ))}
-      </Stepper>
-
+      <StepContainer>
+        <Stepper>
+          {steps.map((i, key) => (
+            <StepperItem key={key}>
+              <Step>{key}</Step>
+              <StepTitle key={key}>{i}</StepTitle>
+            </StepperItem>
+          ))}
+        </Stepper>
+      </StepContainer>
       {activeStep === steps.length ? (
         <div>
           <p> Thank you for your order.</p>
