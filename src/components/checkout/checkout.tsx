@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Gift from "components/gift/gift";
 import Delivery from "components/delivery/delivery";
-import Confirm from "./../confirm/Confirm";
+import Confirm from "../confirm/confirm";
 import { Stepper, StepperItem, Step, StepContainer, StepTitle } from "./styled";
 export default function Checkout() {
   const steps = ["Chọn quà", "Thông tin giao quà", "Xác nhận"];

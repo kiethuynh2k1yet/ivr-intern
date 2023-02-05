@@ -4,6 +4,8 @@ import Header from "components/header/header";
 import Delivery from "components/delivery/delivery";
 import Checkout from "components/checkout/checkout";
 // import Gift from "components/gift/gift";
+import Confirm from "./../components/confirm/confirm";
+
 export default function Home() {
   return (
     <>
@@ -11,7 +13,8 @@ export default function Home() {
       {/* <Authentication /> */}
       {/* <Gift /> */}
       {/* <Delivery /> */}
-      <Checkout />
+      {/* <Checkout /> */}
+      <Confirm />
     </>
   );
 }

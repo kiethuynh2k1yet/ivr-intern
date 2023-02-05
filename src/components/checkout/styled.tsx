@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 export const StepContainer = styled.div`
   background: #ffffff;
-
   height: 70px;
-
   margin-top: 24px;
   position: relative;
   box-shadow: 0px 4px 4px rgba(24, 48, 40, 0.15);

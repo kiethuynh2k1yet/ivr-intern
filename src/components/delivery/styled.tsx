@@ -8,6 +8,7 @@ export const SubContainer = styled.div``;
 
 export const Wrapper = styled.div`
   width: 900px;
+  height:506px;
   background: #ffffff;
   box-shadow: 0px 0px 20px rgba(24, 48, 40, 0.15);
   padding: 40px 112px 0 240px;
