@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 export const SubContainer = styled.div`
   position: relative;
-  width: 283px;
+  width: 293px;
   height: 168px;
   background: #ffffff;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
@@ -30,6 +30,7 @@ export const GiftTitle = styled.p`
   line-height: 24px;
   margin: 16px 0 8px 24px;
   color: #0096a9;
+  text-transform: uppercase;
 `;
 
 export const StyledUL = styled.ul`

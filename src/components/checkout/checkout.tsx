@@ -1,49 +1,40 @@
 import React, { useState } from "react";
 import Gift from "components/gift/gift";
 import Delivery from "components/delivery/delivery";
-import Confirm from "../confirm/confirm";
+import Confirm from "../success/success";
 import { Stepper, StepperItem, Step, StepContainer, StepTitle } from "./styled";
 export default function Checkout() {
   const steps = ["Chọn quà", "Thông tin giao quà", "Xác nhận"];
-  function getStepContent(step) {
-    switch (step) {
-      case 0:
-        return <Gift />;
-      case 1:
-        return <Delivery />;
-      case 2:
-        return <Confirm />;
-      default:
-        throw new Error("Unknown step");
-    }
-  }
-  const [activeStep, setActiveStep] = useState(0);
-  const handleNext = () => {
-    setActiveStep(activeStep + 1);
-  };
+  // function getStepContent(step) {
+  //   switch (step) {
+  //     case 0:
+  //       return <Gift />;
+  //     case 1:
+  //       return <Delivery />;
+  //     case 2:
+  //       return <Confirm />;
+  //     default:
+  //       throw new Error("Unknown step");
+  //   }
+  // }
+  // const [activeStep, setActiveStep] = useState(0);
+  // const handleNext = () => {
+  //   setActiveStep(activeStep + 1);
+  // };
 
-  const handleBack = () => {
-    setActiveStep(activeStep - 1);
-  };
+  // const handleBack = () => {
+  //   setActiveStep(activeStep - 1);
+  // };
 
   return (
     <>
-      {activeStep === 2 ? (
+      {/* {activeStep === 2 ? (
         <StepContainer style={{ display: "none" }} />
       ) : (
-        <StepContainer>
-          <Stepper>
-            {steps.map((i, key) => (
-              <StepperItem key={key}>
-                <Step />
-                <StepTitle key={key}>{i}</StepTitle>
-              </StepperItem>
-            ))}
-          </Stepper>
-        </StepContainer>
-      )}
+      
+      )} */}
 
-      {activeStep === steps.length ? (
+      {/* {activeStep === steps.length ? (
         <div>
           <p> Thank you for your order.</p>
           <p>
@@ -61,7 +52,18 @@ export default function Checkout() {
             {activeStep === steps.length - 1 ? "Place order" : "Next"}
           </button>
         </>
-      )}
+      )} */}
+
+      <StepContainer>
+        <Stepper>
+          {steps.map((i, key) => (
+            <StepperItem key={key}>
+              <Step />
+              <StepTitle key={key}>{i}</StepTitle>
+            </StepperItem>
+          ))}
+        </Stepper>
+      </StepContainer>
     </>
   );
 }

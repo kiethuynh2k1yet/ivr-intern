@@ -2,9 +2,15 @@ import React from "react";
 import { useRouter } from "next/router";
 import Delivery from "components/delivery/delivery";
 import { data } from "data";
+import Checkout from "components/checkout/checkout";
 
 export default function Detail({ product }) {
-  return <Delivery product={product} />;
+  return (
+    <>
+      <Checkout />
+      <Delivery product={product} />
+    </>
+  );
 }
 
 // fetch data

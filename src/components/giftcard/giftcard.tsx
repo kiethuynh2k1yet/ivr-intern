@@ -11,7 +11,6 @@ import {
   StyledLi,
 } from "./styled";
 export default function Giftcard({ item }) {
-  console.log(item);
   return (
     <MainContainer>
       <Container>
