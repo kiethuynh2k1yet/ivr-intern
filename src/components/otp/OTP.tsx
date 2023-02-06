@@ -19,7 +19,7 @@ export type Props = {
   valueLength: number;
   onChange: (value: string) => void;
 };
-export default function OTP({ value, valueLength, onChange }: Props) {
+export default function OTP() {
   return (
     <Container>
       <Title>Xác nhận thông tin </Title>

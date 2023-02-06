@@ -58,4 +58,5 @@ export const StyledButton = styled.button`
   line-height: 24px;
   color: #ffffff;
   text-transform: uppercase;
+  cursor: pointer;
 `;

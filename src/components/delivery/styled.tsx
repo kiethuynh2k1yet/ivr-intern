@@ -111,6 +111,7 @@ export const StyledButton = styled.button`
   font-size: 18px;
   position: relative;
   top: 25px;
+  cursor: pointer;
 `;
 
 export const OrangeWrapper = styled.div`

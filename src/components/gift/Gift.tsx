@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Title, SubTitle, Wrapper } from "./styled";
 import Giftcard from "./../giftcard/giftcard";
-export default function Gift() {
+export default function Gift({ giftData }) {
   return (
     <Container>
       <Title>QUÀ TẶNG SINH NHẬT</Title>
@@ -12,17 +12,9 @@ export default function Gift() {
       </SubTitle>
 
       <Wrapper>
-        <Giftcard />
-        <Giftcard />
-        <Giftcard />
-        <Giftcard />
-        <Giftcard />
-        <Giftcard />
-        <Giftcard />
-        <Giftcard />
-
-        <Giftcard />
-        <Giftcard />
+        {giftData.map((item) => (
+          <Giftcard key={item.id} item={item} />
+        ))}
       </Wrapper>
     </Container>
   );

@@ -5,14 +5,15 @@ import Delivery from "components/delivery/delivery";
 import Checkout from "components/checkout/checkout";
 // import Gift from "components/gift/gift";
 import Confirm from "./../components/confirm/confirm";
+import { data } from "data";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <Authentication /> */}
       {/* <Gift /> */}
-      <Delivery />
+      {/* <Delivery /> */}
       {/* <Checkout /> */}
       {/* <Confirm /> */}
     </>

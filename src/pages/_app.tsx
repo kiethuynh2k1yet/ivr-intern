@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import { store } from "redux/store";
 import { GlobalStyle } from "../styles/globals";
+import Header from "components/header/header";
 
 function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       <ThemeWrapper component={<Component {...pageProps} />}>
         <GlobalStyle />
         {/* thông báo  */}
+        <Header />
         <ToastContainer />
       </ThemeWrapper>
     </Provider>

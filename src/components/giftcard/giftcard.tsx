@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   MainContainer,
@@ -9,19 +10,22 @@ import {
   StyledButton,
   StyledLi,
 } from "./styled";
-export default function giftcard() {
+export default function Giftcard({ item }) {
+  console.log(item);
   return (
     <MainContainer>
       <Container>
         <SubContainer>
-          <GiftTitle>EVOUCHER TIKI</GiftTitle>
+          <GiftTitle>{item.title}</GiftTitle>
           <StyledUL>
-            <StyledLi>Giá trị: 500.000 đồng</StyledLi>
-            <StyledLi>Mua sắm trực tuyến trên Tiki</StyledLi>
-            <StyledLi>Thời hạn sử dụng: 1 năm</StyledLi>
+            {item.list.map((i, key) => (
+              <StyledLi key={key}>{i}</StyledLi>
+            ))}
           </StyledUL>
           <ButtonContainer>
-            <StyledButton>Chọn</StyledButton>
+            <Link href={`/gift/${item.id}`}>
+              <StyledButton>Chọn</StyledButton>
+            </Link>
           </ButtonContainer>
         </SubContainer>
       </Container>

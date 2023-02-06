@@ -16,8 +16,11 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const dispath = useDispatch();
 
   const Layout = useMemo(() => {
+    if (router.pathname === "/login") {
+      return ;
+    }
     return Fragment; // custom layout here
-  }, []);
+  }, [router.pathname]);
 
   useEffect(() => {
     dispath(rootAction.setInitialized(true));
