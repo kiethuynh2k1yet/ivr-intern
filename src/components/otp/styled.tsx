@@ -96,18 +96,23 @@ export const OTPButton = styled.button`
 
 export const OTPGroup = styled.div`
   display: flex;
+  justify-content: center;
+  // width: 100%;
+  // max-width: 360px;
+  // column-gap: 5px;
+  // padding: 0;
   width: 100%;
-  max-width: 360px;
-  column-gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c1c8c6;
 `;
 
 export const OTPInput = styled.input`
-  width: 100%;
-  height: 60px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 15px;
+  height: 17px;
   text-align: center;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 1;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0;
+  color: #5f6c68;
 `;

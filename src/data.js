@@ -8,6 +8,7 @@ export const data = [
       "Mua sắm trực tuyến trên Tiki",
       "Thòi gian sử dụng: 1 năm",
     ],
+    img: "/ivrweb/images/tiki.png",
   },
 
   {
@@ -19,6 +20,7 @@ export const data = [
       "Mua sắm trực tuyến trên Tiki",
       "Thòi gian sử dụng: 1 năm",
     ],
+    img: "/ivrweb/images/ubox.png",
   },
 
   {
@@ -30,6 +32,7 @@ export const data = [
       "Nạp trực tuyến vào điện thoại",
       "Áp dụng: tất cả, trừ Vinaphone trả sau",
     ],
+    img: "/ivrweb/images/card.png",
   },
   {
     id: "4",
@@ -40,5 +43,6 @@ export const data = [
       "Trị giá: 500.000 đồng",
       "Thời hạn sử dụng: 1 năm",
     ],
+    img: "/ivrweb/images/gift.png",
   },
 ];

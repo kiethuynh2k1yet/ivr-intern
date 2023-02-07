@@ -1,9 +1,24 @@
 import React from "react";
-import { Container, Wrapper, Detail, SubTitle, Title } from "./styled";
-
+import {
+  Container,
+  ImgContainer,
+  Wrapper,
+  Detail,
+  SubTitle,
+  Title,
+} from "./styled";
+import Image from "next/image";
 export default function Success() {
   return (
     <Container>
+      <ImgContainer>
+        <Image
+          src="/ivrweb/images/smile.png"
+          alt=""
+          width={1013}
+          height={584}
+        />
+      </ImgContainer>
       <Wrapper>
         <Title>QUÝ KHÁCH ĐÃ CHỌN QUÀ THÀNH CÔNG!</Title>
         <SubTitle>

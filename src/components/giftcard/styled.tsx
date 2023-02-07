@@ -17,11 +17,11 @@ export const Container = styled.div`
 export const SubContainer = styled.div`
   position: relative;
   width: 293px;
-  height: 168px;
+  height: 250px;
   background: #ffffff;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-  top: 123px;
-  left: 24px;
+  top: 24px;
+  left: 38px;
 `;
 
 export const GiftTitle = styled.p`

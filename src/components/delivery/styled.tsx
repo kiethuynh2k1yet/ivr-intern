@@ -139,8 +139,9 @@ export const OrangeWrapper = styled.div`
   left: 818px;
   top: 320px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
   background: #e87722;
+  justify-content: space-around;
   @media (max-width: 768px) {
     top: 280px;
     left: 0;
@@ -169,4 +170,12 @@ export const SubGiftTitle = styled.p`
   font-size: 24px;
   line-height: 32px;
   text-transform: uppercase;
+`;
+
+export const ImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 70px;
 `;

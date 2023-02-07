@@ -17,35 +17,35 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
 
   const Layout = useMemo(() => {
     if (router.pathname === "/login") {
-      return ;
+      return;
     }
     return Fragment; // custom layout here
   }, [router.pathname]);
 
-  useEffect(() => {
-    dispath(rootAction.setInitialized(true));
-    const listenter = function (ev: MouseEvent) {
-      const button = ev.target as HTMLButtonElement;
-      if (button.tagName === "BUTTON" && !button.disabled) {
-        const clickable = button.dataset.clickable;
-        if (clickable === "false") {
-          ev.preventDefault();
-          ev.stopPropagation();
-          return;
-        }
-        button.dataset.clickable = "false";
-        button.style.pointerEvents = "none";
-        setTimeout(() => {
-          button.dataset.clickable = "true";
-          button.style.pointerEvents = "";
-        }, 300);
-      }
-    };
-    document.addEventListener("click", listenter);
-    return () => {
-      document.removeEventListener("click", listenter);
-    };
-  }, [dispath]);
+  // useEffect(() => {
+  //   dispath(rootAction.setInitialized(true));
+  //   const listenter = function (ev: MouseEvent) {
+  //     const button = ev.target as HTMLButtonElement;
+  //     if (button.tagName === "BUTTON" && !button.disabled) {
+  //       const clickable = button.dataset.clickable;
+  //       if (clickable === "false") {
+  //         ev.preventDefault();
+  //         ev.stopPropagation();
+  //         return;
+  //       }
+  //       button.dataset.clickable = "false";
+  //       button.style.pointerEvents = "none";
+  //       setTimeout(() => {
+  //         button.dataset.clickable = "true";
+  //         button.style.pointerEvents = "";
+  //       }, 300);
+  //     }
+  //   };
+  //   document.addEventListener("click", listenter);
+  //   return () => {
+  //     document.removeEventListener("click", listenter);
+  //   };
+  // }, [dispath]);
 
   return (
     <ThemeProvider theme={LightTheme}>
