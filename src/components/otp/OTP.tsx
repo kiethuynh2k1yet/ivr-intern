@@ -16,10 +16,11 @@ import {
   OTPGroup,
   OTPInput,
 } from "./styled";
+import { Error } from "styles/global.styled";
 
 export default function OTP() {
   const [otp, setOtp] = useState("");
-  const [error, setError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
   const handleChange = (value: string) => {
     setOtp(value);
@@ -101,7 +102,7 @@ export default function OTP() {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (otp === "") {
-      setError("Mã OTP là thông tin bắt buộc");
+      setErrorMessage("Mã OTP là thông tin bắt buộc");
     } else {
       router.push(`/gift`);
     }
@@ -136,7 +137,7 @@ export default function OTP() {
                 />
               ))}
             </OTPGroup>
-            {error && <div>{error}</div>}
+            {errorMessage && <Error className="error"> {errorMessage} </Error>}
             <ButtonContainer>
               <OTPButton>Gửi lại mã OTP</OTPButton>
               <StyledButton>Tiếp tục</StyledButton>

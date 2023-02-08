@@ -14,6 +14,7 @@ export const Title = styled.div`
   font-size: 24px;
   color: white;
   line-height: 32px;
+  
 `;
 export const Wrapper = styled.div`
   background-color: #f7f7f7;
@@ -99,7 +100,7 @@ export const OTPGroup = styled.div`
   justify-content: center;
   // width: 100%;
   // max-width: 360px;
-  // column-gap: 5px;
+  column-gap: 5px;
   // padding: 0;
   width: 100%;
   padding-bottom: 12px;
@@ -115,4 +116,5 @@ export const OTPInput = styled.input`
   line-height: 24px;
   padding: 0;
   color: #5f6c68;
+  // border-bottom: 2px solid #5f6c68;
 `;

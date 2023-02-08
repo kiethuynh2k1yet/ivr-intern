@@ -35,10 +35,9 @@ export const NotiFill = styled.p`
 
 export const Infomation = styled.form`
   width: 495px;
-  height: 202px;
+  height: 20%;
   @media (max-width: 768px) {
     width: 327px;
-    height: 194px;
   }
   // display: flex;
 `;

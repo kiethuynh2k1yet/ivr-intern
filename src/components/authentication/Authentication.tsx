@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import {
   Container,
   Title,
@@ -12,14 +13,18 @@ import {
   WrapperInfo,
   ButtonContainer,
 } from "./styled";
+import { Error } from "styles/global.styled";
 export default function Authentication() {
   const [errorMessage, setErrorMessage] = useState("");
   const [date, setDate] = useState("");
   const [identify, setIdentify] = useState("");
-  const handleClick = (e) => {
+  const router = useRouter();
+  const handleClick = (e: React.FormEvent<HTMLFormElement>) => {
     if (date === "") {
       e.preventDefault();
-      setErrorMessage("Lỗi");
+      setErrorMessage("Lỗi ");
+    } else {
+      router.push(`/otp`);
     }
   };
   return (
@@ -37,7 +42,7 @@ export default function Authentication() {
               onChange={(e) => setDate(e.target.value)}
             />
             <Demo>Minh họa: 29/01/2019</Demo>
-            {errorMessage && <p className="error"> {errorMessage} </p>}
+            {errorMessage && <Error className="error"> {errorMessage} </Error>}
             <StyledLabel>Số CMND/CCCD/Hộ chiếu:</StyledLabel>
             <StyledInput
               type="text"
@@ -45,7 +50,7 @@ export default function Authentication() {
               value={identify}
               onChange={(e) => setIdentify(e.target.value)}
             />
-            {errorMessage && <p className="error"> {errorMessage} </p>}
+            {errorMessage && <Error className="error"> {errorMessage} </Error>}
 
             <ButtonContainer>
               <StyledButton>Tiếp tục</StyledButton>

@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const ImgContainer = styled.div``;
+export const ImgContainer = styled.div`
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
 export const Wrapper = styled.div`
   width: 585px;
   height: 408px;
@@ -10,13 +14,22 @@ export const Wrapper = styled.div`
   position: relative;
   top: 50px;
   right: 200px;
+
+  @media (max-width: 768px) {
+    width: 327px;
+    height: 350px;
+    padding: 0;
+  }
 `;
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   margin-right: 120px;
   margin-top: 70px;
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `;
 
 export const Title = styled.h2`
@@ -26,6 +39,10 @@ export const Title = styled.h2`
   font-size: 32px;
   line-height: 40px;
   //   margin-top: 40px;
+  @media (max-width: 768px) {
+    width: 257px;
+    height: 48px;
+  }
 `;
 
 export const SubTitle = styled.p`
@@ -35,6 +52,10 @@ export const SubTitle = styled.p`
   font-size: 24px;
   line-height: 32px;
   margin-top: 24px;
+  @media (max-width: 768px) {
+    width: 285px;
+    height: 48px;
+  }
 `;
 
 export const Detail = styled.span`
@@ -44,4 +65,9 @@ export const Detail = styled.span`
   line-height: 24px;
   color: #000000;
   margin-top: 24px;
+
+  @media (max-width: 768px) {
+    width: 286px;
+    height: 96px;
+  }
 `;
