@@ -1,3 +1,4 @@
+import Header from "components/header";
 import ThemeWrapper from "containers/theme-wrapper";
 import { AppProps } from "next/app";
 import { useEffect } from "react";
@@ -18,6 +19,7 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     <Provider store={store}>
       <ThemeWrapper component={<Component {...pageProps} />}>
         <GlobalStyle />
+        <Header/>
         <ToastContainer />
       </ThemeWrapper>
     </Provider>
