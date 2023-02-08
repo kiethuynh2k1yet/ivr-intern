@@ -19,9 +19,10 @@ export default function Authentication() {
   const [date, setDate] = useState("");
   const [identify, setIdentify] = useState("");
   const router = useRouter();
+
   const handleClick = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (date === "") {
-      e.preventDefault();
       setErrorMessage("Lỗi ");
     } else {
       router.push(`/otp`);

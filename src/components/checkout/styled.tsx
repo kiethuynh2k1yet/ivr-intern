@@ -17,7 +17,7 @@ export const StepperItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 38rem;
+  width: 40rem;
   position: relative;
   flex-direction: column;
 
@@ -25,16 +25,22 @@ export const StepperItem = styled.div`
     content: "";
     position: absolute;
     background: #b9c0be;
-    width: 100%;
+    width: 97.8%;
     height: 3px;
-    right: 50%;
+    right: 49.99%;
+
     top: 20%;
     transform: translateY(50%);
+
+    @media (max-width: 767px) {
+      right: 44.79%;
+    }
   }
 `;
 
 export const Step = styled.div`
   border-radius: 100%;
+  position: relative;
   width: 24px;
   height: 24px;
   background: #b9c0be;
@@ -43,8 +49,8 @@ export const Step = styled.div`
   align-items: center;
   justify-content: center;
 
-  &:active {
-    color: red;
+  &.active {
+    background: red;
   }
 `;
 

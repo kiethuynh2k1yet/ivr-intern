@@ -32,7 +32,7 @@ export const Desc = styled.p`
 
   height: 48px;
   @media (max-width: 768px) {
-    width: 80vw;
+    width: 90vw;
     height: 72px;
   }
 `;

@@ -1,8 +1,9 @@
+import Header from "components/header/header";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
-import { rootAction } from "redux/reducers/root-reducer";
+// import { rootAction } from "redux/reducers/root-reducer";
 import { ThemeProvider } from "styled-components";
 import { LightTheme } from "styles/theme";
 
@@ -57,7 +58,6 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
 
         <title>Intern</title>
       </Head>
-
       {children}
       <Layout>{component}</Layout>
     </ThemeProvider>

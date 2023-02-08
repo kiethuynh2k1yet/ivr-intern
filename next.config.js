@@ -14,6 +14,7 @@ const nextConfig = {
   async redirects() {
     return [];
   },
+  styledComponents: true,
 };
 
 module.exports = nextConfig;

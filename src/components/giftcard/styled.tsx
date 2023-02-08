@@ -12,6 +12,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #e87722;
+
+  @media (max-width: 768px) {
+    margin-right: 74px;
+  }
 `;
 
 export const SubContainer = styled.div`

@@ -1,12 +1,38 @@
 import React from "react";
 import Gift from "components/gift/gift";
 import { data } from "./../../data";
-import Checkout from "components/checkout/checkout";
+import {
+  Stepper,
+  StepperItem,
+  Step,
+  StepContainer,
+  StepTitle,
+} from "components/checkout/styled";
 
-export default function index({ giftData }) {
+interface GiftProps {
+  giftData: object;
+}
+export default function index({ giftData }: { giftData: GiftProps }) {
   return (
     <>
-      <Checkout />
+      <StepContainer>
+        <Stepper>
+          <StepperItem>
+            <Step className="active" />
+            <StepTitle>Chọn quà</StepTitle>
+          </StepperItem>
+
+          <StepperItem>
+            <Step />
+            <StepTitle>Thông tin giao quà</StepTitle>
+          </StepperItem>
+
+          <StepperItem>
+            <Step />
+            <StepTitle>Xác nhận</StepTitle>
+          </StepperItem>
+        </Stepper>
+      </StepContainer>{" "}
       <Gift giftData={giftData} />;
     </>
   );

@@ -12,12 +12,8 @@ import {
 } from "./styled";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-// import { saveGift } from "redux/reducers/root-reducer";
 export default function Giftcard({ item }) {
-  const dispatch = useDispatch();
-  const handleClick = () => {
-    // dispatch(saveGift(item));
-  };
+  console.log(typeof item);
   return (
     <MainContainer>
       <Container>
@@ -32,7 +28,7 @@ export default function Giftcard({ item }) {
           </StyledUL>
           <ButtonContainer>
             <Link href={`/gift/${item.id}`}>
-              <StyledButton onClick={handleClick}>Chọn</StyledButton>
+              <StyledButton>Chọn</StyledButton>
             </Link>
           </ButtonContainer>
         </SubContainer>

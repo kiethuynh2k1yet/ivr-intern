@@ -1,20 +1,41 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Delivery from "components/delivery/delivery";
 import { data } from "data";
-import Checkout from "components/checkout/checkout";
-
-export default function Detail({ product }) {
+import {
+  Stepper,
+  StepperItem,
+  Step,
+  StepContainer,
+  StepTitle,
+} from "components/checkout/styled";
+export default function Detail({ product }: { product: object }) {
   return (
     <>
-      <Checkout />
+      <StepContainer>
+        <Stepper>
+          <StepperItem>
+            <Step className="active" />
+            <StepTitle>Chọn quà</StepTitle>
+          </StepperItem>
+
+          <StepperItem>
+            <Step className="active" />
+            <StepTitle>Thông tin giao quà</StepTitle>
+          </StepperItem>
+
+          <StepperItem>
+            <Step />
+            <StepTitle>Xác nhận</StepTitle>
+          </StepperItem>
+        </Stepper>
+      </StepContainer>{" "}
       <Delivery product={product} />
     </>
   );
 }
 
 // fetch data
-export const getStaticProps = async (ctx) => {
+export const getStaticProps = async (ctx: { params: { id: string } }) => {
   // ctx = params: { id: item.id.toString() },
 
   const id = ctx.params.id;

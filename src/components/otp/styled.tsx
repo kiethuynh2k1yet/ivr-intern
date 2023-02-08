@@ -14,7 +14,6 @@ export const Title = styled.div`
   font-size: 24px;
   color: white;
   line-height: 32px;
-  
 `;
 export const Wrapper = styled.div`
   background-color: #f7f7f7;
@@ -29,6 +28,7 @@ export const NotiFill = styled.p`
   font-size: 14px;
   line-height: 18px;
   padding-top: 24px;
+
   display: flex;
   align-items: center;
   text-align: center;
@@ -51,22 +51,19 @@ export const WrapperInfo = styled.div`
 `;
 export const StyledForm = styled.form`
   width: 495px;
-  height: 77px;
+  height: 20%;
   @media (max-width: 768px) {
     width: 327px;
-    height: 194px;
   }
 `;
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 60px;
+  gap: 10px;
 `;
 
 export const StyledButton = styled.button`
-  width: 200px;
-
   background: #e87722;
   border-radius: 4px;
   padding: 13px 32px;
@@ -74,25 +71,44 @@ export const StyledButton = styled.button`
   font-weight: 700;
   font-size: 18px;
   color: #ffffff;
-  //   margin: 45px auto 60px;
-
+  display: flex;
+  width: 206px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   line-height: 24px;
   cursor: pointer;
+  margin: 29px auto 60px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const OTPButton = styled.button`
-  //   width: 200px;
   background: #8c8c8c;
   border-radius: 4px;
   padding: 13px 32px;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 18px;
-  color: white;
-  //   margin: 45px auto 60px;
-  //   line-height: 24px;
+  color: #ffffff;
+  display: flex;
+  width: 206px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 24px;
   cursor: pointer;
-  margin-right: 24px;
+  margin: 29px auto 60px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const OTPGroup = styled.div`
