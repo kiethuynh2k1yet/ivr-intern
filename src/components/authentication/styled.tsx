@@ -74,6 +74,7 @@ export const Demo = styled.p`
   font-weight: 500;
   font-size: 14px;
   margin-top: 2px;
+  margin-bottom:0px;
   line-height: 22px;
 `;
 

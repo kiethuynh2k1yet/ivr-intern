@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   Container,
@@ -15,43 +15,62 @@ import {
 } from "./styled";
 import { Error } from "styles/global.styled";
 export default function Authentication() {
-  const [errorMessage, setErrorMessage] = useState("");
-  const [date, setDate] = useState("");
-  const [identify, setIdentify] = useState("");
-  const router = useRouter();
+  const [formValues, setFormValues] = useState({ date: "", id: "" });
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
 
-  const handleClick = (e: React.FormEvent<HTMLFormElement>) => {
+  const router = useRouter();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const validate = (values) => {
+    const errors = {};
+    if (!values.date) {
+      errors.date = "Vui lòng nhập ngày tháng năm sinh";
+    }
+    if (!values.id) {
+      errors.id = "Vui lòng nhập số CMND/CCCD/Hộ chiếu";
+    }
+    return errors;
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (date === "") {
-      setErrorMessage("Lỗi ");
-    } else {
+    if (formValues.date !== "" && formValues.id !== "") {
       router.push(`/otp`);
     }
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
   };
+
   return (
     <Container>
       <Title>Thông tin của Quý khách </Title>
       <Wrapper>
         <NotiFill>Quý khách vui lòng nhập thông tin sau đây:</NotiFill>
         <WrapperInfo>
-          <Infomation onSubmit={handleClick}>
+          <Infomation onSubmit={handleSubmit}>
             <StyledLabel>Ngày tháng năm sinh:</StyledLabel>
             <StyledInput
               type="text"
+              name="date"
               placeholder="Vui lòng nhập"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
+              value={formValues.date}
+              onChange={handleChange}
             />
             <Demo>Minh họa: 29/01/2019</Demo>
-            {errorMessage && <Error className="error"> {errorMessage} </Error>}
+            <Error>{formErrors.date}</Error>
             <StyledLabel>Số CMND/CCCD/Hộ chiếu:</StyledLabel>
             <StyledInput
               type="text"
+              name="id"
               placeholder="(9-12 ký tự liền nhau)"
-              value={identify}
-              onChange={(e) => setIdentify(e.target.value)}
+              value={formValues.id}
+              onChange={handleChange}
             />
-            {errorMessage && <Error className="error"> {errorMessage} </Error>}
+            <Error>{formErrors.id}</Error>
 
             <ButtonContainer>
               <StyledButton>Tiếp tục</StyledButton>

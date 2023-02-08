@@ -8,5 +8,6 @@ export const Error = styled.div`
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
-  margin-top: 16px;
+  margin-top: 2px;
+  margin-bottom: 24px;
 `;
