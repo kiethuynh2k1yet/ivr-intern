@@ -25,30 +25,74 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { saveUser } from "redux/reducers/root-reducer";
+import { Error } from "styles/global.styled";
 
 export default function Delivery({ product }: { product: any }) {
   const dispatch = useDispatch(); // <-- dispatch function
 
   const router = useRouter();
 
-  const [error, setError] = useState("");
-  const [cart, setCart] = useState("");
   const [check, setCheck] = useState(true);
 
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [memberId, setMemberId] = useState("");
+  const [formValues, setFormValues] = useState({
+    name: "",
+    phone: "",
+    memberId: "",
+    card: "",
+  });
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+    console.log(name, value);
+  };
+
+  // const handleCard = (e) => {
+  //   const { name, value } = e.target;
+  //   console.log(name, value);
+  //   setFormValues(value);
+  // };
+  const validate = (values) => {
+    const errors = {};
+    if (!values.name) {
+      errors.name = "Vui lòng nhập Họ và tên hội viên";
+    }
+    if (!values.phone) {
+      errors.phone = "Vui lòng nhập số điện thoại";
+    }
+    if (!values.memberId) {
+      errors.memberId = "Vui lòng nhập Mã hội viên";
+    }
+    if (!values.card) {
+      errors.card = "Vui lòng chọn nhà mạng";
+    }
+    return errors;
+  };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (product.desc === "card") {
-      if (!cart) {
-        setError("Vui lòng chọn nhà mạng");
+    if (product.desc === "evoucher") {
+      if (formValues.name !== "" && formValues.phone !== "") {
+        dispatch(saveUser(formValues));
+        router.push(`/confirm/${product.id}`);
       }
-    } else {
-      dispatch(saveUser({ name, phone, memberId, cart }));
-      router.push(`/confirm/${product.id}`);
     }
+    if (product.desc === "gift") {
+      if (formValues.name !== "" && formValues.memberId !== "") {
+        dispatch(saveUser(formValues));
+        router.push(`/confirm/${product.id}`);
+      }
+    }
+    if (product.desc === "card") {
+      if (formValues.card !== "" && formValues.phone !== "") {
+        dispatch(saveUser(formValues));
+        router.push(`/confirm/${product.id}`);
+      }
+    }
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
   };
 
   return (
@@ -61,12 +105,10 @@ export default function Delivery({ product }: { product: any }) {
           </Desc>
           {product.desc === "card" ? (
             <>
-              {error && <div>{error}</div>}
+              <Error>{formErrors.card}</Error>
+
               <StyledLabel>Chọn nhà mạng</StyledLabel>
-              <StyledSelect
-                value={cart}
-                onChange={(e) => setCart(e.target.value)}
-              >
+              <StyledSelect name="card" onChange={handleChange}>
                 <option value="">Chọn nhà mạng</option>
                 <option value="Mobifone">Mobifone</option>
                 <option value="Vinaphone">Vinaphone</option>
@@ -75,10 +117,13 @@ export default function Delivery({ product }: { product: any }) {
               <StyledLabel>Số điện thoại của Bên mua bảo hiểm</StyledLabel>
               <StyledInput
                 type="text"
+                name="phone"
                 placeholder="Vui lòng nhập số điện thoại "
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                value={formValues.phone}
+                onChange={handleChange}
               />
+              <Error>{formErrors.phone}</Error>
+
               <StyledNote>
                 <Underline>Ghi chú:</Underline> Để nạp tiền cho số điện thoại
                 khác, Quý khách vui lòng chọn hình thức EVOUCHER URBOX ở bước
@@ -90,34 +135,44 @@ export default function Delivery({ product }: { product: any }) {
               <StyledLabel>Người nhận</StyledLabel>
               <GiftInput
                 type="text"
-                value={name}
+                name="name"
+                value={formValues.name}
                 placeholder="Vui lòng nhập Họ và tên người nhận"
-                onChange={(e) => setName(e.target.value)}
+                onChange={handleChange}
               />
+              <Error>{formErrors.name}</Error>
+
               <StyledLabel>Điện thoại di động</StyledLabel>
-              <GiftInput
+              <StyledInput
                 type="text"
+                name="phone"
                 placeholder="Vui lòng nhập số điện thoại "
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                value={formValues.phone}
+                onChange={handleChange}
               />
+              <Error>{formErrors.phone}</Error>
             </>
           ) : (
             <>
               <StyledLabel>Nhập mã hội viên</StyledLabel>
               <GiftInput
                 type="text"
+                name="memberId"
                 placeholder="Vui lòng nhập Mã hội viên"
-                value={memberId}
-                onChange={(e) => setMemberId(e.target.value)}
+                value={formValues.memberId}
+                onChange={handleChange}
               />
+              <Error>{formErrors.memberId}</Error>
+
               <StyledLabel>Họ và tên hội viên</StyledLabel>
               <GiftInput
                 type="text"
+                name="name"
                 placeholder="Vui lòng nhập Họ và tên hội viên"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={formValues.name}
+                onChange={handleChange}
               />
+              <Error>{formErrors.name}</Error>
             </>
           )}
           <CheckContainer>

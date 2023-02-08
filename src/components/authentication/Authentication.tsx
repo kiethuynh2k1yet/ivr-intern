@@ -36,7 +36,7 @@ export default function Authentication() {
     return errors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (formValues.date !== "" && formValues.id !== "") {
       router.push(`/otp`);

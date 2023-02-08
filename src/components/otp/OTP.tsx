@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { RE_DIGIT } from "./constant";
 import { useRouter } from "next/navigation";
 import {
@@ -22,6 +22,23 @@ export default function OTP() {
   const [otp, setOtp] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
+
+  const [timeLeft, setTimeLeft] = useState(null);
+
+  useEffect(() => {
+    if (timeLeft === 0) {
+      console.log("TIME LEFT IS 0");
+      setTimeLeft(null);
+    }
+
+    if (!timeLeft) return;
+
+    const intervalId = setInterval(() => {
+      setTimeLeft(timeLeft - 1);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [timeLeft]);
   const handleChange = (value: string) => {
     setOtp(value);
   };
@@ -139,7 +156,10 @@ export default function OTP() {
             </OTPGroup>
             {errorMessage && <Error className="error"> {errorMessage} </Error>}
             <ButtonContainer>
-              <OTPButton>Gửi lại mã OTP</OTPButton>
+              {timeLeft}
+              <OTPButton onClick={() => setTimeLeft(10)}>
+                Gửi lại mã OTP
+              </OTPButton>
               <StyledButton>Tiếp tục</StyledButton>
             </ButtonContainer>
           </StyledForm>

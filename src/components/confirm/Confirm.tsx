@@ -25,13 +25,13 @@ export default function Confirm({ product }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [memberId, setMemberId] = useState("");
-  const [cart, setCart] = useState("");
+  const [card, setCard] = useState("");
   const router = useRouter();
   const setData = () => {
     setName(user.name);
     setPhone(user.phone);
     setMemberId(user.memberId);
-    setCart(user.cart);
+    setCard(user.card);
   };
   useEffect(() => {
     if (user) {
@@ -56,7 +56,7 @@ export default function Confirm({ product }) {
             <StyledLabel>Số điện thoại của Bên mua bảo hiểm</StyledLabel>
             <StyledInput type="text" value={phone} />
             <StyledLabel>Nhà mạng</StyledLabel>
-            <StyledInput type="text" value={cart} />
+            <StyledInput type="text" value={card} />
           </>
         ) : product.desc === "gift" ? (
           <>
