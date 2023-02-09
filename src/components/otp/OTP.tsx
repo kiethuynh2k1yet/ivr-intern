@@ -1,129 +1,65 @@
 import React, { useState, useMemo, useEffect } from "react";
-import { RE_DIGIT } from "./constant";
 import { useRouter } from "next/navigation";
 import {
   Container,
   Title,
   Wrapper,
   NotiFill,
-  WrapperFill,
   StyledForm,
   WrapperInfo,
   StyledLabel,
+  StyledInput,
   ButtonContainer,
   StyledButton,
   OTPButton,
-  OTPGroup,
-  OTPInput,
+  OTPTimer,
 } from "./styled";
 import { Error } from "styles/global.styled";
 
 export default function OTP() {
-  const [otp, setOtp] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const router = useRouter();
-
+  const [formValues, setFormValues] = useState({ otp: "" });
+  const [formErrors, setFormErrors] = useState({});
   const [timeLeft, setTimeLeft] = useState(null);
+  const [disabled, setDisabled] = useState(false);
+  const router = useRouter();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+  const validate = (values) => {
+    const errors = {};
+    if (!values.otp) {
+      errors.otp = "Mã OTP là thông tin bắt buộc.";
+    }
 
+    return errors;
+  };
+
+  const handleSubmit = () => {
+    if (formValues.otp === "" && !disabled) {
+      setFormErrors(validate(formValues));
+    } else {
+      router.push(`/gift`);
+    }
+  };
   useEffect(() => {
     if (timeLeft === 0) {
       console.log("TIME LEFT IS 0");
       setTimeLeft(null);
+      setDisabled(false);
     }
 
     if (!timeLeft) return;
 
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft - 1);
+      setDisabled(true);
+      setFormErrors(!validate(formValues));
     }, 1000);
 
     return () => clearInterval(intervalId);
   }, [timeLeft]);
-  const handleChange = (value: string) => {
-    setOtp(value);
-  };
-  const inputOnChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    idx: number
-  ) => {
-    const target = e.target;
-    let targetValue = target.value.trim();
-    const isTargetValueDigit = RE_DIGIT.test(targetValue);
 
-    if (!isTargetValueDigit && targetValue !== "") {
-      return;
-    }
-
-    targetValue = isTargetValueDigit ? targetValue : " ";
-
-    const targetValueLength = targetValue.length;
-
-    if (targetValueLength === 1) {
-      const newValue =
-        otp.substring(0, idx) + targetValue + otp.substring(idx + 1);
-
-      handleChange(newValue);
-
-      if (!isTargetValueDigit) {
-        return;
-      }
-
-      const nextElementSibling =
-        target.nextElementSibling as HTMLInputElement | null;
-
-      if (nextElementSibling) {
-        nextElementSibling.focus();
-      }
-    } else if (targetValueLength === 6) {
-      handleChange(targetValue);
-
-      target.blur();
-    }
-  };
-  const inputOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const target = e.target as HTMLInputElement;
-
-    if (e.key !== "Backspace" || target.value !== "") {
-      return;
-    }
-
-    const previousElementSibling =
-      target.previousElementSibling as HTMLInputElement | null;
-
-    if (previousElementSibling) {
-      previousElementSibling.focus();
-    }
-  };
-  const inputOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
-    const { target } = e;
-
-    target.setSelectionRange(0, target.value.length);
-  };
-  const valueItems = useMemo(() => {
-    const valueArray = otp.split("");
-    const items: Array<string> = [];
-
-    for (let i = 0; i < 6; i++) {
-      const char = valueArray[i];
-
-      if (RE_DIGIT.test(char)) {
-        items.push(char);
-      } else {
-        items.push("");
-      }
-    }
-
-    return items;
-  }, [otp, 6]);
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (otp === "") {
-      setErrorMessage("Mã OTP là thông tin bắt buộc");
-    } else {
-      router.push(`/gift`);
-    }
-  };
   return (
     <Container>
       <Title>Xác nhận thông tin </Title>
@@ -134,36 +70,35 @@ export default function OTP() {
           Mã OTP sẽ hết hiệu lực sau 5 phút.
         </NotiFill>
         <WrapperInfo>
-          <StyledForm onSubmit={onSubmit}>
+          <StyledForm>
             <StyledLabel>Nhập mã OTP:</StyledLabel>
-
-            <OTPGroup>
-              {valueItems.map((digit, idx) => (
-                <OTPInput
-                  key={idx}
-                  type="text"
-                  inputMode="numeric"
-                  autoComplete="one-time-code"
-                  pattern="\d{1}"
-                  maxLength={6}
-                  className="otp-input"
-                  value={digit}
-                  onChange={(e) => inputOnChange(e, idx)}
-                  onKeyDown={inputOnKeyDown}
-                  onFocus={inputOnFocus}
-                />
-              ))}
-            </OTPGroup>
-            {errorMessage && <Error className="error"> {errorMessage} </Error>}
-            <ButtonContainer>
-              {timeLeft}
-              <OTPButton onClick={() => setTimeLeft(10)}>
-                Gửi lại mã OTP
-              </OTPButton>
-              <StyledButton>Tiếp tục</StyledButton>
-            </ButtonContainer>
+            <StyledInput
+              type="text"
+              maxLength={6}
+              pattern="\d*"
+              name="otp"
+              value={formValues.otp}
+              onChange={handleChange}
+            />
+            {disabled ? (
+              <OTPTimer>Mã OTP sẽ được gửi lại sau {timeLeft}s</OTPTimer>
+            ) : (
+              <Error>{formErrors.otp}</Error>
+            )}
           </StyledForm>
         </WrapperInfo>
+        <ButtonContainer>
+          <OTPButton
+            name="otp"
+            disabled={disabled}
+            onClick={() => setTimeLeft(6)}
+          >
+            {disabled ? "Vui lòng chờ" : "Gửi lại mã OTP"}
+          </OTPButton>
+          <StyledButton name="continue" onClick={handleSubmit}>
+            Tiếp tục
+          </StyledButton>
+        </ButtonContainer>
       </Wrapper>
     </Container>
   );

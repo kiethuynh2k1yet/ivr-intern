@@ -45,6 +45,19 @@ export const StyledLabel = styled.label`
   margin-bottom: 16px;
 `;
 
+export const StyledInput = styled.input`
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  border: 0;
+  outline: 0;
+  font-style: normal;
+  color: #5f6c68;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c1c8c6;
+`;
 export const WrapperInfo = styled.div`
   display: flex;
   justify-content: center;
@@ -61,6 +74,7 @@ export const ButtonContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 10px;
+  padding-bottom: 40px;
 `;
 
 export const StyledButton = styled.button`
@@ -80,7 +94,6 @@ export const StyledButton = styled.button`
   align-items: center;
   line-height: 24px;
   cursor: pointer;
-  margin: 29px auto 60px;
 
   @media (max-width: 768px) {
     padding: 0;
@@ -104,7 +117,6 @@ export const OTPButton = styled.button`
   align-items: center;
   line-height: 24px;
   cursor: pointer;
-  margin: 29px auto 60px;
 
   @media (max-width: 768px) {
     padding: 0;
@@ -133,4 +145,16 @@ export const OTPInput = styled.input`
   padding: 0;
   color: #5f6c68;
   // border-bottom: 2px solid #5f6c68;
+`;
+
+export const OTPTimer = styled.div`
+  color: #e87722;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 2px;
+  margin-bottom: 24px;
 `;
