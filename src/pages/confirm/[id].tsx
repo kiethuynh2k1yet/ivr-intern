@@ -1,13 +1,7 @@
 import React from "react";
 import { data } from "data";
 import Confirm from "components/confirm/confirm";
-import {
-  Stepper,
-  StepperItem,
-  Step,
-  StepContainer,
-  StepTitle,
-} from "components/checkout/styled";
+
 interface GiftProps {
   product: object;
 }
@@ -15,24 +9,6 @@ interface GiftProps {
 export default function Accept({ product }: { product: GiftProps }) {
   return (
     <>
-      <StepContainer>
-        <Stepper>
-          <StepperItem>
-            <Step className="active" />
-            <StepTitle>Chọn quà</StepTitle>
-          </StepperItem>
-
-          <StepperItem>
-            <Step className="active" />
-            <StepTitle>Thông tin giao quà</StepTitle>
-          </StepperItem>
-
-          <StepperItem>
-            <Step className="active" />
-            <StepTitle>Xác nhận</StepTitle>
-          </StepperItem>
-        </Stepper>
-      </StepContainer>{" "}
       <Confirm product={product} />
     </>
   );
