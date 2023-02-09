@@ -36,7 +36,7 @@ export default function OTP() {
   };
 
   const handleSubmit = () => {
-    if (formValues.otp === "" && !disabled) {
+    if (formValues.otp === "") {
       setFormErrors(validate(formValues));
     } else {
       router.push(`/gift`);

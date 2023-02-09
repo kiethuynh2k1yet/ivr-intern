@@ -116,8 +116,9 @@ export const OTPButton = styled.button`
   justify-content: center;
   align-items: center;
   line-height: 24px;
-  cursor: pointer;
-
+  &:disabled {
+    cursor: not-allowed;
+  }
   @media (max-width: 768px) {
     padding: 0;
   }

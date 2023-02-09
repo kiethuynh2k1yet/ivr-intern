@@ -106,6 +106,7 @@ export default function Delivery({ product }: { product: any }) {
           {product.desc === "card" ? (
             <>
               <Error>{formErrors.card}</Error>
+              <Error>{formErrors.phone}</Error>
 
               <StyledLabel>Chọn nhà mạng</StyledLabel>
               <StyledSelect name="card" onChange={handleChange}>
@@ -122,7 +123,6 @@ export default function Delivery({ product }: { product: any }) {
                 value={formValues.phone}
                 onChange={handleChange}
               />
-              <Error>{formErrors.phone}</Error>
 
               <StyledNote>
                 <Underline>Ghi chú:</Underline> Để nạp tiền cho số điện thoại
@@ -132,6 +132,8 @@ export default function Delivery({ product }: { product: any }) {
             </>
           ) : product.desc === "evoucher" ? (
             <>
+              <Error>{formErrors.name}</Error>
+              <Error>{formErrors.phone}</Error>
               <StyledLabel>Người nhận</StyledLabel>
               <GiftInput
                 type="text"
@@ -140,8 +142,6 @@ export default function Delivery({ product }: { product: any }) {
                 placeholder="Vui lòng nhập Họ và tên người nhận"
                 onChange={handleChange}
               />
-              <Error>{formErrors.name}</Error>
-
               <StyledLabel>Điện thoại di động</StyledLabel>
               <StyledInput
                 type="text"
@@ -150,10 +150,11 @@ export default function Delivery({ product }: { product: any }) {
                 value={formValues.phone}
                 onChange={handleChange}
               />
-              <Error>{formErrors.phone}</Error>
             </>
           ) : (
             <>
+              <Error>{formErrors.memberId}</Error>
+              <Error>{formErrors.name}</Error>
               <StyledLabel>Nhập mã hội viên</StyledLabel>
               <GiftInput
                 type="text"
@@ -162,8 +163,6 @@ export default function Delivery({ product }: { product: any }) {
                 value={formValues.memberId}
                 onChange={handleChange}
               />
-              <Error>{formErrors.memberId}</Error>
-
               <StyledLabel>Họ và tên hội viên</StyledLabel>
               <GiftInput
                 type="text"
@@ -172,7 +171,6 @@ export default function Delivery({ product }: { product: any }) {
                 value={formValues.name}
                 onChange={handleChange}
               />
-              <Error>{formErrors.name}</Error>
             </>
           )}
           <CheckContainer>

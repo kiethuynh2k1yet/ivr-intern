@@ -1,34 +1,10 @@
 import React from "react";
 import Delivery from "components/delivery/delivery";
 import { data } from "data";
-import {
-  Stepper,
-  StepperItem,
-  Step,
-  StepContainer,
-  StepTitle,
-} from "components/checkout/styled";
+
 export default function Detail({ product }: { product: object }) {
   return (
     <>
-      <StepContainer>
-        <Stepper>
-          <StepperItem>
-            <Step className="active" />
-            <StepTitle>Chọn quà</StepTitle>
-          </StepperItem>
-
-          <StepperItem>
-            <Step className="active" />
-            <StepTitle>Thông tin giao quà</StepTitle>
-          </StepperItem>
-
-          <StepperItem>
-            <Step />
-            <StepTitle>Xác nhận</StepTitle>
-          </StepperItem>
-        </Stepper>
-      </StepContainer>{" "}
       <Delivery product={product} />
     </>
   );

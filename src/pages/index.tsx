@@ -10,7 +10,7 @@ import Stepper from "components/stepper/stepper";
 export default function Home() {
   return (
     <>
-      <Stepper />
+      {/* <Stepper /> */}
       {/* <Authentication /> */}
       {/* <Gift /> */}
       {/* <Delivery /> */}

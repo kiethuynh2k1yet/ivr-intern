@@ -1,7 +1,18 @@
 import React from "react";
 import { data } from "data";
 import Confirm from "components/confirm/confirm";
-
+import {
+  StyledUL,
+  StyledLi,
+  Container,
+  SubContainer,
+  ProgressWrap,
+  Line,
+  LineProgress,
+  StyledPick,
+  StyledSpan,
+  StyledConfirm,
+} from "components/stepper/styled";
 interface GiftProps {
   product: object;
 }

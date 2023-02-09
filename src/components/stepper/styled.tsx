@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  height: 75px;
+`;
 
 export const SubContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 24px;
-  box-shadow: 0px 4px 20px rgba(24, 48, 40, 0.15);
-  background: #ffffff;
+  position: relative;
+  height: 40%;
+  // border: 1px solid blue;
+  // background: #ffffff;
+  // box-shadow: 0px 4px 20px rgba(24, 48, 40, 0.15);
 `;
 
 export const ProgressWrap = styled.div``;
@@ -16,6 +20,7 @@ export const LineProgress = styled.div`
   display: flex;
   margin: auto;
   width: 100%;
+  height: 50%;
 `;
 
 export const Line = styled.div`
@@ -73,12 +78,11 @@ export const StyledPick = styled.span`
   margin-left: 40px;
   /* width: 75px; */
   float: left;
-  //   margin-left: -30px;
-  //   display: none;
 
-  //   &:nth-child(1) {
-  //     padding-left: 40px;
-  //   }
+  @media (max-width: 768px) {
+    width: 64px;
+    margin-left: 37px;
+  }
 `;
 
 export const StyledSpan = styled.span`
@@ -103,4 +107,9 @@ export const StyledConfirm = styled.span`
   //   float: right;
   margin-right: 30px;
   //   display: none;
+
+  @media (max-width: 768px) {
+    width: 64px;
+    margin-right: 27px;
+  }
 `;

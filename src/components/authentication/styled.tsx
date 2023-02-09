@@ -8,7 +8,6 @@ export const Title = styled.div`
   background-color: #e87722;
   width: 100%;
   padding: 20px;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   font-weight: 500;
@@ -74,7 +73,7 @@ export const Demo = styled.p`
   font-weight: 500;
   font-size: 14px;
   margin-top: 2px;
-  margin-bottom:0px;
+  margin-bottom: 0px;
   line-height: 22px;
 `;
 

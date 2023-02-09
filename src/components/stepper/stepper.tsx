@@ -11,25 +11,39 @@ import {
   StyledSpan,
   StyledConfirm,
 } from "./styled";
+import { useRouter } from "next/router";
+import { data } from "data";
 export default function Stepper() {
+  const router = useRouter();
+  const id = router.query;
+  const pathName = router.pathname;
+  console.log(pathName);
   return (
     <Container>
       <SubContainer>
         <ProgressWrap>
           <LineProgress>
             <Line />
+
             <StyledUL>
               <StyledLi className="active" id="gift">
                 <StyledPick>Chọn quà</StyledPick>
                 {/* Chọn quà */}
               </StyledLi>
-              <StyledLi id="delivery">
-                <StyledSpan>Thông tin giao quà</StyledSpan>
-              </StyledLi>
-
-              <StyledLi id="confirm">
-                <StyledConfirm>Xác nhận</StyledConfirm>
-              </StyledLi>
+              {pathName === `gift/${id}` ? (
+                ""
+              ) : (
+                <StyledLi className="active" id="delivery">
+                  <StyledSpan>Thông tin giao quà</StyledSpan>
+                </StyledLi>
+              )}
+              {pathName === `confirm/${id}` ? (
+                ""
+              ) : (
+                <StyledLi className="active" id="confirm">
+                  <StyledConfirm>Xác nhận</StyledConfirm>
+                </StyledLi>
+              )}
             </StyledUL>
           </LineProgress>
         </ProgressWrap>
