@@ -10,17 +10,15 @@ import React from 'react'
 import Otp from 'components/otp'
 import Receive from 'components/receive'
 import LinkSuccess from 'components/linkSuccess'
-import LinkExpired from 'components/linkExpired'
 
 export default function Home() {
   return (
     <>
       {/* <Header/> */}
-      {/* <Authentication/>  */}
+      <Authentication/> 
       {/* <Otp/> */}
-      <Receive/>
+      {/* <Receive/> */}
       {/* <LinkSuccess/> */}
-      {/* <LinkExpired/> */}
     </>
   )
 }

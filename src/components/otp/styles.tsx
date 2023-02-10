@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width:100%;
-   
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
     margin: 60px 240px 137px 240px;
 
     @media (max-width: 768px) {
@@ -20,7 +19,6 @@ export const Title = styled.h1`
 `;
 
 export const InfoTitle = styled.label`
-    margin-top: 24px;
     width: 382px;
     height: 48px;
     color: #212529;
@@ -37,11 +35,15 @@ export const InputInfoTitle = styled.input`
     padding-left: 16px; 
     width: 250px;
     height: 48px;
-    margin-top: 24px;
     background: #E9ECEF;
     border: 1px solid #CED4DA;
     border-radius: 4px; 
     color: #495057;
+
+    input:focus:invalid {
+        border: 1px solid red;
+        outline: none;
+      }
     
     @media (max-width: 768px) {
         Width: 100%;
@@ -51,6 +53,7 @@ export const InputInfoTitle = styled.input`
 
 export const Info = styled.div`
     display: flex;
+    margin-top:32px;
 
     @media (max-width: 768px) {
         display: block;
@@ -62,7 +65,6 @@ export const InputOtp = styled.input`
     padding-left: 16px; 
     width: 250px;
     height: 48px;
-    margin-top: 24px;
     background: #fff;
     border: 1px solid #CED4DA;
     border-radius: 4px; 
@@ -73,26 +75,26 @@ export const InputOtp = styled.input`
         margin-top: 12px;
         margin-left:0px;
     }
+
+    &.errorOtp{
+        border:1px solid red;
+    }
 `;
 
 export const InputInfoOtp = styled.div`
-    display: block;
 `;
 
 export const DesOtp = styled.label`
-    width: 206px;
-    height: 24px;
-    margin-top: 35px;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
+    margin-top: 12px;
     margin-left: 24px;
 
     @media (max-width: 768px) {
         display: block;
         margin-top: 12px;
-        margin-left: 0px;
     }
 `;
 
@@ -100,12 +102,6 @@ export const DesOptminus = styled.p`
     font-style: italic;
     line-height: 24px;
     color: #212529;
-    margin-top: 2px;
-
-    @media (max-width: 768px) {
-        margin-top: 2px;
-        margin-bottom: 0px;
-    }
 `;
 
 export const StyleBtn = styled.button`
@@ -123,6 +119,7 @@ export const StyleBtn = styled.button`
     font-size: 18px;
     line-height: 24px;
     margin-top: 64px;
+    cursor: pointer;
 `;
 
 export const TitleContactLink = styled.p`
@@ -131,4 +128,17 @@ export const TitleContactLink = styled.p`
     text-decoration: underline;
     margin-top: 15px;
     margin-left:16px;
+`;
+
+export const DesOtpError = styled.label`
+    color:#E65100;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 12px;
+    margin-left: 24px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
 `;

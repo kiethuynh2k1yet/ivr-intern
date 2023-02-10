@@ -14,41 +14,69 @@ import {
   StyleBtn,
   ColorDesHighLight,
   Wapper,
+  InputInfo,
 } from "./styles";
 
+export type MyError = {
+  messsage: string | ErrorMessages;
+  resolution?: string | undefined; 
+}
+
+export const enum ErrorMessages {
+  DBError = "Vui lòng nhập ngày tháng năm sinh"
+}
+
 export default function Authentication() {
-  const [errorMessage, setErrorMessage] = useState("");
-  const [date, setDate] = useState("");
-  const [password, setPassword] = useState("");
+  const [formValues, setFormValues] = useState({ date: "", id: "", check: false });
+  const [formErrors, setFormErrors] = useState({});
+  const [error, setError] = useState([]);
   const router = useRouter();
 
-  const onSubmitDate = (e) => {
-    if (date === "") {
-      e.preventDefault();
-      setErrorMessage("Vui lòng nhập ngày tháng năm sinh");
-    }else {
-      e.preventDefault();
-      setErrorMessage("Ngày tháng năm sinh chưa hợp lệ");
+  const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
+    const { name, value } = e.target;
+    if (error.includes(name)) {
+      setError(error.filter((e) => e !== name));
     }
+    setFormValues({ ...formValues, [name]: value });
   };
 
-  const onSubmitPassword = (e) => {
-    if (password === "") {
-      e.preventDefault();
-      setErrorMessage("Vui lòng nhập số CMND/CCCD/Passport");
-    }else {
-      e.preventDefault();
-      setErrorMessage("Số CMND/CCCD/Passport chưa hợp lệ");
+  const validate = (values: React.FormEvent<HTMLFormElement>) => {
+    const errors = {};
+    if (!values.date) {
+      errors.date = "Vui lòng nhập ngày tháng năm sinh";
+    } else if (values.date){
+      errors.date = "Ngày tháng năm sinh chưa hợp lệ";
     }
+    if (!values.id) {
+      errors.id = "Vui lòng nhập số CMND/CCCD/Hộ chiếu";
+    } else if (values.id){
+      errors.id = "Số CMND/CCCD/Passport chưa hợp lệ";
+    }
+    return errors;
   };
 
-  const onChange = () =>{
-    router.push('/otp');
-  }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const errorList = [];
+    if (!formValues.date ){
+      errorList.push("date");
+    }
+    if (!formValues.id ){
+      errorList.push("id");
+    }
+    if (formValues.date !== "25/08/2001" && formValues.id !== "0000") {
+      errorList.push("id");
+      errorList.push("date");
+    }else {
+      router.push(`/otp`);
+    }
+    setFormErrors(validate(formValues));
+    setError(errorList);
+  };
 
   return (
     <Container>
-      <Wapper>
+      <Wapper onSubmit={handleSubmit}>
         <Title>
           Chúc mừng hợp đồng bảo hiểm 31235802 của quý khách new TC038.2 đã được
           phát hành
@@ -57,26 +85,36 @@ export default function Authentication() {
           Để nhận trực tuyến bộ Hợp đồng bảo hiểm, Quý khách vui lòng nhập các
           thông tin sau đây:
         </DesTitle>
-        <Info onSubmit={onSubmitDate}>
+        <Info>
           <InfoTitle>Ngày tháng năm sinh của Bên mua bảo hiểm</InfoTitle>
-          <InputInfoTitle
-            type="text"
-            name="date"
-            placeholder="Ngày/Tháng/Năm"
-            onChange={(e) => setDate(e.target.value)}
-          />
-          {errorMessage && <Error className="error"> {errorMessage} </Error>}
+          <InputInfo>
+            <InputInfoTitle
+              type="text"
+              name="date"
+              placeholder="Ngày/Tháng/Năm"
+              // onChange={(e) => setDate(e.target.value)}
+              value={formValues.date}
+              onChange={handleChange}
+              className={error.includes("date") ? "errorInfo" : ""} 
+            />
+            {/* {errorMessage && <Error className="error"> {errorMessage} </Error>} */}
+            <Error>{formErrors.date}</Error>
+          </InputInfo>
           <Demo>Minh họa 31/01/2019</Demo>
         </Info>
-        <Info onSubmit={onSubmitPassword}>
+        <Info>
           <InfoTitle>Số CMND/CCCD/Passport</InfoTitle>
-          <InputInfoTitle 
-            type="text" 
-            name="IdCard" 
-            placeholder="" 
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          {errorMessage && <Error className="error"> {errorMessage} </Error>}
+          <InputInfo>
+            <InputInfoTitle
+              type="text"
+              name="id"
+              placeholder=""
+              value={formValues.id}
+              onChange={handleChange}
+              className={error.includes("id") ? "errorInfo" : ""}
+            />
+            <Error>{formErrors.id}</Error>
+          </InputInfo>
         </Info>
         <DesTitle>
           Theo Quy tắc và Điều khoản hợp đồng bảo hiểm,{" "}
@@ -96,11 +134,17 @@ export default function Authentication() {
           chúng tôi thông qua nhà cung cấp dịch vụ bưu phát.
         </DesTitle>
         <DesTitle>
-          <DesCheckBox type="checkbox" />
+          <DesCheckBox 
+          type="checkbox" 
+          name="id"
+          value={formValues.id}
+              onChange={handleChange}
+          className={error.includes("id") ? "errorInfo" : ""}
+          />
           Tôi, bên mua bảo hiểm của Hợp đồng bảo hiểm số 31235802 đã đọc và hiểu
           rõ các nội dung nói trên
         </DesTitle>
-          <StyleBtn onClick={onSubmitDate}>Tiếp tục</StyleBtn>
+        <StyleBtn >Tiếp tục</StyleBtn>
       </Wapper>
     </Container>
   );

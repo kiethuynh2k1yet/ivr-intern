@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Error } from "styles/global.styled";
 import { useRouter } from 'next/router';
-import { RE_DIGIT } from './constants';
 import {
   Container,
   InfoTitle,
@@ -13,25 +12,50 @@ import {
   DesOptminus,
   StyleBtn,
   Wrapper,
-  InputInfoOtp
+  InputInfoOtp,
+  DesOtpError
 } from "./styles";
 
 export default function Otp() {
-  const [countdown, setCountdown] = useState(250);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [otp, setOtp] = useState("");
+  const [countdown, setCountdown] = useState(10);
+  const [formValues, setFormValues] = useState({ otp: ""});
+  const [formErrors, setFormErrors] = useState({});
+  const [error, setError] = useState([]);
   const router = useRouter();
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-
-    if (otp === "") {
-      e.preventDefault();
-      setErrorMessage("Vui lòng nhập Otp");
-    } else if (otp === "00000000"){
-      setErrorMessage("Otp chưa chính xác. Vui lòng nhập lại");
-    } else {
-      router.push('/receive');
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (error.includes(name)) {
+      setError(error.filter((e) => e !== name));
     }
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const validate = (values) => {
+    const errors = {};
+    if (!values.otp) {
+      errors.otp = "Vui lòng nhập Otp";
+    } else if(values.otp) {
+      errors.otp = "OTP chưa chính xác. Vui lòng nhập lại";
+    }
+    return errors;
+  };
+  
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const errorList = [];
+    if (!formValues.otp ){
+      errorList.push("otp");
+    }
+    if (formValues.otp !== "11111111") {
+      errorList.push("otp");
+    }
+    else {
+      router.push(`/receive`);
+    }
+    setFormErrors(validate(formValues));
+    setError(errorList);
   };
 
   useEffect(() => {
@@ -44,9 +68,13 @@ export default function Otp() {
     return () => clearInterval(TimeId);
   }, [countdown]);
 
+  const resendOTP = () => {
+    setCountdown(250);
+  };
+
   return (
     <Container>
-      <Wrapper>
+      <Wrapper onSubmit={handleSubmit} >
         <Title>XÁC NHẬN THÔNG TIN</Title>
         <Info>
           <InfoTitle>Ngày tháng năm sinh của Bên mua bảo hiểm</InfoTitle>
@@ -65,17 +93,22 @@ export default function Otp() {
           <InputInfoOtp>
             <InputOtp
               type="text"
+              name="otp"
               placeholder=""
               maxLength={8}
-  
-              onChange={(e) => setOtp(e.target.value)}
+              value={formValues.otp}
+              onChange={handleChange}
+              className={error.includes("otp") ? "errorOtp" : ""}     
             />
-            {errorMessage && <Error className="error"> {errorMessage} </Error>}
+            <Error>{formErrors.otp}</Error>
           </InputInfoOtp>
-          <DesOtp>Gửi lại mã OTP sau {countdown} giây</DesOtp>
+          {countdown > 0 ? (
+            <DesOtp>Gửi lại mã OTP sau {countdown} giây</DesOtp>
+          ):(
+            <DesOtpError onClick={resendOTP}>Gửi lại mã</DesOtpError>
+          )}
         </Info>
-
-        <StyleBtn onClick={onSubmit}>Tiếp tục</StyleBtn>
+          <StyleBtn>Tiếp tục</StyleBtn>
       </Wrapper>
     </Container>
   );

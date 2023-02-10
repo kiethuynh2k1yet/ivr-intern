@@ -7,7 +7,7 @@ export const Container = styled.div`
    align-items:center;
 `;
 
-export const Wapper = styled.div`
+export const Wapper = styled.form`
     width: 960px;
     height: 532px;
     margin: 60px 240px 137px 240px;
@@ -55,7 +55,6 @@ export const InputInfoTitle = styled.input`
     width: 250px;
     height: 48px;
     margin-top: 24px;
-    margin-left: 32px;
     background: #fff;
     border: 1px solid #CED4DA;
     border-radius: 4px; 
@@ -64,6 +63,10 @@ export const InputInfoTitle = styled.input`
     @media (max-width: 768px) {
         Width: 100%;
         margin:0px;
+    }
+
+    &.errorInfo{
+        border:1px solid red;
     }
 `;
 
@@ -110,6 +113,9 @@ export const DesCheckBox = styled.input`
     accent-color: #F68B1F;
 `;
 
+export const InputInfo = styled.div`
+    margin-left:32px;
+`;
 
 export const StyleBtn = styled.button`
     width: 200px;
