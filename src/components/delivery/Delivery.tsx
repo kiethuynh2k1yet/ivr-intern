@@ -22,12 +22,12 @@ import {
   CheckContainer,
   ImgContainer,
   LabelCheckbox,
+  ErrorMess,
 } from "./styled";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { saveUser } from "redux/reducers/root-reducer";
-import { Error } from "styles/global.styled";
 
 export default function Delivery({ product }: { product: any }) {
   const dispatch = useDispatch(); // <-- dispatch function
@@ -51,12 +51,6 @@ export default function Delivery({ product }: { product: any }) {
     console.log(name, value);
   };
 
-  const handleChecked = () => {};
-  // const handleCard = (e) => {
-  //   const { name, value } = e.target;
-  //   console.log(name, value);
-  //   setFormValues(value);
-  // };
   const validate = (values) => {
     const errors = {};
     if (!values.name) {
@@ -108,8 +102,8 @@ export default function Delivery({ product }: { product: any }) {
           </Desc>
           {product.desc === "card" ? (
             <>
-              <Error>{formErrors.card}</Error>
-              <Error>{formErrors.phone}</Error>
+              <ErrorMess>{formErrors.card}</ErrorMess>
+              <ErrorMess>{formErrors.phone}</ErrorMess>
 
               <StyledLabel>Chọn nhà mạng</StyledLabel>
               <StyledSelect name="card" onChange={handleChange}>
@@ -135,8 +129,8 @@ export default function Delivery({ product }: { product: any }) {
             </>
           ) : product.desc === "evoucher" ? (
             <>
-              <Error>{formErrors.name}</Error>
-              <Error>{formErrors.phone}</Error>
+              <ErrorMess>{formErrors.name}</ErrorMess>
+              <ErrorMess>{formErrors.phone}</ErrorMess>
               <StyledLabel>Người nhận</StyledLabel>
               <GiftInput
                 type="text"
@@ -156,8 +150,8 @@ export default function Delivery({ product }: { product: any }) {
             </>
           ) : (
             <>
-              <Error>{formErrors.memberId}</Error>
-              <Error>{formErrors.name}</Error>
+              <ErrorMess>{formErrors.memberId}</ErrorMess>
+              <ErrorMess>{formErrors.name}</ErrorMess>
               <StyledLabel>Nhập mã hội viên</StyledLabel>
               <GiftInput
                 type="text"

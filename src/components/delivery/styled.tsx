@@ -29,6 +29,7 @@ export const Desc = styled.p`
   color: #5f6c68;
   width: 548px;
   font-style: normal;
+  margin-bottom: 32px;
 
   height: 48px;
   @media (max-width: 768px) {
@@ -226,4 +227,12 @@ export const ImgContainer = styled.div`
   align-items: center;
   position: relative;
   bottom: 70px;
+`;
+
+export const ErrorMess = styled.div`
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 8px;
 `;
