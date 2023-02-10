@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyledUL,
   StyledLi,
@@ -13,37 +13,30 @@ import {
 } from "./styled";
 import { useRouter } from "next/router";
 import { data } from "data";
-export default function Stepper() {
+import Link from "next/link";
+
+export default function Stepper({ step }: { step: number }) {
   const router = useRouter();
-  const id = router.query;
-  const pathName = router.pathname;
-  console.log(pathName);
+  const { id } = router.query;
+  const pathName = router.asPath;
+  const [activeStep, setActiveStep] = useState(0);
   return (
     <Container>
       <SubContainer>
         <ProgressWrap>
           <LineProgress>
             <Line />
-
             <StyledUL>
               <StyledLi className="active" id="gift">
-                <StyledPick>Chọn quà</StyledPick>
+                <StyledPick>Chọn quà </StyledPick>
                 {/* Chọn quà */}
               </StyledLi>
-              {pathName === `gift/${id}` ? (
-                ""
-              ) : (
-                <StyledLi className="active" id="delivery">
-                  <StyledSpan>Thông tin giao quà</StyledSpan>
-                </StyledLi>
-              )}
-              {pathName === `confirm/${id}` ? (
-                ""
-              ) : (
-                <StyledLi className="active" id="confirm">
-                  <StyledConfirm>Xác nhận</StyledConfirm>
-                </StyledLi>
-              )}
+              <StyledLi className={step >= 2 ? "active" : ""}>
+                <StyledSpan>Thông tin giao quà</StyledSpan>
+              </StyledLi>
+              <StyledLi className={step >= 3 ? "active" : ""}>
+                <StyledConfirm>Xác nhận</StyledConfirm>
+              </StyledLi>
             </StyledUL>
           </LineProgress>
         </ProgressWrap>

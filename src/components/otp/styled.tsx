@@ -7,7 +7,6 @@ export const Title = styled.div`
   background-color: #e87722;
   width: 100%;
   padding: 20px;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   font-weight: 500;

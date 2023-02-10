@@ -14,7 +14,7 @@ export const Container = styled.div`
   background-color: #e87722;
 
   @media (max-width: 768px) {
-    margin-right: 74px;
+    margin-right: 70px;
   }
 `;
 

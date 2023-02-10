@@ -100,10 +100,58 @@ export const Underline = styled.span`
   text-decoration-line: underline;
 `;
 
+export const LabelCheckbox = styled.label`
+  display: block;
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+`;
+export const Checkmark = styled.span`
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-image: url(${process.env.basePath}/images/border.png);
+  // background-size: 100%;
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+
+    left: 4px;
+    top: 5px;
+    width: 11.25px;
+    height: 7.88px;
+    background-image: url(${process.env.basePath}/images/checkmark.png);
+    background-size: 100%;
+  }
+`;
+export const StyledCheckbox = styled.input`
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+
+  & ~ ${Checkmark} {
+    // border: 2px solid #0096a9;
+    // border-radius: 2px;
+  }
+  &:checked ~ ${Checkmark}::after {
+    display: block;
+  }
+`;
+
 export const CheckContainer = styled.div`
   margin-top: 24px;
 `;
-export const StyledCheckbox = styled.input``;
+
 export const Agree = styled.label`
   color: #5f6c68;
   font-weight: 500;

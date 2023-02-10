@@ -16,10 +16,12 @@ import {
   GiftTitle,
   GiftContainer,
   SubGiftTitle,
+  Checkmark,
   StyledSelect,
   Underline,
   CheckContainer,
   ImgContainer,
+  LabelCheckbox,
 } from "./styled";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
@@ -49,6 +51,7 @@ export default function Delivery({ product }: { product: any }) {
     console.log(name, value);
   };
 
+  const handleChecked = () => {};
   // const handleCard = (e) => {
   //   const { name, value } = e.target;
   //   console.log(name, value);
@@ -174,15 +177,18 @@ export default function Delivery({ product }: { product: any }) {
             </>
           )}
           <CheckContainer>
-            <StyledCheckbox
-              type="checkbox"
-              defaultChecked={check}
-              onChange={() => setCheck(!check)}
-            />
-            <Agree>
-              Tôi đồng ý FWD cung cấp những thông tin trên cho Nhà cung cấp dịch
-              vụ nhằm mục đích liên hệ và giao quà.
-            </Agree>
+            <LabelCheckbox>
+              <StyledCheckbox
+                type="checkbox"
+                checked={check}
+                onChange={() => setCheck(!check)}
+              />
+              <Checkmark />
+              <Agree>
+                Tôi đồng ý FWD cung cấp những thông tin trên cho Nhà cung cấp
+                dịch vụ nhằm mục đích liên hệ và giao quà.
+              </Agree>
+            </LabelCheckbox>
           </CheckContainer>
           <ButtonContainer>
             <StyledButton onClick={() => router.back()}>Trở lại</StyledButton>

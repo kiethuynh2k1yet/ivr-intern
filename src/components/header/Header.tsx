@@ -6,10 +6,9 @@ import { data } from "data";
 interface GiftProps {
   product: object;
 }
-export default function Header({ product }: { product: GiftProps }) {
+export default function Header() {
   const router = useRouter();
   const pathname = router.pathname;
-  console.log(product);
   return (
     <Container>
       <ImgContainer>
@@ -22,10 +21,16 @@ export default function Header({ product }: { product: GiftProps }) {
           />
         </Logo>
       </ImgContainer>
-      {pathname === `/auth` && `/otp` && `/success` && `/notification` ? (
-        <Stepper />
-      ) : (
+      {pathname === `/auth` ? (
         ""
+      ) : pathname === `/otp` ? (
+        ""
+      ) : pathname === `/success` ? (
+        ""
+      ) : (
+        <Stepper
+          step={pathname === "/gift" ? 1 : pathname === "/gift/[id]" ? 2 : 3}
+        />
       )}
     </Container>
   );
