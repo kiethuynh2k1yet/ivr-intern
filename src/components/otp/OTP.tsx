@@ -22,7 +22,7 @@ export default function OTP() {
   const [timeLeft, setTimeLeft] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const router = useRouter();
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };

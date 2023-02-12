@@ -1,7 +1,15 @@
 import React from "react";
 import { Container, Title, SubTitle, Wrapper } from "./styled";
 import Giftcard from "./../giftcard/giftcard";
-export default function Gift({ giftData }) {
+
+interface GiftProps {
+  id: string;
+  desc: string;
+  title: string;
+  list: string[];
+  img: string;
+}
+export default function Gift({ giftData }: { giftData: GiftProps[] }) {
   return (
     <Container>
       <Title>QUÀ TẶNG SINH NHẬT</Title>

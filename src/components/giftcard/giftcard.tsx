@@ -12,8 +12,13 @@ import {
 } from "./styled";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-export default function Giftcard({ item }) {
-  console.log(typeof item);
+interface IGift {
+  id: string;
+  img: string;
+  title: string;
+  list: string[];
+}
+export default function Giftcard({ item }: { item: IGift }) {
   return (
     <MainContainer>
       <Container>

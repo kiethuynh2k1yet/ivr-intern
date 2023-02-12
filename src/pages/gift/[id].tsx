@@ -1,8 +1,14 @@
 import React from "react";
 import Delivery from "components/delivery/delivery";
 import { data } from "data";
-
-export default function Detail({ product }: { product: object }) {
+interface GiftProps {
+  id: string;
+  desc: string;
+  title: string;
+  list: string[];
+  img: string;
+}
+export default function Detail({ product }: { product: GiftProps }) {
   return (
     <>
       <Delivery product={product} />

@@ -14,25 +14,38 @@ import {
   ButtonContainer,
 } from "./styled";
 import { Error } from "styles/global.styled";
+
 export default function Authentication() {
+  type ErrorMess = {
+    date?: string;
+    id?: string;
+  };
+  interface formError {
+    date?: string;
+    id?: string;
+  }
   const [formValues, setFormValues] = useState({ date: "", id: "" });
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<formError>({});
   const [isSubmit, setIsSubmit] = useState(false);
 
   const router = useRouter();
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const validate = (values) => {
-    const errors = {};
+  const validate = (values: any) => {
+    const errors: ErrorMess = {};
     if (!values.date) {
       errors.date = "Vui lòng nhập ngày tháng năm sinh";
     }
     if (!values.id) {
       errors.id = "Vui lòng nhập số CMND/CCCD/Hộ chiếu";
     }
+    // if (value.date!=="1213"){
+    //   errors.date = "Vui lòng nhập ngày tháng năm sinh";
+
+    // }
     return errors;
   };
 

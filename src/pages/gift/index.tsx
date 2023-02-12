@@ -1,22 +1,15 @@
 import React from "react";
 import Gift from "components/gift/gift";
 import { data } from "./../../data";
-import {
-  StyledUL,
-  StyledLi,
-  Container,
-  SubContainer,
-  ProgressWrap,
-  Line,
-  LineProgress,
-  StyledPick,
-  StyledSpan,
-  StyledConfirm,
-} from "components/stepper/styled";
+
 interface GiftProps {
-  giftData: object;
+  id: string;
+  desc: string;
+  title: string;
+  list: string[];
+  img: string;
 }
-export default function index({ giftData }: { giftData: GiftProps }) {
+export default function index({ giftData }: { giftData: GiftProps[] }) {
   return (
     <>
       <Gift giftData={giftData} />;

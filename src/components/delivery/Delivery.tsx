@@ -30,6 +30,18 @@ import Image from "next/image";
 import { saveUser } from "redux/reducers/root-reducer";
 
 export default function Delivery({ product }: { product: any }) {
+  type ErrorMess = {
+    name?: string;
+    phone?: string;
+    memberId?: string;
+    card?: string;
+  };
+  interface formError {
+    name?: string;
+    phone?: string;
+    memberId?: string;
+    card?: string;
+  }
   const dispatch = useDispatch(); // <-- dispatch function
 
   const router = useRouter();
@@ -42,17 +54,21 @@ export default function Delivery({ product }: { product: any }) {
     memberId: "",
     card: "",
   });
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<formError>({});
   const [isSubmit, setIsSubmit] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
     console.log(name, value);
   };
-
-  const validate = (values) => {
-    const errors = {};
+  const handleOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+    console.log(name, value);
+  };
+  const validate = (values: any) => {
+    const errors: ErrorMess = {};
     if (!values.name) {
       errors.name = "Vui lòng nhập Họ và tên hội viên";
     }
@@ -106,7 +122,7 @@ export default function Delivery({ product }: { product: any }) {
               <ErrorMess>{formErrors.phone}</ErrorMess>
 
               <StyledLabel>Chọn nhà mạng</StyledLabel>
-              <StyledSelect name="card" onChange={handleChange}>
+              <StyledSelect name="card" onChange={handleOption}>
                 <option value="">Chọn nhà mạng</option>
                 <option value="Mobifone">Mobifone</option>
                 <option value="Vinaphone">Vinaphone</option>

@@ -1,20 +1,13 @@
 import React from "react";
 import { data } from "data";
 import Confirm from "components/confirm/confirm";
-import {
-  StyledUL,
-  StyledLi,
-  Container,
-  SubContainer,
-  ProgressWrap,
-  Line,
-  LineProgress,
-  StyledPick,
-  StyledSpan,
-  StyledConfirm,
-} from "components/stepper/styled";
+import { GetStaticProps } from "next";
 interface GiftProps {
-  product: object;
+  id: string;
+  desc: string;
+  title: string;
+  list: string[];
+  img: string;
 }
 
 export default function Accept({ product }: { product: GiftProps }) {
@@ -26,7 +19,7 @@ export default function Accept({ product }: { product: GiftProps }) {
 }
 
 // fetch data
-export const getStaticProps = async (ctx: { params: { id: string } }) => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
   // ctx = params: { id: item.id.toString() },
   console.log(ctx);
   const id = ctx.params.id;
