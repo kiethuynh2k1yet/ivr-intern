@@ -15,19 +15,18 @@ import {
   ColorDesHighLight,
   Wapper,
   InputInfo,
+  CheckInfo,
+  CheckTitle,
+  Checkmark,
 } from "./styles";
 
-export type MyError = {
-  messsage: string | ErrorMessages;
-  resolution?: string | undefined; 
-}
-
-export const enum ErrorMessages {
-  DBError = "Vui lòng nhập ngày tháng năm sinh"
-}
-
 export default function Authentication() {
-  const [formValues, setFormValues] = useState({ date: "", id: "", check: false });
+  const [formValues, setFormValues] = useState({
+    date: "",
+    id: "",
+    checkbox: "",
+  });
+  const [check, setCheck] = useState(true);
   const [formErrors, setFormErrors] = useState({});
   const [error, setError] = useState([]);
   const router = useRouter();
@@ -44,12 +43,12 @@ export default function Authentication() {
     const errors = {};
     if (!values.date) {
       errors.date = "Vui lòng nhập ngày tháng năm sinh";
-    } else if (values.date){
+    } else if (values.date) {
       errors.date = "Ngày tháng năm sinh chưa hợp lệ";
     }
     if (!values.id) {
       errors.id = "Vui lòng nhập số CMND/CCCD/Hộ chiếu";
-    } else if (values.id){
+    } else if (values.id) {
       errors.id = "Số CMND/CCCD/Passport chưa hợp lệ";
     }
     return errors;
@@ -58,18 +57,22 @@ export default function Authentication() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const errorList = [];
-    if (!formValues.date ){
+    if (!formValues.date) {
       errorList.push("date");
     }
-    if (!formValues.id ){
+    if (!formValues.id) {
       errorList.push("id");
     }
-    if (formValues.date !== "25/08/2001" && formValues.id !== "0000") {
+    if (!formValues.checkbox) {
+      errorList.push("checkbox");
+    }
+    if (formValues.date !== "25/08/2001" && formValues.id !== "0000" && check !== false) {
       errorList.push("id");
       errorList.push("date");
-    }else {
+    } else {
       router.push(`/otp`);
     }
+    console.log(errorList);
     setFormErrors(validate(formValues));
     setError(errorList);
   };
@@ -92,12 +95,10 @@ export default function Authentication() {
               type="text"
               name="date"
               placeholder="Ngày/Tháng/Năm"
-              // onChange={(e) => setDate(e.target.value)}
               value={formValues.date}
               onChange={handleChange}
-              className={error.includes("date") ? "errorInfo" : ""} 
+              className={error.includes("date") ? "errorInfo" : ""}
             />
-            {/* {errorMessage && <Error className="error"> {errorMessage} </Error>} */}
             <Error>{formErrors.date}</Error>
           </InputInfo>
           <Demo>Minh họa 31/01/2019</Demo>
@@ -133,18 +134,21 @@ export default function Authentication() {
           <ColorDesHighLight>bộ giấy Chứng nhận bảo hiểm</ColorDesHighLight> từ
           chúng tôi thông qua nhà cung cấp dịch vụ bưu phát.
         </DesTitle>
-        <DesTitle>
-          <DesCheckBox 
-          type="checkbox" 
-          name="id"
-          value={formValues.id}
-              onChange={handleChange}
-          className={error.includes("id") ? "errorInfo" : ""}
+        <CheckInfo>
+          <DesCheckBox
+            type="checkbox"
+            checked={check}
+            onChange={() => setCheck(!check)} 
           />
-          Tôi, bên mua bảo hiểm của Hợp đồng bảo hiểm số 31235802 đã đọc và hiểu
-          rõ các nội dung nói trên
-        </DesTitle>
-        <StyleBtn >Tiếp tục</StyleBtn>
+          <Checkmark className={error.includes("checkbox") ? "errorCheckbox" : ""}/>
+          <CheckTitle
+            className={error.includes("checkbox") ? "errorCheckbox" : ""}
+          >
+            Tôi, bên mua bảo hiểm của Hợp đồng bảo hiểm số 31235802 đã đọc và
+            hiểu rõ các nội dung nói trên
+          </CheckTitle>
+        </CheckInfo>
+        <StyleBtn>Tiếp tục</StyleBtn>
       </Wapper>
     </Container>
   );
