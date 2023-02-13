@@ -27,11 +27,11 @@ export default function Authentication() {
     checkbox: "",
   });
   const [check, setCheck] = useState(true);
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<any>({});
   const [error, setError] = useState([]);
   const router = useRouter();
 
-  const handleChange = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const { name, value } = e.target;
     if (error.includes(name)) {
       setError(error.filter((e) => e !== name));
@@ -39,8 +39,8 @@ export default function Authentication() {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const validate = (values: React.FormEvent<HTMLFormElement>) => {
-    const errors = {};
+  const validate = (values: typeof formValues) => {
+    const errors: any = {};
     if (!values.date) {
       errors.date = "Vui lòng nhập ngày tháng năm sinh";
     } else if (values.date) {
@@ -69,7 +69,7 @@ export default function Authentication() {
     if (formValues.date !== "25/08/2001" && formValues.id !== "000000000000") {
       errorList.push("id");
       errorList.push("date");
-    } else if(check === true){
+    } else if (check === true) {
       router.push(`/otp`);
     }
     console.log(errorList);
@@ -142,9 +142,9 @@ export default function Authentication() {
         </DesTitle>
         <CheckInfo>
           <DesCheckBox
-          type="checkbox"
-          checked={check}
-          onChange={() => setCheck(!check)}
+            type="checkbox"
+            checked={check}
+            onChange={() => setCheck(!check)}
           />
           <Checkmark
             className={error.includes("checkbox") ? "errorCheckbox" : ""}
