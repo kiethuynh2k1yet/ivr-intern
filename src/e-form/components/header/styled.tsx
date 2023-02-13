@@ -93,10 +93,11 @@ export const TitleDetal = styled.label`
 export const Detal = styled.div`
   display: flex;
   margin-left: 20px;
+  align-items: center;
 `;
 
 export const TitleInfoDetal = styled.label`
-  width: 140px;
+  width: 160px;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -106,7 +107,7 @@ export const TitleInfoDetal = styled.label`
 `;
 
 export const TitleData = styled.label`
-  width: 140px;
+  width: 160px;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
