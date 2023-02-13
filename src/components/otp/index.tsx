@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Error } from "styles/global.styled";
-import { useRouter } from 'next/router';
-import {PatternFormat} from 'react-number-format';
+import { useRouter } from "next/router";
+import { PatternFormat } from "react-number-format";
 import {
   Container,
   InfoTitle,
@@ -19,7 +19,7 @@ import {
 
 export default function Otp() {
   const [countdown, setCountdown] = useState(250);
-  const [formValues, setFormValues] = useState({ otp: ""});
+  const [formValues, setFormValues] = useState({ otp: "" });
   const [formErrors, setFormErrors] = useState({});
   const [error, setError] = useState([]);
   const router = useRouter();
@@ -36,23 +36,21 @@ export default function Otp() {
     const errors = {};
     if (!values.otp) {
       errors.otp = "Vui lòng nhập Otp";
-    } else if(values.otp) {
+    } else if (values.otp) {
       errors.otp = "OTP chưa chính xác. Vui lòng nhập lại";
     }
     return errors;
   };
-  
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const errorList = [];
-    if (!formValues.otp ){
+    if (!formValues.otp) {
       errorList.push("otp");
     }
     if (formValues.otp !== "111111") {
       errorList.push("otp");
-    }
-    else {
+    } else {
       router.push(`/receive`);
     }
     setFormErrors(validate(formValues));
@@ -75,23 +73,22 @@ export default function Otp() {
 
   return (
     <Container>
-      <Wrapper onSubmit={handleSubmit} >
+      <Wrapper onSubmit={handleSubmit}>
         <Title>XÁC NHẬN THÔNG TIN</Title>
         <Info>
           <InfoTitle>Ngày tháng năm sinh của Bên mua bảo hiểm</InfoTitle>
           <InputInfoTitle>
-          <PatternFormat 
-          format="##/##/####" placeholder="Ngay/Thang/Nam" mask={['D', 'D', 'M', 'M', 'Y', 'Y', 'Y', 'Y']} 
-          />
+            <PatternFormat
+              format="##/##/####"
+              placeholder="Ngay/Thang/Nam"
+              mask={["D", "D", "M", "M", "Y", "Y", "Y", "Y"]}
+            />
           </InputInfoTitle>
-          
         </Info>
         <Info>
           <InfoTitle>Số CMND/CCCD/Passport</InfoTitle>
           <InputInfoTitle>
-            <PatternFormat 
-            format="#### #### #### ####"
-            />
+            <PatternFormat format="############" />
           </InputInfoTitle>
         </Info>
         <Info>
@@ -101,23 +98,23 @@ export default function Otp() {
             <DesOptminus>Mã OTP sẽ có hiệu lực trong vòng 5 phút.</DesOptminus>
           </InfoTitle>
           <InputInfoOtp>
-          <InputOtp className={error.includes("otp") ? "errorOtp" : ""}>
-            <PatternFormat
-              format="######"
-              name="otp"
-              value={formValues.otp}
-              onChange={handleChange}
+            <InputOtp className={error.includes("otp") ? "errorOtp" : ""}>
+              <PatternFormat
+                format="######"
+                name="otp"
+                value={formValues.otp}
+                onChange={handleChange}
               />
-              </InputOtp>
+            </InputOtp>
             <Error>{formErrors.otp}</Error>
           </InputInfoOtp>
           {countdown > 0 ? (
             <DesOtp>Gửi lại mã OTP sau {countdown} giây</DesOtp>
-          ):(
+          ) : (
             <DesOtpError onClick={resendOTP}>Gửi lại mã</DesOtpError>
           )}
         </Info>
-          <StyleBtn>Tiếp tục</StyleBtn>
+        <StyleBtn>Tiếp tục</StyleBtn>
       </Wrapper>
     </Container>
   );

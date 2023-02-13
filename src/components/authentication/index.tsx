@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { Error } from "styles/global.styled";
+import { PatternFormat } from "react-number-format";
 import {
   Container,
   Title,
@@ -66,10 +66,10 @@ export default function Authentication() {
     if (!formValues.checkbox) {
       errorList.push("checkbox");
     }
-    if (formValues.date !== "25/08/2001" && formValues.id !== "0000") {
+    if (formValues.date !== "25/08/2001" && formValues.id !== "000000000000") {
       errorList.push("id");
       errorList.push("date");
-    } else {
+    } else if(check === true){
       router.push(`/otp`);
     }
     console.log(errorList);
@@ -92,13 +92,17 @@ export default function Authentication() {
           <InfoTitle>Ngày tháng năm sinh của Bên mua bảo hiểm</InfoTitle>
           <InputInfo>
             <InputInfoTitle
-              type="text"
-              name="date"
-              placeholder="Ngày/Tháng/Năm"
-              value={formValues.date}
-              onChange={handleChange}
               className={error.includes("date") ? "errorInfo" : ""}
-            />
+            >
+              <PatternFormat
+                format="##/##/####"
+                placeholder="Ngay/Thang/Nam"
+                mask={["D", "D", "M", "M", "Y", "Y", "Y", "Y"]}
+                name="date"
+                value={formValues.date}
+                onChange={handleChange}
+              />
+            </InputInfoTitle>
             <Error>{formErrors.date}</Error>
           </InputInfo>
           <Demo>Minh họa 31/01/2019</Demo>
@@ -106,14 +110,16 @@ export default function Authentication() {
         <Info>
           <InfoTitle>Số CMND/CCCD/Passport</InfoTitle>
           <InputInfo>
-            <InputInfoTitle
-              type="text"
-              name="id"
-              placeholder=""
-              value={formValues.id}
-              onChange={handleChange}
-              className={error.includes("id") ? "errorInfo" : ""}
-            />
+            <InputInfoTitle className={error.includes("id") ? "errorInfo" : ""}>
+              <PatternFormat
+                format="############"
+                type="text"
+                name="id"
+                placeholder=""
+                value={formValues.id}
+                onChange={handleChange}
+              />
+            </InputInfoTitle>
             <Error>{formErrors.id}</Error>
           </InputInfo>
         </Info>
@@ -136,11 +142,13 @@ export default function Authentication() {
         </DesTitle>
         <CheckInfo>
           <DesCheckBox
-            type="checkbox"
-            checked={check}
-            onChange={() => setCheck(!check)} 
+          type="checkbox"
+          checked={check}
+          onChange={() => setCheck(!check)}
           />
-          <Checkmark className={error.includes("checkbox") ? "errorCheckbox" : ""}/>
+          <Checkmark
+            className={error.includes("checkbox") ? "errorCheckbox" : ""}
+          />
           <CheckTitle
             className={error.includes("checkbox") ? "errorCheckbox" : ""}
           >

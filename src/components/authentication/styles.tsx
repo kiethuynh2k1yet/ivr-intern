@@ -50,7 +50,7 @@ export const InfoTitle = styled.p`
   }
 `;
 
-export const InputInfoTitle = styled.input`
+export const InputInfoTitle = styled.div`
   padding-left: 16px;
   width: 250px;
   height: 48px;
@@ -59,6 +59,8 @@ export const InputInfoTitle = styled.input`
   border: 1px solid #ced4da;
   border-radius: 4px;
   color: #495057;
+  display: flex;
+  item-align: center;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -104,9 +106,9 @@ export const Checkmark = styled.span`
   left: 0;
   height: 18px;
   width: 18px;
-  background-image: url(${process.env.basePath}/images/checkFalse .png);
+  background-image: url(${process.env.basePath}/images/checkFalse.svg);
   &.errorCheckbox {
-    background-color: #FF3547;
+    background-image: url(${process.env.basePath}/images/checkError.svg);
   }
   &:after {
     content: "";
@@ -115,7 +117,7 @@ export const Checkmark = styled.span`
     top: 5px;
     width: 18px;
     height: 18px;
-    background-image: url(${process.env.basePath}/images/checkTrue.png);
+    background-image: url(${process.env.basePath}/images/checkTrue.svg);
     background-size: 100%;
   }
 `;
@@ -124,12 +126,11 @@ export const DesCheckBox = styled.input`
   position: absolute;
   opacity: 0;
   cursor: pointer;
-  height: 18;
-  width: 18;
+  margin-left:0px;
+  height: 17px;
+  width: 17px;
 
   & ~ ${Checkmark} {
-    // border: 2px solid #0096a9;
-    // border-radius: 2px;
   }
   &:checked ~ ${Checkmark}::after {
     display: block;
@@ -138,6 +139,10 @@ export const DesCheckBox = styled.input`
 
 export const InputInfo = styled.div`
   margin-left: 32px;
+
+  @media (max-width: 768px){
+    margin-left:0px;
+  }
 `;
 
 export const StyleBtn = styled.button`
@@ -156,6 +161,7 @@ export const StyleBtn = styled.button`
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  cursor: pointer;
 `;
 
 export const ColorDesHighLight = styled.span`
@@ -178,5 +184,4 @@ export const CheckTitle = styled.p`
 export const CheckInfo = styled.div`
   display: flex;
   align-items: center;
-  text-align: center;
 `;

@@ -1,3 +1,4 @@
+import { group } from "console";
 import Image from "next/image";
 import { useRouter } from 'next/router';
 import {
@@ -15,6 +16,7 @@ import {
 } from "./style";
 
 export default function Receive() {
+  const logo: string = require("../../../public/images/group.svg").default;
   const router = useRouter();
 
   const onSubmit = () => {
@@ -56,7 +58,7 @@ export default function Receive() {
             </TitleDes>
             <TitleContact>
               <Image
-                src={`${process.env.basePath}/images/Frame.png`}
+                src={logo}
                 alt="logo"
                 width={52}
                 height={52}

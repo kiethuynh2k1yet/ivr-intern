@@ -16,7 +16,13 @@ const Layouts = ({ children }: LayoutsProps) => {
           margin: "auto",
         }}
       >
-        <Header />
+        <Header 
+        data={{
+          fullname: "Bùi Bích Diệp",
+          date:"22/01/2023",
+          request:"FWD20230110R0054",
+          code: "2345688",
+        }}/>
         {children}
       </div>
     </div>
