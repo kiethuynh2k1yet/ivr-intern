@@ -1,3 +1,4 @@
+import Layouts from "containers/layouts";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useMemo } from "react";
@@ -16,8 +17,9 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const dispath = useDispatch();
 
   const Layout = useMemo(() => {
-    return Fragment; // custom layout here
-  }, []);
+    if (router.pathname.includes("/e-form")) return Layouts; // custom layout here
+    return Fragment;
+  }, [router.pathname]);
 
   useEffect(() => {
     dispath(rootAction.setInitialized(true));
