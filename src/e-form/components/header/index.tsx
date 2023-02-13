@@ -29,11 +29,15 @@ interface HeaderProps {
 }
 
 const Header = ({ data }: HeaderProps) => {
-  const logo: string = require("../../../../public/images/FWDlogo.svg").default;
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        <Image src={logo} alt="logo" width={132} height={90} />
+        <Image
+          src={`${process.env.basePath}/images/FWDLogo.svg`}
+          alt="logo"
+          width={132}
+          height={90}
+        />
         <ContainerTitle>
           <HeaderTitle>Sống đầy từ hôm nay</HeaderTitle>
           <HeaderCompany>
@@ -59,7 +63,7 @@ const Header = ({ data }: HeaderProps) => {
           <Detal>
             <TitleData>{data.date}</TitleData>
             <TitleData>{data.request}</TitleData>
-          </Detal>  
+          </Detal>
           <Detal>
             <TitleInfoDetal>Số hợp đồng</TitleInfoDetal>
             <TitleInfoDetal>Bên mua bảo hiểm</TitleInfoDetal>
