@@ -20,8 +20,10 @@ const sqlConfig = {
 const handler: NextApiHandler = async (req, res) => {
   try {
     // make sure that any items are correctly URL encoded in the connection string
-    await sql.connect(sqlConfig);
-    const result = await sql.query`SELECT Name from sys.databases;`;
+    const connect = new sql.ConnectionPool(sqlConfig);
+    await connect.connect();
+    const request = new sql.Request(connect);
+    const result = await request.query`SELECT Name from sys.databases;`;
     console.dir(result);
     res.status(200).json(result);
   } catch (err) {
