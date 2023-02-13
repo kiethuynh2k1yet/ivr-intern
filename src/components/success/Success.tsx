@@ -13,7 +13,7 @@ export default function Success() {
     <Container>
       <ImgContainer>
         <Image
-          src={`${process.env.basePath}/images/smile.png`}
+          src={`${process.env.basePath}/images/smile.svg`}
           alt=""
           width={1013}
           height={584}

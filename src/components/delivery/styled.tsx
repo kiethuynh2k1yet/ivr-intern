@@ -3,10 +3,28 @@ import styled from "styled-components";
 export const Container = styled.div`
   margin-top: 40px;
   margin-bottom: 100px;
+  border: 1px solid black;
 `;
 
-export const SubContainer = styled.div``;
+export const SubContainer = styled.div`
+  display: flex;
+  & :nth-child(2) {
+    align-self: flex-end;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
 
+    & :nth-child(2) {
+      margin: auto;
+    }
+  }
+`;
+export const OrangeWrapper = styled.div`
+  width: 431px;
+  height: 369px;
+  background: #e87722;
+  postion
+`;
 export const Wrapper = styled.form`
   width: 900px;
   height:55%;
@@ -118,8 +136,7 @@ export const Checkmark = styled.span`
   left: 0;
   height: 18px;
   width: 18px;
-  background-image: url(${process.env.basePath}/images/border.png);
-  // background-size: 100%;
+  background-image: url(${process.env.basePath}/images/border.svg);
   &:after {
     content: "";
     position: absolute;
@@ -129,7 +146,7 @@ export const Checkmark = styled.span`
     top: 5px;
     width: 11.25px;
     height: 7.88px;
-    background-image: url(${process.env.basePath}/images/checkmark.png);
+    background-image: url(${process.env.basePath}/images/checkmark.svg);
     background-size: 100%;
   }
 `;
@@ -179,25 +196,11 @@ export const StyledButton = styled.button`
   font-size: 18px;
 
   cursor: pointer;
-`;
-
-export const OrangeWrapper = styled.div`
-  position: absolute;
-  width: 431px;
-  height: 369px;
-  left: 818px;
-  top: 320px;
-  display: flex;
-  flex-direction: column;
-  background: #e87722;
-  justify-content: space-around;
-  @media (max-width: 768px) {
-    top: 280px;
-    left: 0;
-    width: 100%;
-    height: 282px;
+  &:disabled {
+    background: #8c8c8c;
   }
 `;
+
 export const GiftContainer = styled.div`
   margin-left: 48px;
   margin-bottom: 24px;

@@ -17,8 +17,16 @@ import {
 import { Error } from "styles/global.styled";
 
 export default function OTP() {
-  const [formValues, setFormValues] = useState({ otp: "" });
-  const [formErrors, setFormErrors] = useState({});
+  type ErrorMess = {
+    otp?: string;
+    length?: string;
+  };
+  interface formError {
+    otp?: string;
+    length?: string;
+  }
+  const [formValues, setFormValues] = useState({ otp: "", length: "" });
+  const [formErrors, setFormErrors] = useState<formError>({});
   const [timeLeft, setTimeLeft] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const router = useRouter();
@@ -26,20 +34,25 @@ export default function OTP() {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-  const validate = (values) => {
-    const errors = {};
+  const validate = (values: any) => {
+    const errors: ErrorMess = {};
     if (!values.otp) {
       errors.otp = "Mã OTP là thông tin bắt buộc.";
+    } else if (!values.length) {
+      errors.length = "Mã OTP buộc phải 6 kí tự.";
     }
-
     return errors;
   };
 
   const handleSubmit = () => {
-    if (formValues.otp === "") {
+    if (formValues.otp === "123") {
       setFormErrors(validate(formValues));
-    } else {
+    }
+    if (formValues.otp !== "999999") {
       router.push(`/gift`);
+    }
+    if (formValues.otp.length < 6) {
+      setFormErrors(validate(formValues));
     }
   };
   useEffect(() => {
@@ -85,6 +98,8 @@ export default function OTP() {
             ) : (
               <Error>{formErrors.otp}</Error>
             )}
+
+            <Error>{formErrors.length}</Error>
           </StyledForm>
         </WrapperInfo>
         <ButtonContainer>

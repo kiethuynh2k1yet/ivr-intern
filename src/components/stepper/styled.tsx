@@ -1,53 +1,50 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 75px;
+  height: 100px;
+  width: 80vw;
+  max-width: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
 `;
 
 export const SubContainer = styled.div`
   display: flex;
   justify-content: center;
-  position: relative;
-  height: 40%;
-  // border: 1px solid blue;
-  // background: #ffffff;
-  // box-shadow: 0px 4px 20px rgba(24, 48, 40, 0.15);
-`;
+  align-items: center;
+  width: 80vw;
 
-export const ProgressWrap = styled.div``;
+  @media (max-width: 768px) {
+  }
+`;
 
 export const LineProgress = styled.div`
   display: flex;
-  margin: auto;
-  width: 100%;
-  height: 50%;
+  width: 80vw;
+  max-width: 1024px;
 `;
 
 export const Line = styled.div`
   height: 2px;
-  width: 1070px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #b9c0be;
+  width: 80vw;
+  max-width: 1024px;
+  border-bottom: 2px solid #b9c0be;
+
   position: absolute;
   margin-top: 10px;
 
   @media (max-width: 768px) {
-    width: 346px;
   }
 `;
 export const StyledUL = styled.ul`
   display: flex;
-  width: 1070px;
+  width: 1024px;
   list-style: none;
   padding: 0px;
-  margin: initial;
   justify-content: space-between;
   z-index: 1;
-
-  @media (max-width: 768px) {
-    width: 346px;
-  }
 `;
 
 export const StyledLi = styled.li`
@@ -67,21 +64,12 @@ export const StyledLi = styled.li`
     background: #e87722;
     color: #e87722;
   }
-`;
+  &:nth-child(1) {
+    justify-content: flex-start;
+  }
 
-export const StyledPick = styled.span`
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  position: absolute;
-  margin-top: 60px;
-  margin-left: 40px;
-  /* width: 75px; */
-  float: left;
-
-  @media (max-width: 768px) {
-    width: 64px;
-    margin-left: 37px;
+  &:nth-child(3) {
+    justify-content: flex-end;
   }
 `;
 
@@ -92,24 +80,4 @@ export const StyledSpan = styled.span`
   position: absolute;
   margin-top: 60px;
   text-align: center;
-  /* width: 75px; */
-  //   float: left;
-  //   margin-left: 30px;
-`;
-
-export const StyledConfirm = styled.span`
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  position: absolute;
-  margin-top: 60px;
-  /* width: 75px; */
-  //   float: right;
-  margin-right: 30px;
-  //   display: none;
-
-  @media (max-width: 768px) {
-    width: 64px;
-    margin-right: 27px;
-  }
 `;

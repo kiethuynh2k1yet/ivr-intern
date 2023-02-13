@@ -46,8 +46,8 @@ export default function Delivery({ product }: { product: any }) {
 
   const router = useRouter();
 
-  const [check, setCheck] = useState(true);
-
+  const [isChecked, setChecked] = useState(true);
+  const [disabled, setDisabled] = useState(false);
   const [formValues, setFormValues] = useState({
     name: "",
     phone: "",
@@ -55,12 +55,14 @@ export default function Delivery({ product }: { product: any }) {
     card: "",
   });
   const [formErrors, setFormErrors] = useState<formError>({});
-  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
-    console.log(name, value);
+  };
+
+  const toggleDisableButton = () => {
+    setDisabled(!disabled);
   };
   const handleOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -105,7 +107,6 @@ export default function Delivery({ product }: { product: any }) {
       }
     }
     setFormErrors(validate(formValues));
-    setIsSubmit(true);
   };
 
   return (
@@ -190,8 +191,8 @@ export default function Delivery({ product }: { product: any }) {
             <LabelCheckbox>
               <StyledCheckbox
                 type="checkbox"
-                checked={check}
-                onChange={() => setCheck(!check)}
+                // checked={isChecked}
+                onChange={toggleDisableButton}
               />
               <Checkmark />
               <Agree>
@@ -202,17 +203,19 @@ export default function Delivery({ product }: { product: any }) {
           </CheckContainer>
           <ButtonContainer>
             <StyledButton onClick={() => router.back()}>Trở lại</StyledButton>
-            <StyledButton style={{ marginLeft: "24px" }}>Tiếp tục</StyledButton>
+            <StyledButton disabled={!disabled} style={{ marginLeft: "24px" }}>
+              Tiếp tục
+            </StyledButton>
           </ButtonContainer>
         </Wrapper>
         <OrangeWrapper>
-          <ImgContainer>
+          {/* <ImgContainer>
             <Image src={product.img} alt="" width={383} height={215} />
           </ImgContainer>
           <GiftContainer>
             <GiftTitle>Quà đã chọn:</GiftTitle>
             <SubGiftTitle>{product.title}</SubGiftTitle>
-          </GiftContainer>
+          </GiftContainer> */}
         </OrangeWrapper>
       </SubContainer>
     </Container>

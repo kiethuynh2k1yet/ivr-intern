@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PatternFormat } from "react-number-format";
 
 export const Container = styled.div`
   width: 100%;
@@ -69,6 +70,18 @@ export const StyledInput = styled.input`
   border-bottom: 1px solid #c1c8c6;
 `;
 
+export const StyledFormat = styled(PatternFormat)`
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  border: 0;
+  outline: 0;
+  font-style: normal;
+  color: #5f6c68;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c1c8c6;
+`;
 export const Demo = styled.p`
   font-weight: 500;
   font-size: 14px;
@@ -93,4 +106,17 @@ export const StyledButton = styled.button`
   margin: 45px auto 60px;
   line-height: 24px;
   cursor: pointer;
+`;
+
+export const ErrorAll = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 2px;
+  margin-bottom: 24px;
 `;

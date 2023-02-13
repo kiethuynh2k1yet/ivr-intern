@@ -115,6 +115,7 @@ export const OTPButton = styled.button`
   justify-content: center;
   align-items: center;
   line-height: 24px;
+  cursor: pointer;
   &:disabled {
     cursor: not-allowed;
   }
