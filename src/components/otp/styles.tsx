@@ -26,12 +26,13 @@ export const InfoTitle = styled.label`
     font-size: 16px;
     line-height: 24px;
     
+    
     @media (max-width: 768px) {
         margin-top: 12px;
     }
 `;
 
-export const InputInfoTitle = styled.input`
+export const InputInfoTitle = styled.div`
     padding-left: 16px; 
     width: 250px;
     height: 48px;
@@ -39,6 +40,8 @@ export const InputInfoTitle = styled.input`
     border: 1px solid #CED4DA;
     border-radius: 4px; 
     color: #495057;
+    item-align: center;
+    display: flex;
 
     input:focus:invalid {
         border: 1px solid red;
@@ -61,7 +64,7 @@ export const Info = styled.div`
     }
 `;
 
-export const InputOtp = styled.input`
+export const InputOtp = styled.div`
     padding-left: 16px; 
     width: 250px;
     height: 48px;
@@ -69,6 +72,8 @@ export const InputOtp = styled.input`
     border: 1px solid #CED4DA;
     border-radius: 4px; 
     color: #495057;
+    item-align: center;
+    display: flex;
     
     @media (max-width: 768px) {
         width: 100%;

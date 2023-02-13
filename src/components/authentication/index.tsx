@@ -66,7 +66,7 @@ export default function Authentication() {
     if (!formValues.checkbox) {
       errorList.push("checkbox");
     }
-    if (formValues.date !== "25/08/2001" && formValues.id !== "0000" && check !== false) {
+    if (formValues.date !== "25/08/2001" && formValues.id !== "0000") {
       errorList.push("id");
       errorList.push("date");
     } else {

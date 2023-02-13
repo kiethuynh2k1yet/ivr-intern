@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Error } from "styles/global.styled";
 import { useRouter } from 'next/router';
+import {PatternFormat} from 'react-number-format';
 import {
   Container,
   InfoTitle,
@@ -13,11 +14,11 @@ import {
   StyleBtn,
   Wrapper,
   InputInfoOtp,
-  DesOtpError
+  DesOtpError,
 } from "./styles";
 
 export default function Otp() {
-  const [countdown, setCountdown] = useState(10);
+  const [countdown, setCountdown] = useState(250);
   const [formValues, setFormValues] = useState({ otp: ""});
   const [formErrors, setFormErrors] = useState({});
   const [error, setError] = useState([]);
@@ -48,7 +49,7 @@ export default function Otp() {
     if (!formValues.otp ){
       errorList.push("otp");
     }
-    if (formValues.otp !== "11111111") {
+    if (formValues.otp !== "111111") {
       errorList.push("otp");
     }
     else {
@@ -78,11 +79,20 @@ export default function Otp() {
         <Title>XÁC NHẬN THÔNG TIN</Title>
         <Info>
           <InfoTitle>Ngày tháng năm sinh của Bên mua bảo hiểm</InfoTitle>
-          <InputInfoTitle type="text" value="12/10/1984" />
+          <InputInfoTitle>
+          <PatternFormat 
+          format="##/##/####" placeholder="Ngay/Thang/Nam" mask={['D', 'D', 'M', 'M', 'Y', 'Y', 'Y', 'Y']} 
+          />
+          </InputInfoTitle>
+          
         </Info>
         <Info>
           <InfoTitle>Số CMND/CCCD/Passport</InfoTitle>
-          <InputInfoTitle type="text" value="123456789" />
+          <InputInfoTitle>
+            <PatternFormat 
+            format="#### #### #### ####"
+            />
+          </InputInfoTitle>
         </Info>
         <Info>
           <InfoTitle>
@@ -91,15 +101,14 @@ export default function Otp() {
             <DesOptminus>Mã OTP sẽ có hiệu lực trong vòng 5 phút.</DesOptminus>
           </InfoTitle>
           <InputInfoOtp>
-            <InputOtp
-              type="text"
+          <InputOtp className={error.includes("otp") ? "errorOtp" : ""}>
+            <PatternFormat
+              format="######"
               name="otp"
-              placeholder=""
-              maxLength={8}
               value={formValues.otp}
               onChange={handleChange}
-              className={error.includes("otp") ? "errorOtp" : ""}     
-            />
+              />
+              </InputOtp>
             <Error>{formErrors.otp}</Error>
           </InputInfoOtp>
           {countdown > 0 ? (
