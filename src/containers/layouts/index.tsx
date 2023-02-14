@@ -1,3 +1,4 @@
+import Footer from "e-form/components/footer";
 import Header from "e-form/components/header";
 import React from "react";
 
@@ -24,6 +25,7 @@ const Layouts = ({ children }: LayoutsProps) => {
           code: "2345688",
         }}/>
         {children}
+        <Footer/>
       </div>
     </div>
   );
