@@ -1,37 +1,33 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const InfoWrapper = styled.div`
+  display: flex;
   width: 499px;
   height: 126px;
   background: #f8f9f9;
   border-radius: 12px;
   padding: 16px;
+  flex-direction: column;
 `;
 
-export const Wrapper = styled.div`
-  width: 467px;
+export const InfoRow = styled.div`
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
-  align-items: center;
 `;
 
-export const InfoWrapper = styled.div`
-  width: 140px;
-  height: 39px;
+export const InformationWrap = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 `;
 
-export const InfoTitle = styled.p`
+export const InfoTitle = styled.label`
   color: #636566;
   font-weight: 500;
   font-size: 12px;
   margin: 0;
 `;
 
-export const InfoDetail = styled.p`
+export const InfoDetail = styled.span`
   font-weight: 700;
   font-size: 14px;
   color: #e87722;

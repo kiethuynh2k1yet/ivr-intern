@@ -1,36 +1,32 @@
 import React from "react";
 import {
-  Container,
-  Wrapper,
+  InfoRow,
   InfoWrapper,
   InfoTitle,
   InfoDetail,
+  InformationWrap,
 } from "./styled";
-export default function index() {
+import Image from "next/image";
+export default function InfoCard({ data }) {
+  console.log(data);
   return (
-    <Container>
-      <Wrapper>
-        <InfoWrapper>
-          <InfoTitle>Họ tên</InfoTitle>
-          <InfoDetail>Bùi Bích Diệp</InfoDetail>
-        </InfoWrapper>
-        <InfoWrapper>
-          <InfoTitle>Giới tính</InfoTitle>
-          <InfoDetail>Nữ</InfoDetail>
-        </InfoWrapper>
-        <InfoWrapper>
-          <InfoTitle>Tình trạng hôn nhân</InfoTitle>
-          <InfoDetail>Kết hôn</InfoDetail>
-        </InfoWrapper>
-        <InfoWrapper>
-          <InfoTitle>Ngày sinh</InfoTitle>
-          <InfoDetail>12/12/1992</InfoDetail>
-        </InfoWrapper>
-        <InfoWrapper>
-          <InfoTitle>Nơi sinh</InfoTitle>
-          <InfoDetail>Hà Nội</InfoDetail>
-        </InfoWrapper>
-      </Wrapper>
-    </Container>
+    <InfoWrapper>
+      {data.map((item, index) => (
+        <InfoRow key={index}>
+          {item.map((child, i) => (
+            <InformationWrap key={i}>
+              {child.label === `${process.env.basePath}/images/pdf.svg` ? (
+                <Image src={child.label} width="60" height="60" alt="" />
+              ) : (
+                <>
+                  <InfoTitle>{child.label}</InfoTitle>
+                  <InfoDetail>{child.value}</InfoDetail>
+                </>
+              )}
+            </InformationWrap>
+          ))}
+        </InfoRow>
+      ))}
+    </InfoWrapper>
   );
 }
