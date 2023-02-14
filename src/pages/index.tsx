@@ -4,13 +4,13 @@
 // };
 
 // export default Home;
-import Header from 'components/header'
-import Authentication from 'components/authentication'
-import React from 'react'
-import Otp from 'components/otp'
-import Receive from 'components/receive'
-import LinkSuccess from 'components/linkSuccess'
-
+import Header from "components/header";
+import Authentication from "components/authentication";
+import React from "react";
+import Otp from "components/otp";
+import Receive from "components/receive";
+import LinkSuccess from "components/linkSuccess";
+import InfoCard from "e-form/components/infocard/index";
 export default function Home() {
   return (
     <>
@@ -19,7 +19,7 @@ export default function Home() {
       {/* <Otp/> */}
       {/* <Receive/> */}
       {/* <LinkSuccess/> */}
+      <InfoCard />
     </>
-  )
+  );
 }
-
