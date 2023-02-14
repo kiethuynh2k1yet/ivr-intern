@@ -96,6 +96,20 @@ const style = css`
     line-height: 22px;
   }
 
+  .h7 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 125%;
+  }
+
+  .h8 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+  }
+
   .tiny {
     font-size: 10px;
   }
@@ -167,7 +181,7 @@ const style = css`
     } */
   }
 
-  .container{
+  .container {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;

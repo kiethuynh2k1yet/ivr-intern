@@ -1,5 +1,7 @@
 import Footer from "e-form/components/footer";
 import Header from "e-form/components/header";
+import Info from "e-form/components/info";
+import Tosign from "e-form/components/tosign";
 import React from "react";
 
 interface LayoutsProps {
@@ -15,17 +17,22 @@ const Layouts = ({ children }: LayoutsProps) => {
           height: 1684,
           backgroundColor: "white",
           margin: "auto",
+          display: "flex",
+          flexDirection: "column",
         }}
       >
-        <Header 
-        data={{
-          fullname: "Bùi Bích Diệp",
-          date:"22/01/2023",
-          request:"FWD20230110R0054",
-          code: "2345688",
-        }}/>
+        <Header />
+        <Info
+          data={{
+            fullname: "Bùi Bích Diệp",
+            date: "22/01/2023",
+            request: "FWD20230110R0054",
+            code: "2345688",
+          }}
+        />
         {children}
-        <Footer/>
+        <Tosign />
+        <Footer />
       </div>
     </div>
   );
