@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       {/* <Header/> */}
-      {/* <Authentication/>  */}
+      <Authentication/> 
       {/* <Otp/> */}
       {/* <Receive/> */}
       {/* <LinkSuccess/> */}

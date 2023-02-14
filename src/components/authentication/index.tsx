@@ -142,9 +142,7 @@ export default function Authentication() {
         </DesTitle>
         <CheckInfo>
           <DesCheckBox
-            type="checkbox"
-            checked={check}
-            onChange={() => setCheck(!check)}
+            
           />
           <Checkmark
             className={error.includes("checkbox") ? "errorCheckbox" : ""}

@@ -1,11 +1,10 @@
+import { TIMEOUT } from "dns";
 import React from "react";
 import {
   FooterWapper,
   InfoFooter,
   Info,
-  TitleCompant,
-  TitleInfo,
-  TitlePhone,
+  Title,
 } from "./styled";
 
 interface FooterProps {}
@@ -15,17 +14,17 @@ const Footer = ({}: FooterProps) => {
     <FooterWapper>
       <InfoFooter>
         <Info>
-          <TitleCompant>
+          <Title>
             Tầng 11, Toà nhà Diamond Plaza, 34 Lê Duẩn, Phường Bến Nghé, Quận 1,
             TP.HCM, Việt Nam
-          </TitleCompant>
-          <TitleInfo>Telephone</TitleInfo>
-          <TitlePhone>(28) 6256 3688</TitlePhone>
+          </Title>
+          <Title>Telephone</Title>
+          <Title>(28) 6256 3688</Title>
         </Info>
         <Info>
-          <TitleCompant>fwd.com.vn</TitleCompant>
-          <TitleInfo>Hotline</TitleInfo>
-          <TitlePhone>1800 96 96 90</TitlePhone>
+          <Title>fwd.com.vn</Title>
+          <Title>Hotline</Title>
+          <Title>1800 96 96 90</Title>
         </Info>
       </InfoFooter>
     </FooterWapper>

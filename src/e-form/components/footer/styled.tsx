@@ -4,37 +4,19 @@ export const FooterWapper = styled.div`
   width: 100%;
 `;
 
-export const InfoFooter = styled.div`
+export const InfoFooter = styled.table`
   border-top: 1px solid #dbdfe1;
-  padding: 16px 0px 0px 0px;
-  margin: 0px 50px;
 `;
 
-export const Info = styled.div`
+export const Info = styled.ul`
   display: flex;
   justify-content: space-between;
+  text-align: center;
+  list-style-type: none;
+  flex-de
 `;
 
-export const TitleCompant = styled.h6`
-  width: 600px;
-  font-style: normal;
-  font-weight: 450;
-  font-size: 14px;
-  line-height: 150%;
-  color: #636566;
-`;
-
-export const TitleInfo = styled.h6`
-  width: 66px;
-  font-style: normal;
-  font-weight: 450;
-  font-size: 14px;
-  line-height: 150%;
-  color: #636566;
-`;
-
-export const TitlePhone = styled.h6`
-  text-align: right;
+export const Title = styled.li`
   font-style: normal;
   font-weight: 450;
   font-size: 14px;

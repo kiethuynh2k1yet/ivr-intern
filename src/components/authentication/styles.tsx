@@ -102,8 +102,6 @@ export const DesTitle = styled.p`
 `;
 
 export const Checkmark = styled.span`
-  top: 3px;
-  left: 0;
   height: 18px;
   width: 18px;
   background-image: url(${process.env.basePath}/images/checkFalse.svg);
@@ -113,8 +111,6 @@ export const Checkmark = styled.span`
   &:after {
     content: "";
     display: none;
-    left: 4px;
-    top: 5px;
     width: 18px;
     height: 18px;
     background-image: url(${process.env.basePath}/images/checkTrue.svg);
@@ -122,13 +118,13 @@ export const Checkmark = styled.span`
   }
 `;
 
-export const DesCheckBox = styled.input`
+export const DesCheckBox = styled.button`
   position: absolute;
   opacity: 0;
   cursor: pointer;
   margin-left:0px;
-  height: 17px;
-  width: 17px;
+  height: 18px;
+  width: 18px;
 
   & ~ ${Checkmark} {
   }

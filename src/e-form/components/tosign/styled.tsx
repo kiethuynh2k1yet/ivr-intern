@@ -11,7 +11,6 @@ export const Title = styled.h5`
   font-size: 16px;
   line-height: 150%;
   color: #183028;
-  width: 498px;
   margin-bottom: 20px;
 `;
 

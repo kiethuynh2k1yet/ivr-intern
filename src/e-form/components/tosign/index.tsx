@@ -12,7 +12,7 @@ const Tosign = ({}: ToSignProps) => {
   return (
       <Contract>
         <Title>
-          Một lần nữa, chúng tôi cảm ơn Quý khách tin tưởng và lựa chọn FWD.
+          Một lần nữa, chúng tôi cảm ơn Quý khách tin tưởng và lựa chọn FWD.<br/>
           Trân trọng,
         </Title>
         <TitleContract>Phòng Quản Lý Hợp Đồng</TitleContract>
