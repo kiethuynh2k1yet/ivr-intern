@@ -20,11 +20,13 @@ import {
 export default function Otp() {
   const [countdown, setCountdown] = useState(250);
   const [formValues, setFormValues] = useState({ otp: "" });
-  const [formErrors, setFormErrors] = useState({});
+  const [formErrors, setFormErrors] = useState<{
+    [key in keyof typeof formValues]?: string;
+  }>({});
   const [error, setError] = useState([]);
   const router = useRouter();
 
-  const handleChange = (e) => {
+  const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const { name, value } = e.target;
     if (error.includes(name)) {
       setError(error.filter((e) => e !== name));
@@ -32,8 +34,8 @@ export default function Otp() {
     setFormValues({ ...formValues, [name]: value });
   };
 
-  const validate = (values) => {
-    const errors = {};
+  const validate = (values: typeof formValues) => {
+    const errors: any = {};
     if (!values.otp) {
       errors.otp = "Vui lòng nhập Otp";
     } else if (values.otp) {
