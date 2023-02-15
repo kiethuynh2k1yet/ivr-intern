@@ -53,7 +53,7 @@ export default function Otp() {
     if (formValues.otp !== "111111") {
       errorList.push("otp");
     } else {
-      router.push(`/receive`);
+      router.push(`/e-ARK/receive`);
     }
     setFormErrors(validate(formValues));
     setError(errorList);

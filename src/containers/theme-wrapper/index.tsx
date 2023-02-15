@@ -1,4 +1,5 @@
 import Layouts from "containers/layouts";
+import LayoutEarks from "components/Layouts";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useMemo } from "react";
