@@ -8,8 +8,12 @@ export const ContractWrapper = styled.div`
 `;
 
 export const StyledTable = styled.table`
-  padding: 16px;
+  width: 100%;
+
   td {
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 12px;
     color: #636566;
     text-align: left;
   }
