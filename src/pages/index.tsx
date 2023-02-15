@@ -4,8 +4,6 @@
 // };
 
 // export default Home;
-import Header from "components/header";
-import Authentication from "components/authentication";
 import React from "react";
 import Otp from "components/otp";
 import Receive from "components/receive";
