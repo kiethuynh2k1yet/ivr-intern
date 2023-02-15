@@ -10,13 +10,7 @@ import {
 import { updateList, confirmList } from "listData";
 import InfoPDF from "../info-pdf";
 import ListItem from "../list-item";
-import {
-  BodyWrapper,
-  Form1Title,
-  Form1User,
-  Form1Wrapper,
-  ListContainer,
-} from "./styled";
+import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
 
 const Form1 = () => {
   return (
@@ -37,10 +31,8 @@ const Form1 = () => {
         </Form1User>
       </BodyWrapper>
 
-      <div>
-        <ListItem list={updateList} />
-        <ListItem list={confirmList} />
-      </div>
+      <ListItem list={updateList} />
+      <ListItem list={confirmList} />
     </Form1Wrapper>
   );
 };

@@ -9,6 +9,7 @@ import Otp from "components/otp";
 import Receive from "components/receive";
 import LinkSuccess from "components/linkSuccess";
 import InfoCard from "e-form/components/info-card/index";
+import NoteForm from "e-form/components/note";
 export default function Home() {
   return (
     <>

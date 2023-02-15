@@ -130,3 +130,34 @@ export const contactData: InfoCardData[][] = [
     },
   ],
 ];
+
+export const addressData: InfoCardData[][] = [
+  [
+    {
+      label: "Quốc gia",
+      value: "Việt Nam",
+    },
+    {
+      label: "Thành phố/Tỉnh",
+      value: "Hà Nội",
+    },
+    {
+      label: "Quận/Huyện",
+      value: "Ba Đình",
+    },
+  ],
+  [
+    {
+      label: "Phường/Xã",
+      value: "Điện Biên",
+    },
+    {
+      label: "Đường",
+      value: "Cao Bá Quát",
+    },
+    {
+      label: "Số nhà",
+      value: "222",
+    },
+  ],
+];
