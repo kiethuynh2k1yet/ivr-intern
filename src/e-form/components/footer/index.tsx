@@ -1,33 +1,38 @@
-import { TIMEOUT } from "dns";
 import React from "react";
 import {
   FooterWapper,
-  InfoFooter,
-  Info,
-  Title,
+  FooterTable,
+  FooterContainer,
+  Tbody,
+  Tr,
+  Td,
 } from "./styled";
 
 interface FooterProps {}
 
 const Footer = ({}: FooterProps) => {
   return (
-    <FooterWapper>
-      <InfoFooter>
-        <Info>
-          <Title>
-            Tầng 11, Toà nhà Diamond Plaza, 34 Lê Duẩn, Phường Bến Nghé, Quận 1,
-            TP.HCM, Việt Nam
-          </Title>
-          <Title>Telephone</Title>
-          <Title>(28) 6256 3688</Title>
-        </Info>
-        <Info>
-          <Title>fwd.com.vn</Title>
-          <Title>Hotline</Title>
-          <Title>1800 96 96 90</Title>
-        </Info>
-      </InfoFooter>
-    </FooterWapper>
+    <FooterContainer>
+      <FooterWapper>
+        <FooterTable>
+          <Tbody>
+            <Tr>
+              <Td>
+                Tầng 11, Toà nhà Diamond Plaza, 34 Lê Duẩn, Phường Bến Nghé,
+                Quận 1, TP.HCM, Việt Nam
+              </Td>
+              <Td>Telephone</Td>
+              <Td>(28) 6256 3688</Td>
+            </Tr>
+            <Tr>
+              <Td>fwd.com.vn</Td>
+              <Td>Hotline</Td>
+              <Td>1800 96 96 90</Td>
+            </Tr>
+          </Tbody>
+        </FooterTable>
+      </FooterWapper>
+    </FooterContainer>
   );
 };
 

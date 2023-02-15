@@ -19,6 +19,7 @@ const Layouts = ({ children }: LayoutsProps) => {
           margin: "auto",
           display: "flex",
           flexDirection: "column",
+          position: "relative",
         }}
       >
         <Header />
@@ -30,6 +31,7 @@ const Layouts = ({ children }: LayoutsProps) => {
             code: "2345688",
           }}
         />
+        
         {children}
         <Tosign />
         <Footer />
