@@ -1,4 +1,9 @@
-export const infoData = [
+export interface InfoCardData {
+  label: string;
+  value: string;
+}
+
+export const infoData: InfoCardData[][] = [
   [
     {
       label: "Họ tên",
@@ -22,10 +27,14 @@ export const infoData = [
       label: "Nơi sinh",
       value: "Hà Nội",
     },
+    {
+      label: "",
+      value: "",
+    },
   ],
 ];
 
-export const FATCA = [
+export const fatca = [
   [
     {
       label:
@@ -35,29 +44,33 @@ export const FATCA = [
   ],
 ];
 
-export const documentData = [
+export const documentData: InfoCardData[][] = [
   [
     {
       label: "Loại chứng từ",
-      value: "Bùi Bích Diệp",
+      value: "Hộ chiếu",
     },
     {
-      label: "Giới tính",
-      value: "Nữ",
+      label: "Số Hộ chiếu",
+      value: "12345678",
     },
     {
-      label: "Tình trạng hôn nhân",
-      value: "Kết hôn",
+      label: "Ngày hết hạn",
+      value: "12/12/2034",
     },
   ],
   [
     {
-      label: "Ngày sinh",
-      value: "12/12/1992",
+      label: "Ngày cấp",
+      value: "12/12/2014",
     },
     {
-      label: "Nơi sinh",
+      label: "Nơi cấp",
       value: "Hà Nội",
+    },
+    {
+      label: "",
+      value: "",
     },
   ],
 ];
@@ -72,7 +85,7 @@ export const policyData = [
     },
   ],
 ];
-export const jobData = [
+export const jobData: InfoCardData[][] = [
   [
     {
       label: "Nghề nghiệp",
@@ -95,7 +108,7 @@ export const jobData = [
   ],
 ];
 
-export const contactData = [
+export const contactData: InfoCardData[][] = [
   [
     {
       label: "Di dộng",

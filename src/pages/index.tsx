@@ -10,16 +10,16 @@ import React from "react";
 import Otp from "components/otp";
 import Receive from "components/receive";
 import LinkSuccess from "components/linkSuccess";
-import InfoCard from "e-form/components/infocard/index";
+import InfoCard from "e-form/components/info-card/index";
 export default function Home() {
   return (
     <>
       {/* <Header/> */}
-      <Authentication/> 
+      {/* <Authentication/>  */}
       {/* <Otp/> */}
       {/* <Receive/> */}
       {/* <LinkSuccess/> */}
-      <InfoCard />
+      {/* <InfoCard /> */}
     </>
   );
 }

@@ -13,7 +13,7 @@ export const updateList = [
 export const confirmList = [
   {
     title:
-      "Quý khách đã xác nhận thông tin phiếu yêu cầu bằng mã xác thực một lần (OTP) vào lúc 22:00 22/01/2023 như sau:",
+      "Quý khách đã xác nhận thông tin phiếu yêu cầu bằng mã xác thực một lần <span style={{color:"red"}}>(OTP)</span> vào lúc 22:00 22/01/2023 như sau:",
     list: [
       "Tôi xác nhận các thông tin điều chỉnh nói trên. Tôi đồng ý giao dịch điều chỉnh dưới xác thực Bên mua bảo hiểm của tôi là cơ sở để FWD Việt Nam xử lý các giao dịch/yêu cầu của tôi",
       "Mã xác thực một lần (OTP) sẽ được gửi đến số điện thoại của Bên mua bảo hiểm. Bằng việc xác thực mã OTP này, Bên mua bảo hiểm xác nhận tính trung thực, chính xác và đầy đủ của các thông tin đã cung cấp trong yêu cầu điều chỉnh thông tin này.",
