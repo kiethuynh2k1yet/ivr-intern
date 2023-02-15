@@ -22,12 +22,8 @@ export const Tr = styled.tr`
 export const Td = styled.td`
   color: #636566;
 
-  &:nth-child(2){
-    width: 11%;
-  }
-
-  &:nth-child(3){
-    width: 9.5%;
+  &:nth-child(2),:nth-child(3){
+    width: 10%;
   }
 `;
 
