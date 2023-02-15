@@ -7,7 +7,9 @@ import {
   contactData,
   policyData,
 } from "infoData";
+import { updateList, confirmList } from "listData";
 import InfoPDF from "../info-pdf";
+import ListItem from "../list-item";
 import {
   BodyWrapper,
   Form1Title,
@@ -34,7 +36,11 @@ const Form1 = () => {
           <InfoCard title="Thông tin liên lạc" data={contactData} />
         </Form1User>
       </BodyWrapper>
-      <ListContainer>alo</ListContainer>
+
+      <div>
+        <ListItem list={updateList} />
+        <ListItem list={confirmList} />
+      </div>
     </Form1Wrapper>
   );
 };
