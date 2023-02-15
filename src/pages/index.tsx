@@ -10,6 +10,7 @@ import Receive from "components/receive";
 import LinkSuccess from "components/linkSuccess";
 import InfoCard from "e-form/components/info-card/index";
 import NoteForm from "e-form/components/note";
+import Contract from "e-form/components/contract";
 export default function Home() {
   return (
     <>
@@ -19,6 +20,7 @@ export default function Home() {
       {/* <Receive/> */}
       {/* <LinkSuccess/> */}
       {/* <InfoCard /> */}
+      <Contract />
     </>
   );
 }
