@@ -39,14 +39,13 @@ export const Cell = styled.div<{ col: number }>`
   label {
     font-weight: 500;
     font-size: 12px;
-    line-height: 125%;
+    color: #636566;
   }
 
   h6 {
     font-weight: 700;
     font-size: 14px;
-    line-height: 125%;
-
+    padding-top: 6px;
     color: #e87722;
   }
 `;

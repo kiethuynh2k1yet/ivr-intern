@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NoteWrapper = styled.div`
   width: 1090px;
-  margin: 24px 50px;
+  margin: 24px 50px 0 50px;
   border: 1px solid #fed141;
   border-radius: 16px;
   padding: 20px;

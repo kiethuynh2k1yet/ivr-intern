@@ -15,8 +15,17 @@ export default function InfoCard({ title, data }: InfoCardProps) {
           <Row key={index}>
             {row.map((child, i) => (
               <Cell key={i} col={row.length}>
-                <label>{child.label}</label>
-                <h6>{child.value}</h6>
+                {child.label === "Quốc gia" && child.value === "Việt Nam" ? (
+                  <>
+                    <label style={{ color: "#B3B6B8" }}>{child.label}</label>
+                    <h6 style={{ color: "#B3B6B8" }}>{child.value}</h6>
+                  </>
+                ) : (
+                  <>
+                    <label>{child.label}</label>
+                    <h6>{child.value}</h6>
+                  </>
+                )}
               </Cell>
             ))}
           </Row>
