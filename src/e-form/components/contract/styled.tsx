@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
-export const ContractWrapper = styled.div``;
+export const ContractWrapper = styled.div`
+  width: 100%;
+`;
 
 export const StyledTable = styled.table`
+  width: 100%;
+
   background-color: #f8f9f9;
   border-radius: 12px;
-  // border-collapse: collapse;
   border-spacing: 16px;
   td {
     // border: 1px solid black;
-    padding: 0;
-    margin: 0;
+
     white-space: nowrap;
     font-weight: 500;
     font-size: 12px;
