@@ -16,7 +16,6 @@ export const Title = styled.div`
 
 export const Content = styled.div`
   padding: 16px;
-
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -29,7 +28,7 @@ export const Row = styled.div`
   display: flex;
 
   :not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 `;
 

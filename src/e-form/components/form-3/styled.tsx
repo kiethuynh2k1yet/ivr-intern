@@ -37,6 +37,6 @@ export const Form3User = styled.div`
   justify-content: space-between;
 
   :not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 `;
