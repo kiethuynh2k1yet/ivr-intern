@@ -4,6 +4,8 @@ import InfoCard from "e-form/components/info-card/index";
 import { fatca, addressData } from "infoData";
 import ListItem from "../list-item";
 import { confirmList } from "listData";
+import { contractData } from "contractData";
+import Contract from "../contract";
 
 export default function Form2() {
   return (
@@ -14,6 +16,10 @@ export default function Form2() {
           <InfoCard title="Địa chỉ liên lạc" data={addressData} />
           <InfoCard title="Đạo luật FATCA" data={fatca} />
         </Form2User>
+        <Contract
+          title="Các điều chỉnh trên sẽ được áp dụng cho các hợp đồng sau:"
+          body={contractData}
+        />
       </BodyWrapper>
 
       <ListItem list={confirmList} />

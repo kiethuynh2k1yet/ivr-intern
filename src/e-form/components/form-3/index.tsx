@@ -1,12 +1,13 @@
 import React from "react";
 import { Form3Wrapper, Form3Title, BodyWrapper, Form3User } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
-import { fatca, infoData } from "infoData";
+import { fatca, infoData, policyData } from "infoData";
 import { confirmList } from "listData";
 import { contractData } from "contractData";
 import ListItem from "../list-item";
 import NoteForm from "../note";
 import Contract from "../contract";
+import InfoPDF from "../info-pdf";
 
 export default function Form3() {
   return (
@@ -18,7 +19,13 @@ export default function Form3() {
             <InfoCard title="Thông tin cá nhân" data={infoData} />
             <InfoCard title="Đạo luật FATCA" data={fatca} />
           </Form3User>
-          <Contract body={contractData} />
+          <Form3User>
+            <InfoPDF title="Chứng từ đăng tải" data={policyData} />
+          </Form3User>
+          <Contract
+            title="Các điều chỉnh trên sẽ được áp dụng cho các hợp đồng sau:"
+            body={contractData}
+          />
         </BodyWrapper>
         <ListItem list={confirmList} />
       </Form3Wrapper>

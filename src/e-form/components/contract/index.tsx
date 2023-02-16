@@ -1,15 +1,20 @@
 import React from "react";
-import { ContractWrapper, StyledTable } from "./styled";
+import { ContractWrapper, StyledTable, Title } from "./styled";
 
-export default function Contract({ body }) {
+interface ContractProps {
+  title: string;
+  body: string[][];
+}
+export default function Contract({ title, body }: ContractProps) {
   return (
     <ContractWrapper>
+      <Title>{title}</Title>
       <StyledTable>
         <tbody>
           {body.map((row, i) => (
-            <tr>
-              {row.map((i) => (
-                <td>{i}</td>
+            <tr key={i}>
+              {row.map((row, index) => (
+                <td key={index}>{row}</td>
               ))}
             </tr>
           ))}

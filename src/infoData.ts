@@ -79,9 +79,29 @@ export const policyData = [
   [
     {
       label: `${process.env.basePath}/images/pdf.svg`,
+      value: "",
     },
     {
       label: `${process.env.basePath}/images/pdf.svg`,
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
+  ],
+  [
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
     },
   ],
 ];

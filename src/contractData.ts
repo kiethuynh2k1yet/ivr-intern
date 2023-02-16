@@ -1,4 +1,4 @@
-export const contractData = [
+export const contractData: string[][] = [
   [
     "10023007 - FWD Bảo hiểm hỗ trợ viện phí",
     "10023007 - Linh hoạt 3 trong 1 - Quyền lợi cơ bản",

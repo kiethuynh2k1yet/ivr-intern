@@ -8,6 +8,10 @@ export const InfoCardWrawpper = styled.div`
 
 export const Title = styled.div`
   margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #183028;
+  margin-bottom: 10px;
 `;
 
 export const Content = styled.div`
@@ -26,7 +30,7 @@ export const Row = styled.div`
   display: flex;
 
   :not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 27px;
   }
 `;
 

@@ -16,7 +16,11 @@ export default function InfoPDF({ title, data }: InfoCardProps) {
           <Row key={index}>
             {row.map((child, i) => (
               <Cell key={i} col={row.length}>
-                <Image src={child.label} alt="" width={60} height={60} />
+                {child.label !== "" ? (
+                  <Image src={child.label} alt="" width={60} height={60} />
+                ) : (
+                  ""
+                )}
               </Cell>
             ))}
           </Row>
