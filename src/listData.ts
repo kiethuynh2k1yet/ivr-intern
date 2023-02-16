@@ -1,4 +1,9 @@
-export const updateList = [
+export interface ListData {
+  title: string;
+  list: string[];
+}
+
+export const updateList: ListData[] = [
   {
     title: "Xin lưu ý cùng Quý khách:",
     list: [
@@ -10,7 +15,7 @@ export const updateList = [
   },
 ];
 
-export const confirmList = [
+export const confirmList: ListData[] = [
   {
     title: `Quý khách đã xác nhận thông tin phiếu yêu cầu bằng mã xác thực một lần <span style="color:#E87722">(OTP)</span> vào lúc <span style="color:#E87722">22:00 22/01/2023</span> như sau:`,
     list: [
