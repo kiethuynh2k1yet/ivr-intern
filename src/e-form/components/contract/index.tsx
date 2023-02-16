@@ -11,14 +11,13 @@ export default function Contract({ title, body }: ContractProps) {
       <Title>{title}</Title>
       <StyledTable>
         <tbody>
-          {body.map((row, i) => (
-            <tr key={i}>
+          {body.map((row, id) => (
+            <tr key={id}>
               {row.map((row, index) => (
                 <td key={index}>{row}</td>
               ))}
             </tr>
           ))}
-          <tr></tr>
         </tbody>
       </StyledTable>
     </ContractWrapper>
