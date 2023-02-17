@@ -83,8 +83,8 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     const size = [1190.55, 1683.78];
     const imageLogo = imageLoader[0];
     // const imageBanner = imageLoader[1];
-    const template = ReactDOMServer.renderToString(<Header/>);
-
+    const template = ReactDOMServer.renderToString(<Header />);
+    console.log(template);
     let font = (await base64convert(
       `${process.env.basePath}/font/FWDCircularVietTT-Book.ttf`
     )) as string;
