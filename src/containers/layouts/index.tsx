@@ -2,7 +2,7 @@ import Footer from "e-form/components/footer";
 import Header from "e-form/components/header";
 import Info from "e-form/components/info";
 import Tosign from "e-form/components/tosign";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 interface LayoutsProps {
   children: React.ReactNode;
@@ -31,7 +31,7 @@ const Layouts = ({ children }: LayoutsProps) => {
             code: "2345688",
           }}
         />
-        
+
         {children}
         <Tosign />
         <Footer />

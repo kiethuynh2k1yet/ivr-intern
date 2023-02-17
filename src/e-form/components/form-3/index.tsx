@@ -1,7 +1,6 @@
 import React from "react";
 import { Form3Wrapper, Form3Title, BodyWrapper, Form3User } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
-import { fatca, policyData, addressData } from "infoData";
 import { confirmList } from "listData";
 import { contractData } from "contractData";
 import ListItem from "../list-item";
@@ -9,7 +8,13 @@ import NoteForm from "../note";
 import Contract from "../contract";
 import InfoPDF from "../info-pdf";
 
-export default function Form3() {
+interface DataProps {
+  addressData: {};
+  fatca: {};
+  policyData: {};
+}
+
+export default function Form3({ addressData, fatca, policyData }: DataProps) {
   return (
     <>
       <Form3Wrapper>

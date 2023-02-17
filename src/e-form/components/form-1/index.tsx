@@ -1,18 +1,28 @@
 import InfoCard from "e-form/components/info-card/index";
-import {
-  fatca,
-  infoData,
-  documentData,
-  jobData,
-  contactData,
-  policyData,
-} from "infoData";
+
 import { updateList, confirmList } from "listData";
 import InfoPDF from "../info-pdf";
 import ListItem from "../list-item";
 import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
+import { infoData } from "infoData";
+import { contactData } from "./../../../infoData";
 
-const Form1 = () => {
+interface DataProps {
+  infoData: {};
+  fatca: {};
+  documentData: {};
+  policyData: {};
+  jobData: {};
+  contactData: {};
+}
+const Form1 = ({
+  infoData,
+  fatca,
+  documentData,
+  policyData,
+  jobData,
+  contactData,
+}: DataProps) => {
   return (
     <Form1Wrapper>
       <Form1Title>Thông tin được yêu cầu điều chỉnh như sau:</Form1Title>

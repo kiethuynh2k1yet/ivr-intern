@@ -8,15 +8,14 @@ import {
   ContainerTitle,
 } from "./styled";
 
-interface HeaderProps {
-}
+interface HeaderProps {}
 
 const Header = ({}: HeaderProps) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <Image
-          src={`${process.env.basePath}/images/FWDLogo.svg`}
+          src={`${process.env.basePath}/images/logo.svg`}
           alt="logo"
           width={132}
           height={90}
