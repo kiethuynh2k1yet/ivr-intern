@@ -1,4 +1,4 @@
-import LayoutEarks from 'components/Layouts/index'
+import LayoutEarks from 'e-ack/components/Layouts'
 import React from 'react'
 
 export default function index() {

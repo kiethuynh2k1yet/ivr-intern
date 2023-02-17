@@ -1,6 +1,9 @@
-import Authentication from "components/authentication";
-import Header from "components/header";
+import Authentication from "../authentication";
+import Header from "../header";
 import React from "react";
+import Otp from "../otp";
+import LinkSuccess from "../linkSuccess";
+import Receive from "../receive";
 
 interface LayoutEarkProps {
   children: React.ReactNode;
@@ -11,7 +14,7 @@ const LayoutEarks = ({ children }: LayoutEarkProps) => {
     <>
         <Header/>
         {children}
-        <Authentication/>
+        <Receive/>
     </>
   );
 };
