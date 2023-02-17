@@ -12,7 +12,7 @@ interface ThemeWrapperProps {
 }
 
 const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
-  const router = useRouter();
+  // const router = useRouter();
   const dispath = useDispatch();
 
   const Layout = useMemo(() => {
