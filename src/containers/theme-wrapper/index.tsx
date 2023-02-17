@@ -43,7 +43,7 @@ function base64convert(url: any) {
   });
 }
 const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
-  // const router = useRouter();
+  const router = useRouter();
   const dispath = useDispatch();
   const Layout = useMemo(() => {
     if (router.pathname.includes("/e-form")) return Layouts; // custom layout here
@@ -121,9 +121,9 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       y: 0,
     });
   }
-  useEffect(() => {
-    callback();
-  }, []);
+  // useEffect(() => {
+  //   callback();
+  // }, []);
   return (
     <ThemeProvider theme={LightTheme}>
       <Head>

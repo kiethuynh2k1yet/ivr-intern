@@ -50,7 +50,7 @@ export const Detal = styled.div`
   align-items: center;
 `;
 
-export const TitleInfoDetal = styled.label`
+export const TitleInfoDetal = styled.h5`
   width: 160px;
   font-style: normal;
   font-weight: 500;
