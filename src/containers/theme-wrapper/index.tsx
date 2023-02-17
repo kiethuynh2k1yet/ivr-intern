@@ -16,7 +16,7 @@ interface ThemeWrapperProps {
 }
 function getImageBase64(url: string, ratio = 1) {
   return new Promise((resolve, reject) => {
-    var c = document.createElement("canvas");
+    var c = document.createElement("canvas"); 
     var ctx = c.getContext("2d");
     var img = new Image();
     img.src = url;
