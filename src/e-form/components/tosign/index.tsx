@@ -1,5 +1,6 @@
 import React from "react";
 import {
+    Container,
     Title,
     Contract,
     TitleContract,
@@ -10,7 +11,10 @@ interface ToSignProps {}
 
 const Tosign = ({}: ToSignProps) => {
   return (
-      <Contract>
+    <Contract>
+      <Container>
+
+      </Container>
         <Title>
           Một lần nữa, chúng tôi cảm ơn Quý khách tin tưởng và lựa chọn FWD.<br/>
           Trân trọng,

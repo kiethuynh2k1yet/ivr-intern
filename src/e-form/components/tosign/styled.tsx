@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  max-height: 90px;
+  flex:1;
+`;
+
 export const Contract = styled.div`
-  display: block;
-  margin: 90px 50px 40px 50px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: start;
+  margin: 0px 50px 131px;
 `;
 
 export const Title = styled.h5`
