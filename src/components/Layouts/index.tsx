@@ -1,3 +1,4 @@
+import Authentication from "components/authentication";
 import Header from "components/header";
 import React from "react";
 
@@ -10,6 +11,7 @@ const LayoutEarks = ({ children }: LayoutEarkProps) => {
     <>
         <Header/>
         {children}
+        <Authentication/>
     </>
   );
 };
