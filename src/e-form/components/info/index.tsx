@@ -23,16 +23,16 @@ interface InfoProps {
 
 const Info = ({ data }: InfoProps) => {
   return (
-    <MemberInfo>
-      <TitleInfo>
-        <TitleMember className="h5">
+    <div style={{display:"flex", margin:"25px 50px", justifyContent:"space-between"}}>
+      <div style={{width:"585px", height:"95%"}}>
+        <h3 style={{color:"#e87722", marginBottom:"16px", fontStyle:"normal", fontWeight: 700, fontSize: "25px", lineHeight:"125%"}}>
           Kính gửi Quý khách {data.fullname},
-        </TitleMember>
-        <TitleArrge>
+        </h3>
+        <p>
           FWD đã nhận được Phiếu yêu cầu điều chỉnh thông tin cá nhân của Quý
-          khách cho hợp đồng bảo hiểm số <ColorArrge>{data.code}</ColorArrge>
-        </TitleArrge>
-      </TitleInfo>
+          khách cho hợp đồng bảo hiểm số <p>{data.code}</p>
+        </p>
+      </div>
       <InfoDetal>
         <TitleDetal>
           Yêu cầu điều chỉnh thông tin cá nhân:
@@ -54,7 +54,7 @@ const Info = ({ data }: InfoProps) => {
           <TitleData>{data.fullname}</TitleData>
         </Detal>
       </InfoDetal>
-    </MemberInfo>
+    </div>
   );
 };
 

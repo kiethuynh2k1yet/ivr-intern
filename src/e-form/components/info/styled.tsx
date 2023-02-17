@@ -11,7 +11,7 @@ export const TitleInfo = styled.div`
   height: 95px;
 `;
 
-export const TitleMember = styled.header`
+export const TitleMember = styled.h3`
   color: #e87722;
   margin-bottom: 16px;
   font-style: normal;
@@ -20,14 +20,14 @@ export const TitleMember = styled.header`
   line-height: 125%;
 `;
 
-export const TitleArrge = styled.label`
+export const TitleArrge = styled.h5`
   font-style: normal;
   font-weight: 450;
   font-size: 16px;
   line-height: 150%;
 `;
 
-export const ColorArrge = styled.label`
+export const ColorArrge = styled.h5`
   color: #e87722;
   font-style: normal;
   font-weight: 450;
