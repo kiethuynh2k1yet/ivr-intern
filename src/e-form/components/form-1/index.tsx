@@ -33,7 +33,7 @@ const Form1 = ({
         </Form1User>
         <Form1User>
           <InfoCard title="Thông tin chứng từ" data={documentData} />
-          <InfoPDF title="Chứng từ đăng tải" data={policyData} />
+          {/* <InfoPDF title="Chứng từ đăng tải" data={policyData} /> */}
         </Form1User>
         <Form1User>
           <InfoCard title="Thông tin nghề nghiệp" data={jobData} />
