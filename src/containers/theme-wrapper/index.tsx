@@ -68,6 +68,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       `${process.env.basePath}/font/FWDCircularVietTT-Bold.ttf`
     )) as string;
 
+    // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",
