@@ -27,13 +27,13 @@ const Footer = ({}: FooterProps) => {
                 Tầng 11, Toà nhà Diamond Plaza, 34 Lê Duẩn, Phường Bến Nghé,
                 Quận 1, TP.HCM, Việt Nam
               </Td>
-              <Td style={{ color: "#636566", width: "10%" }}>Telephone</Td>
-              <Td style={{ color: "#636566", width: "10%" }}>(28) 6256 3688</Td>
+              <Td style={{ color: "#636566" }}>Telephone</Td>
+              <Td style={{ color: "#636566" }}>(28) 6256 3688</Td>
             </Tr>
             <Tr>
               <Td style={{ color: "#636566" }}>fwd.com.vn</Td>
-              <Td style={{ color: "#636566", width: "10%" }}>Hotline</Td>
-              <Td style={{ color: "#636566", width: "10%" }}>1800 96 96 90</Td>
+              <Td style={{ color: "#636566" }}>Hotline</Td>
+              <Td style={{ color: "#636566" }}>1800 96 96 90</Td>
             </Tr>
           </Tbody>
         </table>

@@ -1,5 +1,6 @@
 import InfoCard from "e-form/components/info-card/index";
 import InfoPersonal from "e-form/components/info-personal/index";
+import InfoPDF from "../info-pdf";
 import { updateList, confirmList } from "listData";
 import ListItem from "../list-item";
 import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
