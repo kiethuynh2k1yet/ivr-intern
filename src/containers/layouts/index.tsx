@@ -1,6 +1,6 @@
 import Footer from "e-form/components/footer";
 import Header from "e-form/components/header";
-import Info from "e-form/components/info";
+import InfoPersonal from "e-form/components/info-personal";
 import Tosign from "e-form/components/tosign";
 import React, { useState, useEffect } from "react";
 
@@ -23,15 +23,7 @@ const Layouts = ({ children }: LayoutsProps) => {
         }}
       >
         <Header />
-        <Info
-          data={{
-            fullname: "Bùi Bích Diệp",
-            date: "22/01/2023",
-            request: "FWD20230110R0054",
-            code: "2345688",
-          }}
-        />
-
+        
         {children}
         <Tosign />
         <Footer />

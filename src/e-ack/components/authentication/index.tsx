@@ -70,7 +70,7 @@ export default function Authentication() {
       errorList.push("id");
       errorList.push("date");
     } else if (check === true) {
-      router.push(`/e-ARK/otp`);
+      router.push(`/otp`);
     }
     console.log(errorList);
     setFormErrors(validate(formValues));

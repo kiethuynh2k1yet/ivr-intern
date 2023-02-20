@@ -16,7 +16,7 @@ import {
 } from "./style";
 
 export default function Receive() {
-  const logo: string = require("../../../public/images/group.svg").default;
+  const logo: string = require("../../../../public/images/group.svg").default;
   const router = useRouter();
 
   const onSubmit = () => {

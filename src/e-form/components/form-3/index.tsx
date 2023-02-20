@@ -1,6 +1,7 @@
 import React from "react";
 import { Form3Wrapper, Form3Title, BodyWrapper, Form3User } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
+import InfoAddress from "../info-address";
 import { confirmList } from "listData";
 import { contractData } from "contractData";
 import ListItem from "../list-item";
@@ -18,6 +19,14 @@ interface DataProps {
 export default function Form3({ addressData, fatca, policyData }: DataProps) {
   return (
     <>
+      <InfoAddress
+        data={{
+          fullname: "Bùi Bích Diệp",
+          date: "22/01/2023",
+          request: "FWD20230110R0054",
+          code: "2345688",
+        }}
+      />
       <Form3Wrapper>
         <Form3Title>Thông tin được yêu cầu điều chỉnh như sau:</Form3Title>
         <BodyWrapper>

@@ -1,4 +1,4 @@
-import Header from "components/header";
+import Header from "../header";
 import React from "react";
 
 interface LayoutEarkProps {
@@ -10,6 +10,7 @@ const LayoutEarks = ({ children }: LayoutEarkProps) => {
     <>
         <Header/>
         {children}
+        {/* <Receive/> */}
     </>
   );
 };

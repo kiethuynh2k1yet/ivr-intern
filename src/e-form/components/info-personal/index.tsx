@@ -22,7 +22,7 @@ interface InfoProps {
   };
 }
 
-const Info = ({ data }: InfoProps) => {
+const InfoPersonal = ({ data }: InfoProps) => {
   return (
     <div
       style={{
@@ -44,7 +44,7 @@ const Info = ({ data }: InfoProps) => {
         >
           Kính gửi Quý khách {data.fullname},
         </h3>
-        <p
+        <label
           style={{
             fontStyle: "normal",
             fontWeight: 450,
@@ -52,10 +52,20 @@ const Info = ({ data }: InfoProps) => {
             lineHeight: "150%",
           }}
         >
-          FWD đã nhận được Phiếu yêu cầu điều chỉnh thông tin cá nhân của Quý
+          FWD đã nhận được Phiếu yêu cầu điều chỉnh địa chỉ liên lạc của Quý
           khách cho hợp đồng bảo hiểm số{" "}
-          <label style={{ color: "#e87722" }}>{data.code}</label>
-        </p>
+          <label
+            style={{
+              color: "#e87722",
+              fontStyle: "normal",
+              fontWeight: 450,
+              fontSize: "16px",
+              lineHeight: "150%",
+            }}
+          >
+            {data.code}
+          </label>
+        </label>
       </div>
       <div
         style={{ background: "#e87722", borderRadius: "16px", padding: "20px" }}
@@ -178,4 +188,4 @@ const Info = ({ data }: InfoProps) => {
   );
 };
 
-export default Info;
+export default InfoPersonal;

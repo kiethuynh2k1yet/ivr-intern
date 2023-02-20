@@ -62,7 +62,7 @@ const Header = () => {
               color: "#636566",
             }}
           >
-            Công ti trách nhiệm hữu hạn bảo hiểm nhân thọ FWD Việt Nam
+            Công ty TNHH Bảo hiểm Nhân thọ FWD Việt Nam
           </h6>
         </div>
       </div>

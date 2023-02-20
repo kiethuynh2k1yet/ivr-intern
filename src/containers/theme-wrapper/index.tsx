@@ -118,9 +118,9 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       y: 0,
     });
   }
-  useEffect(() => {
-    callback();
-  }, []);
+  // useEffect(() => {
+  //   callback();
+  // }, []);
   return (
     <ThemeProvider theme={LightTheme}>
       <Head>
