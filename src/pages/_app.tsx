@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import { store } from "redux/store";
 import { GlobalStyle } from "../styles/globals";
- 
+
 function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useEffect(() => {
     if (window) {

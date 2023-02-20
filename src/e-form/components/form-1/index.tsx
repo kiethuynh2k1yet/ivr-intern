@@ -5,6 +5,7 @@ import { updateList, confirmList } from "listData";
 import ListItem from "../list-item";
 import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
 import { InfoCardData } from "infoData";
+import { image } from "html2canvas/dist/types/css/types/image";
 
 interface InfoCard {
   infoData: InfoCardData[][];
@@ -13,6 +14,7 @@ interface InfoCard {
   jobData: InfoCardData[][];
   contactData: InfoCardData[][];
   policyData: InfoCardData[][];
+  image: string;
 }
 
 const Form1 = ({
@@ -22,6 +24,7 @@ const Form1 = ({
   jobData,
   policyData,
   contactData,
+  image,
 }: InfoCard) => {
   return (
     <Form1Wrapper>
@@ -33,7 +36,15 @@ const Form1 = ({
         </Form1User>
         <Form1User>
           <InfoCard title="Thông tin chứng từ" data={documentData} />
-          <InfoPDF title="Chứng từ đăng tải" data={policyData} />
+          <InfoPDF
+            title="Chứng từ đăng tải"
+            data={policyData.map((item) =>
+              item.map((item1) => ({
+                ...item1,
+                image: image ?? item1.label,
+              }))
+            )}
+          />
         </Form1User>
         <Form1User>
           <InfoCard title="Thông tin nghề nghiệp" data={jobData} />

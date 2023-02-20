@@ -19,6 +19,7 @@ const EForm1 = () => {
       policyData={policyData}
       jobData={jobData}
       contactData={contactData}
+      image
     />
   );
 };
