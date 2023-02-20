@@ -1,28 +1,27 @@
 import InfoCard from "e-form/components/info-card/index";
 import InfoPersonal from "e-form/components/info-personal/index";
 import { updateList, confirmList } from "listData";
-import InfoPDF from "../info-pdf";
 import ListItem from "../list-item";
 import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
-import { infoData } from "infoData";
-import { contactData } from "./../../../infoData";
+import { InfoCardData } from "infoData";
 
-interface DataProps {
-  infoData: {};
-  fatca: {};
-  documentData: {};
-  policyData: {};
-  jobData: {};
-  contactData: {};
+interface InfoCard {
+  infoData: InfoCardData[][];
+  fatca: InfoCardData[][];
+  documentData: InfoCardData[][];
+  jobData: InfoCardData[][];
+  contactData: InfoCardData[][];
+  policyData: InfoCardData[][];
 }
+
 const Form1 = ({
   infoData,
   fatca,
   documentData,
-  policyData,
   jobData,
+  policyData,
   contactData,
-}: DataProps) => {
+}: InfoCard) => {
   return (
     <>
       <InfoPersonal
