@@ -10,19 +10,19 @@ import {
 import { getImageBase64 } from "services";
 
 const Header = () => {
-  const [img, setImg] = useState("");
-  useEffect(() => {
-    const imgHeader = async () => {
-      const imageLoader = await Promise.all([
-        getImageBase64(`${process.env.basePath}/images/logo.svg`),
-        // service.getImageBase64(`${process.env.basePath}/images/banner.jpg`),
-      ]);
-      const imgLogo = imageLoader[0] as string;
-      setImg(imgLogo);
-      console.log(imgLogo);
-    };
-    imgHeader();
-  }, []);
+  // const [img, setImg] = useState("");
+  // useEffect(() => {
+  //   const imgHeader = async () => {
+  //     const imageLoader = await Promise.all([
+  //       getImageBase64(`${process.env.basePath}/images/logo.svg`),
+  //       // service.getImageBase64(`${process.env.basePath}/images/banner.jpg`),
+  //     ]);
+  //     const imgLogo = imageLoader[0] as string;
+  //     setImg(imgLogo);
+  //     console.log(imgLogo);
+  //   };
+  //   imgHeader();
+  // }, []);
 
   return (
     <div style={{ width: "100%" }}>
