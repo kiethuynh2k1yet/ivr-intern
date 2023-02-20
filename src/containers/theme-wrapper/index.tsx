@@ -9,44 +9,12 @@ import { ThemeProvider } from "styled-components";
 import { LightTheme } from "styles/theme";
 import ReactDOMServer from "react-dom/server";
 import jsPDF from "jspdf";
-import Header from "e-form/components/header";
-import Info from "e-form/components/info";
+import { base64convert, getImageBase64 } from "services";
 interface ThemeWrapperProps {
   children: React.ReactNode;
   component: React.ReactNode;
 }
-// load the image.
-// function load image ra base64 = canvas
-function getImageBase64(url: string, ratio = 1) {
-  return new Promise((resolve, reject) => {
-    var c = document.createElement("canvas");
-    var ctx = c.getContext("2d");
-    var img = new Image();
-    // source hình
-    img.src = url;
-    img.onload = function (e) {
-      c.width = img.naturalWidth * ratio;
-      c.height = img.naturalHeight * ratio;
-      ctx.drawImage(img, 0, 0, c.width, c.height);
-      var base64String = c.toDataURL();
-      resolve(base64String);
-    };
-  });
-}
 
-function base64convert(url: any) {
-  return new Promise((resolve) => {
-    fetch(url)
-      .then((response) => response.blob())
-      .then((blob) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          resolve(e.target.result);
-        };
-        reader.readAsDataURL(blob);
-      });
-  });
-}
 const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const router = useRouter();
   const dispath = useDispatch();
@@ -85,10 +53,10 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
       // service.getImageBase64(`${process.env.basePath}/images/banner.jpg`),
     ]);
-    console.log(imageLoader);
+    // console.log(imageLoader);
     const size = [1190.55, 1683.78];
-    const imageLogo = imageLoader[0];
-    console.log(imageLogo);
+    // const imageLogo = imageLoader[0];
+    // console.log(imageLogo);
     // const imageBanner = imageLoader[1];
     const template = ReactDOMServer.renderToString(
       <Layout>{component}</Layout>

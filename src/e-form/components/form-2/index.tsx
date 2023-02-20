@@ -5,10 +5,11 @@ import ListItem from "../list-item";
 import { confirmList } from "listData";
 import { contractData } from "contractData";
 import Contract from "../contract";
+import { InfoCardData } from "infoData";
 
 interface DataProps {
-  addressData: {};
-  fatca: {};
+  addressData: InfoCardData[][];
+  fatca: InfoCardData[][];
 }
 export default function Form2({ addressData, fatca }: DataProps) {
   return (

@@ -11,7 +11,6 @@ import {
 } from "infoData";
 
 const EForm1 = () => {
-  
   return (
     <Form1
       infoData={infoData}

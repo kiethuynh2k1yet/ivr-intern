@@ -1,28 +1,28 @@
 import InfoCard from "e-form/components/info-card/index";
+import InfoPDF from "e-form/components/info-pdf/index";
 
 import { updateList, confirmList } from "listData";
-import InfoPDF from "../info-pdf";
 import ListItem from "../list-item";
 import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
-import { infoData } from "infoData";
-import { contactData } from "./../../../infoData";
+import { InfoCardData } from "infoData";
 
-interface DataProps {
-  infoData: {};
-  fatca: {};
-  documentData: {};
-  policyData: {};
-  jobData: {};
-  contactData: {};
+interface InfoCard {
+  infoData: InfoCardData[][];
+  fatca: InfoCardData[][];
+  documentData: InfoCardData[][];
+  jobData: InfoCardData[][];
+  contactData: InfoCardData[][];
+  policyData: InfoCardData[][];
 }
+
 const Form1 = ({
   infoData,
   fatca,
   documentData,
-  policyData,
   jobData,
+  policyData,
   contactData,
-}: DataProps) => {
+}: InfoCard) => {
   return (
     <Form1Wrapper>
       <Form1Title>Thông tin được yêu cầu điều chỉnh như sau:</Form1Title>
@@ -33,7 +33,7 @@ const Form1 = ({
         </Form1User>
         <Form1User>
           <InfoCard title="Thông tin chứng từ" data={documentData} />
-          {/* <InfoPDF title="Chứng từ đăng tải" data={policyData} /> */}
+          <InfoPDF title="Chứng từ đăng tải" data={policyData} />
         </Form1User>
         <Form1User>
           <InfoCard title="Thông tin nghề nghiệp" data={jobData} />

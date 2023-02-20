@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   HeaderWrapper,
@@ -7,10 +7,23 @@ import {
   HeaderCompany,
   ContainerTitle,
 } from "./styled";
+import { getImageBase64 } from "services";
 
-interface HeaderProps {}
+const Header = () => {
+  const [img, setImg] = useState("");
+  useEffect(() => {
+    const imgHeader = async () => {
+      const imageLoader = await Promise.all([
+        getImageBase64(`${process.env.basePath}/images/logo.svg`),
+        // service.getImageBase64(`${process.env.basePath}/images/banner.jpg`),
+      ]);
+      const imgLogo = imageLoader[0] as string;
+      setImg(imgLogo);
+      console.log(imgLogo);
+    };
+    imgHeader();
+  }, []);
 
-const Header = ({}: HeaderProps) => {
   return (
     <div style={{ width: "100%" }}>
       <div
@@ -22,12 +35,7 @@ const Header = ({}: HeaderProps) => {
           borderBottom: "1px solid #dbdfe1",
         }}
       >
-        <Image
-          src={`${process.env.basePath}/images/logo.png`}
-          alt="logo"
-          width={132}
-          height={90}
-        />
+        <Image src={img} alt="logo" width={132} height={90} />
         <div style={{ marginLeft: "40px" }}>
           <h5
             style={{
