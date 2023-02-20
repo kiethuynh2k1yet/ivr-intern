@@ -35,7 +35,12 @@ const Header = () => {
           borderBottom: "1px solid #dbdfe1",
         }}
       >
-        <Image src={img} alt="logo" width={132} height={90} />
+        <Image
+          src={`${process.env.basePath}/images/logo.png`}
+          alt="logo"
+          width={132}
+          height={90}
+        />
         <div style={{ marginLeft: "40px" }}>
           <h5
             style={{
