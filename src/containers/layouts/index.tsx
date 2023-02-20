@@ -10,7 +10,7 @@ interface LayoutsProps {
 
 const Layouts = ({ children }: LayoutsProps) => {
   return (
-    <div style={{ backgroundColor: "gray", padding: 40 }}>
+    <div style={{ backgroundColor: "gray"}}>
       <div
         style={{
           width: 1190,
@@ -23,7 +23,7 @@ const Layouts = ({ children }: LayoutsProps) => {
         }}
       >
         <Header />
-        
+
         {children}
         <Tosign />
         <Footer />
