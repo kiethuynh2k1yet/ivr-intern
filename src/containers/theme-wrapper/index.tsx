@@ -1,5 +1,4 @@
 import Layouts from "containers/layouts";
-import LayoutEarks from "components/Layouts";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
@@ -10,6 +9,16 @@ import { LightTheme } from "styles/theme";
 import ReactDOMServer from "react-dom/server";
 import jsPDF from "jspdf";
 import { base64convert, getImageBase64 } from "services";
+import Form1 from "e-form/components/form-1";
+import {
+  infoData,
+  fatca,
+  documentData,
+  policyData,
+  jobData,
+  contactData,
+} from "infoData";
+
 interface ThemeWrapperProps {
   children: React.ReactNode;
   component: React.ReactNode;
@@ -51,7 +60,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   async function callback() {
     const imageLoader = await Promise.all([
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
-      // service.getImageBase64(`${process.env.basePath}/images/banner.jpg`),
+      getImageBase64(`${process.env.basePath}/images/pdf.svg`),
     ]);
     // console.log(imageLoader);
     const size = [1190.55, 1683.78];
@@ -59,7 +68,17 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     // console.log(imageLogo);
     // const imageBanner = imageLoader[1];
     const template = ReactDOMServer.renderToString(
-      <Layout>{component}</Layout>
+      <Layout>
+        <Form1
+          infoData={infoData}
+          fatca={fatca}
+          documentData={documentData}
+          policyData={policyData}
+          jobData={jobData}
+          contactData={contactData}
+          image={imageLoader[1]}
+        />
+      </Layout>
     );
     let font = (await base64convert(
       `${process.env.basePath}/font/FWDCircularVietTT-Book.ttf`
