@@ -1,0 +1,223 @@
+import React, { useRef, useState } from "react";
+import {
+  Container,
+  SubContainer,
+  Wrapper,
+  Desc,
+  StyledLabel,
+  StyledInput,
+  StyledCheckbox,
+  GiftInput,
+  StyledNote,
+  Agree,
+  ButtonContainer,
+  StyledButton,
+  OrangeWrapper,
+  GiftTitle,
+  GiftContainer,
+  SubGiftTitle,
+  Checkmark,
+  StyledSelect,
+  Underline,
+  CheckContainer,
+  ImgContainer,
+  LabelCheckbox,
+  ErrorMess,
+} from "./styled";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import Image from "next/image";
+import { saveUser } from "redux/reducers/root-reducer";
+
+export default function Delivery({ product }: { product: any }) {
+  type ErrorMess = {
+    name?: string;
+    phone?: string;
+    memberId?: string;
+    card?: string;
+  };
+  interface formError {
+    name?: string;
+    phone?: string;
+    memberId?: string;
+    card?: string;
+  }
+  const dispatch = useDispatch(); // <-- dispatch function
+
+  const router = useRouter();
+
+  const [isChecked, setChecked] = useState(true);
+  const [disabled, setDisabled] = useState(false);
+  const [formValues, setFormValues] = useState({
+    name: "",
+    phone: "",
+    memberId: "",
+    card: "",
+  });
+  const [formErrors, setFormErrors] = useState<formError>({});
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const toggleDisableButton = () => {
+    setDisabled(!disabled);
+  };
+  const handleOption = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+    console.log(name, value);
+  };
+  const validate = (values: any) => {
+    const errors: ErrorMess = {};
+    if (!values.name) {
+      errors.name = "Vui lòng nhập Họ và tên hội viên";
+    }
+    if (!values.phone) {
+      errors.phone = "Vui lòng nhập số điện thoại";
+    }
+    if (!values.memberId) {
+      errors.memberId = "Vui lòng nhập Mã hội viên";
+    }
+    if (!values.card) {
+      errors.card = "Vui lòng chọn nhà mạng";
+    }
+    return errors;
+  };
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (product.desc === "evoucher") {
+      if (formValues.name !== "" && formValues.phone !== "") {
+        dispatch(saveUser(formValues));
+        router.push(`/confirm/${product.id}`);
+      }
+    }
+    if (product.desc === "gift") {
+      if (formValues.name !== "" && formValues.memberId !== "") {
+        dispatch(saveUser(formValues));
+        router.push(`/confirm/${product.id}`);
+      }
+    }
+    if (product.desc === "card") {
+      if (formValues.card !== "" && formValues.phone !== "") {
+        dispatch(saveUser(formValues));
+        router.push(`/confirm/${product.id}`);
+      }
+    }
+    setFormErrors(validate(formValues));
+  };
+
+  return (
+    <Container>
+      <SubContainer>
+        <Wrapper onSubmit={onSubmit}>
+          <Desc>
+            Để trải nghiệm nhận quà được tốt nhất, Quý khách vui lòng kiểm tra
+            thông tin đã nhập (nếu có) trước khi hoàn tất các bước chọn quà.
+          </Desc>
+          {product.desc === "card" ? (
+            <>
+              <ErrorMess>{formErrors.card}</ErrorMess>
+              <ErrorMess>{formErrors.phone}</ErrorMess>
+
+              <StyledLabel>Chọn nhà mạng</StyledLabel>
+              <StyledSelect name="card" onChange={handleOption}>
+                <option value="">Chọn nhà mạng</option>
+                <option value="Mobifone">Mobifone</option>
+                <option value="Vinaphone">Vinaphone</option>
+                <option value="Viettel">Viettel</option>
+              </StyledSelect>
+              <StyledLabel>Số điện thoại của Bên mua bảo hiểm</StyledLabel>
+              <StyledInput
+                type="text"
+                name="phone"
+                placeholder="Vui lòng nhập số điện thoại "
+                value={formValues.phone}
+                onChange={handleChange}
+              />
+
+              <StyledNote>
+                <Underline>Ghi chú:</Underline> Để nạp tiền cho số điện thoại
+                khác, Quý khách vui lòng chọn hình thức EVOUCHER URBOX ở bước
+                chọn quà.
+              </StyledNote>
+            </>
+          ) : product.desc === "evoucher" ? (
+            <>
+              <ErrorMess>{formErrors.name}</ErrorMess>
+              <ErrorMess>{formErrors.phone}</ErrorMess>
+              <StyledLabel>Người nhận</StyledLabel>
+              <GiftInput
+                type="text"
+                name="name"
+                value={formValues.name}
+                placeholder="Vui lòng nhập Họ và tên người nhận"
+                onChange={handleChange}
+              />
+              <StyledLabel>Điện thoại di động</StyledLabel>
+              <StyledInput
+                type="text"
+                name="phone"
+                placeholder="Vui lòng nhập số điện thoại "
+                value={formValues.phone}
+                onChange={handleChange}
+              />
+            </>
+          ) : (
+            <>
+              <ErrorMess>{formErrors.memberId}</ErrorMess>
+              <ErrorMess>{formErrors.name}</ErrorMess>
+              <StyledLabel>Nhập mã hội viên</StyledLabel>
+              <GiftInput
+                type="text"
+                name="memberId"
+                placeholder="Vui lòng nhập Mã hội viên"
+                value={formValues.memberId}
+                onChange={handleChange}
+              />
+              <StyledLabel>Họ và tên hội viên</StyledLabel>
+              <GiftInput
+                type="text"
+                name="name"
+                placeholder="Vui lòng nhập Họ và tên hội viên"
+                value={formValues.name}
+                onChange={handleChange}
+              />
+            </>
+          )}
+          <CheckContainer>
+            <LabelCheckbox>
+              <StyledCheckbox
+                type="checkbox"
+                // checked={isChecked}
+                onChange={toggleDisableButton}
+              />
+              <Checkmark />
+              <Agree>
+                Tôi đồng ý FWD cung cấp những thông tin trên cho Nhà cung cấp
+                dịch vụ nhằm mục đích liên hệ và giao quà.
+              </Agree>
+            </LabelCheckbox>
+          </CheckContainer>
+          <ButtonContainer>
+            <StyledButton onClick={() => router.back()}>Trở lại</StyledButton>
+            <StyledButton disabled={!disabled} style={{ marginLeft: "24px" }}>
+              Tiếp tục
+            </StyledButton>
+          </ButtonContainer>
+        </Wrapper>
+        <OrangeWrapper>
+          {/* <ImgContainer>
+            <Image src={product.img} alt="" width={383} height={215} />
+          </ImgContainer>
+          <GiftContainer>
+            <GiftTitle>Quà đã chọn:</GiftTitle>
+            <SubGiftTitle>{product.title}</SubGiftTitle>
+          </GiftContainer> */}
+        </OrangeWrapper>
+      </SubContainer>
+    </Container>
+  );
+}

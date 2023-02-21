@@ -4,9 +4,14 @@ import { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
-import { store } from "redux/store";
+import store from "redux/store";
 import { GlobalStyle } from "../styles/globals";
+<<<<<<< HEAD
  
+=======
+import Header from "components/header/header";
+
+>>>>>>> 826fa2f99c537fddc71ab2f0b97075050d51c78a
 function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useEffect(() => {
     if (window) {
@@ -19,6 +24,8 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     <Provider store={store}>
       <ThemeWrapper component={<Component {...pageProps} />}>
         <GlobalStyle />
+        {/* thông báo  */}
+        <Header />
         <ToastContainer />
       </ThemeWrapper>
     </Provider>

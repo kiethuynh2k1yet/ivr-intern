@@ -10,9 +10,14 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
+<<<<<<< HEAD
     "axios": "^1.1.3",
     "hoist-non-react-statics": "^3.3.2",
     "html2canvas": "^1.4.1",
+=======
+    "axios": "^1.3.2",
+    "babel-preset-next": "^1.4.0",
+>>>>>>> 826fa2f99c537fddc71ab2f0b97075050d51c78a
     "jimp": "^0.16.2",
     "jpeg-js": "^0.4.4",
     "jspdf": "^2.5.1",
@@ -22,8 +27,13 @@
     "next": "^13.1.6",
     "next-i18next": "^13.0.3",
     "query-string": "^7.1.1",
+<<<<<<< HEAD
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+=======
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+>>>>>>> 826fa2f99c537fddc71ab2f0b97075050d51c78a
     "react-number-format": "^5.1.3",
     "react-redux": "^8.0.5",
     "react-toastify": "^9.1.1",

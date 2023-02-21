@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 import Layouts from "containers/layouts";
+=======
+import Header from "components/header/header";
+>>>>>>> 826fa2f99c537fddc71ab2f0b97075050d51c78a
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { useDispatch } from "react-redux";
-import { rootAction } from "redux/reducers/root-reducer";
+// import { rootAction } from "redux/reducers/root-reducer";
 import { ThemeProvider } from "styled-components";
 import { LightTheme } from "styles/theme";
 import ReactDOMServer from "react-dom/server";
@@ -18,6 +22,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const router = useRouter();
   const dispath = useDispatch();
   const Layout = useMemo(() => {
+<<<<<<< HEAD
     if (router.pathname.includes("/e-form")) return Layouts; // custom layout here
     return Fragment;
   }, [router.pathname]);
@@ -66,6 +71,38 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     let fontBold = (await base64convert(
       `${process.env.basePath}/font/FWDCircularVietTT-Bold.ttf`
     )) as string;
+=======
+    if (router.pathname === "/login") {
+      return;
+    }
+    return Fragment; // custom layout here
+  }, [router.pathname]);
+
+  // useEffect(() => {
+  //   dispath(rootAction.setInitialized(true));
+  //   const listenter = function (ev: MouseEvent) {
+  //     const button = ev.target as HTMLButtonElement;
+  //     if (button.tagName === "BUTTON" && !button.disabled) {
+  //       const clickable = button.dataset.clickable;
+  //       if (clickable === "false") {
+  //         ev.preventDefault();
+  //         ev.stopPropagation();
+  //         return;
+  //       }
+  //       button.dataset.clickable = "false";
+  //       button.style.pointerEvents = "none";
+  //       setTimeout(() => {
+  //         button.dataset.clickable = "true";
+  //         button.style.pointerEvents = "";
+  //       }, 300);
+  //     }
+  //   };
+  //   document.addEventListener("click", listenter);
+  //   return () => {
+  //     document.removeEventListener("click", listenter);
+  //   };
+  // }, [dispath]);
+>>>>>>> 826fa2f99c537fddc71ab2f0b97075050d51c78a
 
     const pdf = new jsPDF("p", "px", size);
     pdf.addFileToVFS(
