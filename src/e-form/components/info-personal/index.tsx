@@ -68,7 +68,11 @@ const InfoPersonal = ({ data }: InfoProps) => {
         </label>
       </div>
       <div
-        style={{ background: "#e87722", borderRadius: "16px", padding: "20px" }}
+        style={{
+          background: "#e87722",
+          borderRadius: "16px",
+          padding: "20px !important",
+        }}
       >
         <h5 style={{ color: "#fff" }}>Yêu cầu điều chỉnh thông tin cá nhân:</h5>
         <div style={{ display: "flex", alignItems: "center" }}>
@@ -78,7 +82,6 @@ const InfoPersonal = ({ data }: InfoProps) => {
               fontStyle: "normal",
               fontWeight: 500,
               fontSize: "12px",
-              lineHeight: "125%",
               color: "#fff",
               marginTop: "16px",
             }}
