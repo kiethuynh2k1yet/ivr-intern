@@ -33,31 +33,30 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     return Fragment;
   }, [router.pathname]);
 
-  useEffect(() => {
-    dispath(rootAction.setInitialized(true));
-    const listenter = function (ev: MouseEvent) {
-      const button = ev.target as HTMLButtonElement;
-      if (button.tagName === "BUTTON" && !button.disabled) {
-        const clickable = button.dataset.clickable;
-        if (clickable === "false") {
-          ev.preventDefault();
-          ev.stopPropagation();
-          return;
-        }
-        button.dataset.clickable = "false";
-        button.style.pointerEvents = "none";
-        setTimeout(() => {
-          button.dataset.clickable = "true";
-          button.style.pointerEvents = "";
-        }, 300);
-      }
-    };
-    document.addEventListener("click", listenter);
-    return () => {
-      document.removeEventListener("click", listenter);
-    };
-  }, [dispath]);
-  const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //   dispath(rootAction.setInitialized(true));
+  //   const listenter = function (ev: MouseEvent) {
+  //     const button = ev.target as HTMLButtonElement;
+  //     if (button.tagName === "BUTTON" && !button.disabled) {
+  //       const clickable = button.dataset.clickable;
+  //       if (clickable === "false") {
+  //         ev.preventDefault();
+  //         ev.stopPropagation();
+  //         return;
+  //       }
+  //       button.dataset.clickable = "false";
+  //       button.style.pointerEvents = "none";
+  //       setTimeout(() => {
+  //         button.dataset.clickable = "true";
+  //         button.style.pointerEvents = "";
+  //       }, 300);
+  //     }
+  //   };
+  //   document.addEventListener("click", listenter);
+  //   return () => {
+  //     document.removeEventListener("click", listenter);
+  //   };
+  // }, [dispath]);
   async function callback() {
     const imageLoader = await Promise.all([
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
