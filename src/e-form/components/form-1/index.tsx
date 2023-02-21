@@ -5,7 +5,6 @@ import { updateList, confirmList } from "listData";
 import ListItem from "../list-item";
 import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
 import { InfoCardData } from "infoData";
-import Image from "next/image";
 interface InfoCard {
   infoData: InfoCardData[][];
   fatca: InfoCardData[][];
