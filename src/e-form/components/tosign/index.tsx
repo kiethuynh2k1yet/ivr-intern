@@ -15,7 +15,7 @@ const Tosign = ({}: ToSignProps) => {
       <div style={{maxHeight:"90px", flex:1}}>
 
       </div>
-        <h5 style={{fontStyle:"normal", fontWeight: 450, fontSize:"16px", lineHeight:"150%", color:"#183028", marginBottom:"20px"}}>
+        <h5 style={{fontStyle:"normal", fontWeight: 500, fontSize:"16px", lineHeight:"150%", color:"#183028", marginBottom:"20px"}}>
           Một lần nữa, chúng tôi cảm ơn Quý khách tin tưởng và lựa chọn FWD.<br/>
           Trân trọng,
         </h5>

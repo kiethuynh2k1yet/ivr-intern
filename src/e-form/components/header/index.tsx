@@ -56,7 +56,7 @@ const Header = () => {
           <h6
             style={{
               fontStyle: "normal",
-              fontWeight: "450",
+              fontWeight: "500",
               fontSize: "16px",
               lineHeight: "125%",
               color: "#636566",

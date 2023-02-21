@@ -1,5 +1,4 @@
 import Layouts from "containers/layouts";
-import LayoutEarks from "components/Layouts";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
@@ -12,9 +11,9 @@ import jsPDF from "jspdf";
 import { base64convert, getImageBase64 } from "services";
 import Form1 from "e-form/components/form-1";
 import {
-  documentData,
-  fatca,
   infoData,
+  fatca,
+  documentData,
   policyData,
   jobData,
   contactData,
@@ -89,6 +88,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       `${process.env.basePath}/font/FWDCircularVietTT-Bold.ttf`
     )) as string;
 
+    // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",
@@ -118,9 +118,9 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       y: 0,
     });
   }
-  // useEffect(() => {
-  //   callback();
-  // }, []);
+  useEffect(() => {
+    callback();
+  }, []);
   return (
     <ThemeProvider theme={LightTheme}>
       <Head>

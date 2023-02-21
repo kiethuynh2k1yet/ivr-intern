@@ -1,4 +1,3 @@
-import Header from "components/header";
 import ThemeWrapper from "containers/theme-wrapper";
 import { AppProps } from "next/app";
 import { useEffect, useState } from "react";

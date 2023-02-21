@@ -1,11 +1,11 @@
 import InfoCard from "e-form/components/info-card/index";
 import InfoPersonal from "e-form/components/info-personal/index";
+import InfoPDF from "../info-pdf";
 import { updateList, confirmList } from "listData";
 import ListItem from "../list-item";
 import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
 import { InfoCardData } from "infoData";
-import { image } from "html2canvas/dist/types/css/types/image";
-
+import Image from "next/image";
 interface InfoCard {
   infoData: InfoCardData[][];
   fatca: InfoCardData[][];
@@ -13,7 +13,7 @@ interface InfoCard {
   jobData: InfoCardData[][];
   contactData: InfoCardData[][];
   policyData: InfoCardData[][];
-  image: string;
+  image?: string;
 }
 
 const Form1 = ({
@@ -25,6 +25,13 @@ const Form1 = ({
   contactData,
   image,
 }: InfoCard) => {
+  const imgPolicy = policyData.map((item) =>
+    item.map((item1) => ({
+      ...item1,
+      label: image ?? item1.label,
+    }))
+  );
+
   return (
     <>
       <InfoPersonal
@@ -44,7 +51,7 @@ const Form1 = ({
           </Form1User>
           <Form1User>
             <InfoCard title="Thông tin chứng từ" data={documentData} />
-            <InfoPDF title="Chứng từ đăng tải" data={policyData} />
+            <InfoPDF title="Chứng từ đăng tải" data={imgPolicy} />
           </Form1User>
           <Form1User>
             <InfoCard title="Thông tin nghề nghiệp" data={jobData} />

@@ -47,7 +47,7 @@ const InfoAddress = ({ data }: InfoProps) => {
         <label
           style={{
             fontStyle: "normal",
-            fontWeight: 450,
+            fontWeight: 500,
             fontSize: "16px",
             lineHeight: "150%",
           }}
@@ -58,7 +58,7 @@ const InfoAddress = ({ data }: InfoProps) => {
             style={{
               color: "#e87722",
               fontStyle: "normal",
-              fontWeight: 450,
+              fontWeight: 500,
               fontSize: "16px",
               lineHeight: "150%",
             }}
