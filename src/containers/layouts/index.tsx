@@ -10,7 +10,7 @@ interface LayoutsProps {
 
 const Layouts = ({ children }: LayoutsProps) => {
   return (
-    <div style={{ backgroundColor: "gray"}}>
+    <div style={{ backgroundColor: "gray" }}>
       <div
         style={{
           width: 1190,

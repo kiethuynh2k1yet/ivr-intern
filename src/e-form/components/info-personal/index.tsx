@@ -27,37 +27,128 @@ const InfoPersonal = ({ data }: InfoProps) => {
           khách cho hợp đồng bảo hiểm số{" "}
           <span style={{ color: "#E87722" }}>{data.code}</span>
         </label>
-      </TitleInfo>
-      <InfoDetal>
-        <InfoDetalL>
-          <div>
-            <h4>Yêu cầu điều chỉnh thông tin cá nhân:</h4>
-          </div>
-          <div>
-            <TitleDetal>
-              <Detal>
-                <h5>Ngày yêu cầu</h5>
-                <h6>{data.date}</h6>
-              </Detal>
-              <Detal>
-                <h5>Mã yêu cầu</h5>
-                <h6>{data.request}</h6>
-              </Detal>
-            </TitleDetal>
-            <TitleDetal>
-              <Detal>
-                <h5>Số hợp đồng</h5>
-                <h6>{data.code}</h6>
-              </Detal>
-              <Detal>
-                <h5>Bên mua bảo hiểm</h5>
-                <h6>{data.fullname}</h6>
-              </Detal>
-            </TitleDetal>
-          </div>
-        </InfoDetalL>
-      </InfoDetal>
-    </MemberInfo>
+      </div>
+      <div
+        style={{
+          background: "#e87722",
+          borderRadius: "16px",
+          padding: "20px !important",
+        }}
+      >
+        <h5 style={{ color: "#fff" }}>Yêu cầu điều chỉnh thông tin cá nhân:</h5>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h5
+            style={{
+              width: "160px",
+              fontStyle: "normal",
+              fontWeight: 500,
+              fontSize: "12px",
+              color: "#fff",
+              marginTop: "16px",
+            }}
+          >
+            Ngày yêu cầu
+          </h5>
+          <h5
+            style={{
+              width: "160px",
+              fontStyle: "normal",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "125%",
+              color: "#fff",
+              marginTop: "16px",
+            }}
+          >
+            Mã yêu cầu
+          </h5>
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h5
+            style={{
+              width: "160px",
+              fontStyle: "normal",
+              fontWeight: 700,
+              fontSize: "14px",
+              lineHeight: "125%",
+              color: "#fff",
+              marginTop: "4px",
+            }}
+          >
+            {data.date}
+          </h5>
+          <h5
+            style={{
+              width: "160px",
+              fontStyle: "normal",
+              fontWeight: 700,
+              fontSize: "14px",
+              lineHeight: "125%",
+              color: "#fff",
+              marginTop: "4px",
+            }}
+          >
+            {data.request}
+          </h5>
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h5
+            style={{
+              width: "160px",
+              fontStyle: "normal",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "125%",
+              color: "#fff",
+              marginTop: "16px",
+            }}
+          >
+            Số hợp đồng
+          </h5>
+          <h5
+            style={{
+              width: "160px",
+              fontStyle: "normal",
+              fontWeight: 500,
+              fontSize: "12px",
+              lineHeight: "125%",
+              color: "#fff",
+              marginTop: "16px",
+            }}
+          >
+            Bên mua bảo hiểm
+          </h5>
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h5
+            style={{
+              width: "160px",
+              fontStyle: "normal",
+              fontWeight: 700,
+              fontSize: "14px",
+              lineHeight: "125%",
+              color: "#fff",
+              marginTop: "4px",
+            }}
+          >
+            {data.code}
+          </h5>
+          <h5
+            style={{
+              width: "160px",
+              fontStyle: "normal",
+              fontWeight: 700,
+              fontSize: "14px",
+              lineHeight: "125%",
+              color: "#fff",
+              marginTop: "4px",
+            }}
+          >
+            {data.fullname}
+          </h5>
+        </div>
+      </div>
+    </div>
   );
 };
 
