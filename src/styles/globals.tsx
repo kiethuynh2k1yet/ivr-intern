@@ -59,56 +59,56 @@ const style = css`
     margin: 0;
   }
 
-  h1 {
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 44px;
-  }
+  // h1 {
+  //   font-size: 36px;
+  //   font-weight: 500;
+  //   line-height: 44px;
+  // }
 
-  h2 {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 32px;
-  }
+  // h2 {
+  //   font-size: 24px;
+  //   font-weight: 500;
+  //   line-height: 32px;
+  // }
 
-  h3 {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-  }
+  // h3 {
+  //   font-size: 18px;
+  //   font-weight: 500;
+  //   line-height: 24px;
+  // }
 
-  h4 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-  }
+  // h4 {
+  //   font-size: 16px;
+  //   font-weight: 500;
+  //   line-height: 24px;
+  // }
 
-  h5 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-  }
+  // h5 {
+  //   font-size: 16px;
+  //   font-weight: 500;
+  //   line-height: 24px;
+  // }
 
-  h6 {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 22px;
-  }
+  // h6 {
+  //   font-size: 14px;
+  //   font-style: normal;
+  //   font-weight: normal;
+  //   line-height: 22px;
+  // }
 
-  .h7 {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 125%;
-  }
+  // .h7 {
+  //   font-style: normal;
+  //   font-weight: 700;
+  //   font-size: 16px;
+  //   line-height: 125%;
+  // }
 
-  .h8 {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 125%;
-  }
+  // .h8 {
+  //   font-style: normal;
+  //   font-weight: 700;
+  //   font-size: 14px;
+  //   line-height: 125%;
+  // }
 
   .tiny {
     font-size: 10px;
@@ -148,11 +148,11 @@ const style = css`
     }
   }
 
-  label {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 500;
-  }
+  // label {
+  //   font-size: 13px;
+  //   line-height: 18px;
+  //   font-weight: 500;
+  // }
 
   a {
     color: inherit;
@@ -187,17 +187,17 @@ const style = css`
     margin-right: auto;
   }
 
-  p {
-    font-style: normal;
-    font-weight: normal;
-    margin-top: 0px;
-    margin-bottom: 16px;
-    color: ${({ theme }) => theme.color.text.body};
+  // p {
+  //   font-style: normal;
+  //   font-weight: normal;
+  //   margin-top: 0px;
+  //   margin-bottom: 16px;
+  //   color: ${({ theme }) => theme.color.text.body};
 
-    :last-child {
-      margin-bottom: 0px;
-    }
-  }
+  //   :last-child {
+  //     margin-bottom: 0px;
+  //   }
+  // }
 
   hr {
     border-style: solid;
@@ -206,11 +206,11 @@ const style = css`
     color: ${({ theme }) => theme.color.page.border};
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
+  // img {
+  //   max-width: 100%;
+  //   height: auto;
+  //   display: block;
+  // }
 
   dl,
   ol,
