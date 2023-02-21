@@ -9,6 +9,15 @@ import { LightTheme } from "styles/theme";
 import ReactDOMServer from "react-dom/server";
 import jsPDF from "jspdf";
 import { base64convert, getImageBase64 } from "services";
+import Form1 from "e-form/components/form-1";
+import {
+  documentData,
+  fatca,
+  infoData,
+  policyData,
+  jobData,
+  contactData,
+} from "infoData";
 interface ThemeWrapperProps {
   children: React.ReactNode;
   component: React.ReactNode;
@@ -17,48 +26,61 @@ interface ThemeWrapperProps {
 const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const router = useRouter();
   const dispath = useDispatch();
+  const [loading, setLoading] = useState(false);
+
   const Layout = useMemo(() => {
     if (router.pathname.includes("/e-form")) return Layouts; // custom layout here
     return Fragment;
   }, [router.pathname]);
 
-  // useEffect(() => {
-  //   dispath(rootAction.setInitialized(true));
-  //   const listenter = function (ev: MouseEvent) {
-  //     const button = ev.target as HTMLButtonElement;
-  //     if (button.tagName === "BUTTON" && !button.disabled) {
-  //       const clickable = button.dataset.clickable;
-  //       if (clickable === "false") {
-  //         ev.preventDefault();
-  //         ev.stopPropagation();
-  //         return;
-  //       }
-  //       button.dataset.clickable = "false";
-  //       button.style.pointerEvents = "none";
-  //       setTimeout(() => {
-  //         button.dataset.clickable = "true";
-  //         button.style.pointerEvents = "";
-  //       }, 300);
-  //     }
-  //   };
-  //   document.addEventListener("click", listenter);
-  //   return () => {
-  //     document.removeEventListener("click", listenter);
-  //   };
-  // }, [dispath]);
+  useEffect(() => {
+    dispath(rootAction.setInitialized(true));
+    const listenter = function (ev: MouseEvent) {
+      const button = ev.target as HTMLButtonElement;
+      if (button.tagName === "BUTTON" && !button.disabled) {
+        const clickable = button.dataset.clickable;
+        if (clickable === "false") {
+          ev.preventDefault();
+          ev.stopPropagation();
+          return;
+        }
+        button.dataset.clickable = "false";
+        button.style.pointerEvents = "none";
+        setTimeout(() => {
+          button.dataset.clickable = "true";
+          button.style.pointerEvents = "";
+        }, 300);
+      }
+    };
+    document.addEventListener("click", listenter);
+    return () => {
+      document.removeEventListener("click", listenter);
+    };
+  }, [dispath]);
   const [loading, setLoading] = useState(false);
   async function callback() {
     const imageLoader = await Promise.all([
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
-      // service.getImageBase64(`${process.env.basePath}/images/banner.jpg`),
+      getImageBase64(`${process.env.basePath}/images/pdf.svg`),
     ]);
-    // console.log(imageLoader);
+    console.log(imageLoader[1]);
     const size = [1190.55, 1683.78];
     // const imageLogo = imageLoader[0];
     // console.log(imageLogo);
     // const imageBanner = imageLoader[1];
+    // {router.pathname.includes(`e-form/1`)}
     const template = ReactDOMServer.renderToString(
-      <Layout>{component}</Layout>
+      <Layout>
+        <Form1
+          infoData={infoData}
+          fatca={fatca}
+          documentData={documentData}
+          policyData={policyData}
+          jobData={jobData}
+          contactData={contactData}
+          image={imageLoader[1]}
+        />
+      </Layout>
     );
     let font = (await base64convert(
       `${process.env.basePath}/font/FWDCircularVietTT-Book.ttf`
