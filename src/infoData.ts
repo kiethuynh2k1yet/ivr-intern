@@ -156,6 +156,15 @@ export const contactData: InfoCardData[][] = [
       label: "Email",
       value: "bichdiep@gmail.com",
     },
+
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
   ],
 ];
 

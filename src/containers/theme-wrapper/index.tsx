@@ -119,9 +119,9 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       y: 0,
     });
   }
-  // useEffect(() => {
-  //   callback();
-  // }, []);
+  useEffect(() => {
+    callback();
+  }, []);
   return (
     //themeprovider: styled-component
     <ThemeProvider theme={LightTheme}>
