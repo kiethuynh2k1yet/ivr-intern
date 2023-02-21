@@ -18,6 +18,7 @@ import {
   jobData,
   contactData,
 } from "infoData";
+
 interface ThemeWrapperProps {
   children: React.ReactNode;
   component: React.ReactNode;
@@ -33,39 +34,39 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     return Fragment;
   }, [router.pathname]);
 
-  // useEffect(() => {
-  //   dispath(rootAction.setInitialized(true));
-  //   const listenter = function (ev: MouseEvent) {
-  //     const button = ev.target as HTMLButtonElement;
-  //     if (button.tagName === "BUTTON" && !button.disabled) {
-  //       const clickable = button.dataset.clickable;
-  //       if (clickable === "false") {
-  //         ev.preventDefault();
-  //         ev.stopPropagation();
-  //         return;
-  //       }
-  //       button.dataset.clickable = "false";
-  //       button.style.pointerEvents = "none";
-  //       setTimeout(() => {
-  //         button.dataset.clickable = "true";
-  //         button.style.pointerEvents = "";
-  //       }, 300);
-  //     }
-  //   };
-  //   document.addEventListener("click", listenter);
-  //   return () => {
-  //     document.removeEventListener("click", listenter);
-  //   };
-  // }, [dispath]);
+  useEffect(() => {
+    dispath(rootAction.setInitialized(true));
+    const listenter = function (ev: MouseEvent) {
+      const button = ev.target as HTMLButtonElement;
+      if (button.tagName === "BUTTON" && !button.disabled) {
+        const clickable = button.dataset.clickable;
+        if (clickable === "false") {
+          ev.preventDefault();
+          ev.stopPropagation();
+          return;
+        }
+        button.dataset.clickable = "false";
+        button.style.pointerEvents = "none";
+        setTimeout(() => {
+          button.dataset.clickable = "true";
+          button.style.pointerEvents = "";
+        }, 300);
+      }
+    };
+    document.addEventListener("click", listenter);
+    return () => {
+      document.removeEventListener("click", listenter);
+    };
+  }, [dispath]);
+  const [loading, setLoading] = useState(false);
   async function callback() {
     const imageLoader = await Promise.all([
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
       getImageBase64(`${process.env.basePath}/images/pdf.svg`),
     ]);
-    console.log(imageLoader[1]);
+    // console.log(imageLoader);
     const size = [1190.55, 1683.78];
     // const imageLogo = imageLoader[0];
-    // console.log(imageLogo);
     // const imageBanner = imageLoader[1];
     // {router.pathname.includes(`e-form/1`)}
     const template = ReactDOMServer.renderToString(
@@ -81,6 +82,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
         />
       </Layout>
     );
+    console.log(template);
     let font = (await base64convert(
       `${process.env.basePath}/font/FWDCircularVietTT-Book.ttf`
     )) as string;
@@ -94,11 +96,11 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       "FWDCircularVietTT-Book.ttf",
       font.slice(font.indexOf(",") + 1)
     );
+
     pdf.addFileToVFS(
       "FWDCircularVietTT-Bold.ttf",
       fontBold.slice(fontBold.indexOf(",") + 1)
     );
-    // pdf.addImage(imageLogo.toString(), "png", 5, 5, 0, 0);
     pdf.addFont("FWDCircularVietTT-Book.ttf", "FWD", "normal");
     pdf.addFont("FWDCircularVietTT-Bold.ttf", "FWD", "bold");
     pdf.setFont("FWD");
@@ -122,6 +124,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     callback();
   }, []);
   return (
+    //themeprovider: styled-component
     <ThemeProvider theme={LightTheme}>
       <Head>
         <link rel="icon" href={`${process.env.basePath}/favicon.ico`} />
