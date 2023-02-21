@@ -9,7 +9,7 @@ export const StyledTable = styled.table`
 
   background-color: #f8f9f9;
   border-radius: 12px;
-  border-spacing: 12px;
+  border-spacing: 16px;
   td {
     // border: 1px solid black;
 

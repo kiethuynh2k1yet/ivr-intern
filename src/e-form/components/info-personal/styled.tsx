@@ -22,7 +22,7 @@ export const TitleMember = styled.h3`
 
 export const TitleArrge = styled.h5`
   font-style: normal;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 16px;
   line-height: 150%;
 `;
@@ -30,7 +30,7 @@ export const TitleArrge = styled.h5`
 export const ColorArrge = styled.h5`
   color: #e87722;
   font-style: normal;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 16px;
   line-height: 150%;
 `;

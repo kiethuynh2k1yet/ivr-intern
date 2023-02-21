@@ -11,9 +11,9 @@ import jsPDF from "jspdf";
 import { base64convert, getImageBase64 } from "services";
 import Form1 from "e-form/components/form-1";
 import {
-  documentData,
-  fatca,
   infoData,
+  fatca,
+  documentData,
   policyData,
   jobData,
   contactData,
@@ -88,6 +88,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       `${process.env.basePath}/font/FWDCircularVietTT-Bold.ttf`
     )) as string;
 
+    // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",

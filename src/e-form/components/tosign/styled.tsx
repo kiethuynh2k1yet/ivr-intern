@@ -15,7 +15,7 @@ export const Contract = styled.div`
 
 export const Title = styled.h5`
   font-style: normal;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   color: #183028;

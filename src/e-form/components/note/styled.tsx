@@ -5,7 +5,7 @@ export const NoteWrapper = styled.div`
   margin: 24px 50px 0px;
   border: 1px solid #fed141;
   border-radius: 16px;
-  padding: 20px;
+  padding: 15px 20px 25px 20px;
   background-color: #fff6d9;
 `;
 
@@ -17,7 +17,7 @@ export const NoteTitle = styled.label`
 
 export const NoteParagraph = styled.p`
   color: #183028;
-  font-weight: 450;
+  font-weight: 500;
   font-size: 14px;
 
   span {
