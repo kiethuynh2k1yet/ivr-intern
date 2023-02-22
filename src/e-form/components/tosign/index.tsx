@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Title,
-  Contract,
-  TitleContract,
-  TitleCompany,
-} from "./styled";
+import { Container, Contract } from "./styled";
 
 interface ToSignProps {}
 
