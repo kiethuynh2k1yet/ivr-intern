@@ -15,7 +15,7 @@ export const Title = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 16px !important;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -44,7 +44,7 @@ export const Cell = styled.div<{ col: number }>`
   h6 {
     font-weight: 700;
     font-size: 14px;
-    padding-top: 6px !important;
+    padding-top: 6px;
     color: #e87722;
   }
 `;
