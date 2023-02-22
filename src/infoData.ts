@@ -139,7 +139,7 @@ export const jobData: InfoCardData[][] = [
 export const contactData: InfoCardData[][] = [
   [
     {
-      label: "Di dộng",
+      label: "Di động",
       value: "09123456789",
     },
     {

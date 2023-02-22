@@ -57,7 +57,6 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   //     document.removeEventListener("click", listenter);
   //   };
   // }, [dispath]);
-  const [loading, setLoading] = useState(false);
   async function callback() {
     const imageLoader = await Promise.all([
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
