@@ -1,7 +1,7 @@
 // load the image.
 // function load image ra base64 = canvas
 export function getImageBase64(url: string, ratio = 1) {
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     var c = document.createElement("canvas");
     var ctx = c.getContext("2d");
     var img = new Image();
