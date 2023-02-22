@@ -13,21 +13,15 @@ export const FooterWapper = styled.div`
 `;
 
 export const FooterTable = styled.table`
-  width: 100%;
-`;
 
-export const Tr = styled.tr`
-`;
+  td{
+    color: #636566;
 
-export const Td = styled.td`
-  color: #636566;
-
-  &:nth-child(2),:nth-child(3){
-    width: 10%;
+    &:nth-child(2),:nth-child(3){
+      width: 10%;
+    }
   }
 `;
 
-export const Tbody = styled.tbody`
-`;
 
 

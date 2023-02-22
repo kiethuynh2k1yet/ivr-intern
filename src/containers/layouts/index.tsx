@@ -1,20 +1,26 @@
 import Footer from "e-form/components/footer";
 import Header from "e-form/components/header";
-import InfoPersonal from "e-form/components/info-personal";
 import Tosign from "e-form/components/tosign";
-import React, { useState, useEffect } from "react";
+import { InfoCardData } from "infoData";
+import React from "react";
 
 interface LayoutsProps {
   children: React.ReactNode;
+  logo?: string;
 }
 
-const Layouts = ({ children }: LayoutsProps) => {
+const Layouts = ({ children, logo }: LayoutsProps) => {
   return (
-    <div style={{ backgroundColor: "gray" }}>
+    <div
+      style={{
+        backgroundColor: "gray",
+        
+      }}
+    >
       <div
         style={{
           width: 1190,
-          height: 1684,
+          height: 1683,
           backgroundColor: "white",
           margin: "auto",
           display: "flex",
@@ -22,8 +28,7 @@ const Layouts = ({ children }: LayoutsProps) => {
           position: "relative",
         }}
       >
-        <Header />
-
+        <Header logo={logo} />
         {children}
         <Tosign />
         <Footer />

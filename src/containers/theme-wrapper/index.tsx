@@ -62,13 +62,9 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
       getImageBase64(`${process.env.basePath}/images/pdf.svg`),
     ]);
-    // console.log(imageLoader);
     const size = [1190.55, 1683.78];
-    // const imageLogo = imageLoader[0];
-    // const imageBanner = imageLoader[1];
-    // {router.pathname.includes(`e-form/1`)}
     const template = ReactDOMServer.renderToString(
-      <Layout>
+      <Layout logo={imageLoader[0]}>
         <Form1
           infoData={infoData}
           fatca={fatca}
@@ -80,7 +76,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
         />
       </Layout>
     );
-    console.log(template);
+
     let font = (await base64convert(
       `${process.env.basePath}/font/FWDCircularVietTT-Book.ttf`
     )) as string;
@@ -122,7 +118,6 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     callback();
   }, []);
   return (
-    //themeprovider: styled-component
     <ThemeProvider theme={LightTheme}>
       <Head>
         <link rel="icon" href={`${process.env.basePath}/favicon.ico`} />

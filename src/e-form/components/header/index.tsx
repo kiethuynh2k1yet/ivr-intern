@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import {
-  HeaderWrapper,
-  HeaderContainer,
-  ContainerTitle,
-} from "./styled";
-import { getImageBase64 } from "services";
+import React from "react";
+import { HeaderWrapper, HeaderContainer, ContainerTitle } from "./styled";
 
-const Header = () => {
-
-
+const Header = ({ logo }) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
-        {/* <Image
-          src={`${process.env.basePath}/images/logo.svg`}
+        <img
+          src={logo ?? `${process.env.basePath}/images/logo.svg`}
           alt="logo"
           width={132}
           height={90}
-        /> */}
+        />
         <ContainerTitle>
           <h5>Sống đầy từ hôm nay</h5>
           <h6>Công ty TNHH Bảo hiểm Nhân thọ FWD Việt Nam</h6>
