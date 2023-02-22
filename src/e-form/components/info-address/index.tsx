@@ -1,17 +1,6 @@
 import { display } from "html2canvas/dist/types/css/property-descriptors/display";
 import React from "react";
-import {
-  MemberInfo,
-  TitleInfo,
-  TitleMember,
-  TitleArrge,
-  ColorArrge,
-  InfoDetal,
-  TitleDetal,
-  Detal,
-  TitleInfoDetal,
-  TitleData,
-} from "./styled";
+import { MemberInfo, TitleInfo, ColorArrge, InfoDetal, Detal } from "./styled";
 
 interface InfoProps {
   data: {
@@ -24,167 +13,34 @@ interface InfoProps {
 
 const InfoAddress = ({ data }: InfoProps) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        margin: "25px 50px",
-        justifyContent: "space-between",
-      }}
-    >
-      <div style={{ width: "585px", height: "95%" }}>
-        <h3
-          style={{
-            color: "#e87722",
-            marginBottom: "16px",
-            fontStyle: "normal",
-            fontWeight: 700,
-            fontSize: "25px",
-            lineHeight: "125%",
-          }}
-        >
-          Kính gửi Quý khách {data.fullname},
-        </h3>
-        <label
-          style={{
-            fontStyle: "normal",
-            fontWeight: 500,
-            fontSize: "16px",
-            lineHeight: "150%",
-          }}
-        >
+    <MemberInfo>
+      <TitleInfo>
+        <h3>Kính gửi Quý khách {data.fullname},</h3>
+        <label>
           FWD đã nhận được Phiếu yêu cầu điều chỉnh địa chỉ liên lạc của Quý
-          khách cho hợp đồng bảo hiểm số{" "}
-          <label
-            style={{
-              color: "#e87722",
-              fontStyle: "normal",
-              fontWeight: 500,
-              fontSize: "16px",
-              lineHeight: "150%",
-            }}
-          >
-            {data.code}
-          </label>
+          khách cho hợp đồng bảo hiểm số <ColorArrge>{data.code}</ColorArrge>
         </label>
-      </div>
-      <div
-        style={{ background: "#e87722", borderRadius: "16px", padding: "20px" }}
-      >
-        <h5 style={{ color: "#fff" }}>Yêu cầu điều chỉnh địa chỉ liên lạc:</h5>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <h5
-            style={{
-              width: "160px",
-              fontStyle: "normal",
-              fontWeight: 500,
-              fontSize: "12px",
-              lineHeight: "125%",
-              color: "#fff",
-              marginTop: "16px",
-            }}
-          >
-            Ngày yêu cầu
-          </h5>
-          <h5
-            style={{
-              width: "160px",
-              fontStyle: "normal",
-              fontWeight: 500,
-              fontSize: "12px",
-              lineHeight: "125%",
-              color: "#fff",
-              marginTop: "16px",
-            }}
-          >
-            Số hợp đồng
-          </h5>
-        </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <h5
-            style={{
-              width: "160px",
-              fontStyle: "normal",
-              fontWeight: 700,
-              fontSize: "14px",
-              lineHeight: "125%",
-              color: "#fff",
-              marginTop: "4px",
-            }}
-          >
-            {data.date}
-          </h5>
-          <h5
-            style={{
-              width: "160px",
-              fontStyle: "normal",
-              fontWeight: 700,
-              fontSize: "14px",
-              lineHeight: "125%",
-              color: "#fff",
-              marginTop: "4px",
-            }}
-          >
-            {data.code}
-          </h5>
-        </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <h5
-            style={{
-              width: "160px",
-              fontStyle: "normal",
-              fontWeight: 500,
-              fontSize: "12px",
-              lineHeight: "125%",
-              color: "#fff",
-              marginTop: "16px",
-            }}
-          >
-            Bên mua bảo hiểm
-          </h5>
-          <h5
-            style={{
-              width: "160px",
-              fontStyle: "normal",
-              fontWeight: 500,
-              fontSize: "12px",
-              lineHeight: "125%",
-              color: "#fff",
-              marginTop: "16px",
-            }}
-          >
-            Người được bảo hiểm chính
-          </h5>
-        </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <h5
-            style={{
-              width: "160px",
-              fontStyle: "normal",
-              fontWeight: 700,
-              fontSize: "14px",
-              lineHeight: "125%",
-              color: "#fff",
-              marginTop: "4px",
-            }}
-          >
-            {data.fullname}
-          </h5>
-          <h5
-            style={{
-              width: "160px",
-              fontStyle: "normal",
-              fontWeight: 700,
-              fontSize: "14px",
-              lineHeight: "125%",
-              color: "#fff",
-              marginTop: "4px",
-            }}
-          >
-            {data.fullname}
-          </h5>
-        </div>
-      </div>
-    </div>
+      </TitleInfo>
+      <InfoDetal>
+        <h5>Yêu cầu điều chỉnh địa chỉ liên lạc:</h5>
+        <Detal>
+          <h5>Ngày yêu cầu</h5>
+          <h5>Số hợp đồng</h5>
+        </Detal>
+        <Detal>
+          <h6>{data.date}</h6>
+          <h6>{data.code}</h6>
+        </Detal>
+        <Detal>
+          <h5>Bên mua bảo hiểm</h5>
+          <h5>Người được bảo hiểm chính</h5>
+        </Detal>
+        <Detal>
+          <h6>{data.fullname}</h6>
+          <h6>{data.fullname}</h6>
+        </Detal>
+      </InfoDetal>
+    </MemberInfo>
   );
 };
 

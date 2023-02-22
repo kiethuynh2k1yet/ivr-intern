@@ -13,21 +13,22 @@ export const HeaderContainer = styled.div`
 `;
 
 export const ContainerTitle = styled.div`
-  margin-left: 40px;
-`;
+  padding-left: 40px;
 
-export const HeaderTitle = styled.h5`
-  color: #e87722;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 125%;
-  margin-bottom: 4px;
-`;
+  h5 {
+    color: #e87722;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    padding-bottom: 4px;
+  }
 
-export const HeaderCompany = styled.h6`
-  font-style: normal;
-  font-weight: 450;
-  font-size: 16px;
-  line-height: 125%;
-  color: #636566;
-`;
+  h6 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #636566;
+    title-spacing: 1px;
+  }
+`;    
