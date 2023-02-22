@@ -27,7 +27,7 @@ interface ThemeWrapperProps {
 const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const router = useRouter();
   const dispath = useDispatch();
-
+  const [loading, setLoading] = useState(false);
   const Layout = useMemo(() => {
     if (router.pathname.includes("/e-form")) return Layouts; // custom layout here
     return Fragment;
