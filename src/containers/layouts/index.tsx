@@ -1,7 +1,7 @@
 import Footer from "e-form/components/footer";
 import Header from "e-form/components/header";
 import Tosign from "e-form/components/tosign";
-import { InfoCardData } from "infoData";
+import { InfoCardData } from "pages/utils/infoData";
 import React from "react";
 
 interface LayoutsProps {
@@ -14,7 +14,6 @@ const Layouts = ({ children, logo }: LayoutsProps) => {
     <div
       style={{
         backgroundColor: "gray",
-        
       }}
     >
       <div

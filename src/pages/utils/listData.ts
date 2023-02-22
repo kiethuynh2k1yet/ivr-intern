@@ -27,14 +27,14 @@ export const confirmList: ListData[] = [
 
 export const considerTime: ListData[] = [
   {
-    title: `Những thay đổi trong thời gian cân nhắc`,
+    title: "Những thay đổi trong thời gian cân nhắc",
     list: [
       "Quý khách vui lòng liên hệ Tư vấn tài chính hỗ trợ lập Bảng minh họa quyền lợi bảo hiểm đối với các yêu cầu thêm/hủy sản phẩm bổ trợ, tăng/giảm số tiền bảo hiểm",
       "Nếu có thay đổi về phí bảo hiểm, chúng tôi sẽ thông báo chi tiết đến Quý khách trong vòng 03 ngày làm việc",
     ],
   },
   {
-    title: `Những thay đổi sau thời gian cân nhắc`,
+    title: "Những thay đổi sau thời gian cân nhắc",
     list: [
       "Sau khi nhận được yêu cầu của Quý khách, chúng tôi sẽ thẩm định và thông báo kết quả đến Quý khách trong vòng 03 ngày làm việc",
     ],
