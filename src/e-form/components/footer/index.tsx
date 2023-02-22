@@ -3,9 +3,6 @@ import {
   FooterWapper,
   FooterTable,
   FooterContainer,
-  Tbody,
-  Tr,
-  Td,
 } from "./styled";
 
 interface FooterProps {}
@@ -15,21 +12,21 @@ const Footer = ({}: FooterProps) => {
     <FooterContainer>
       <FooterWapper>
         <FooterTable>
-          <Tbody>
-            <Tr>
-              <Td>
+          <tbody>
+            <tr>
+              <td>
                 Tầng 11, Toà nhà Diamond Plaza, 34 Lê Duẩn, Phường Bến Nghé,
                 Quận 1, TP.HCM, Việt Nam
-              </Td>
-              <Td>Telephone</Td>
-              <Td>(28) 6256 3688</Td>
-            </Tr>
-            <Tr>
-              <Td>fwd.com.vn</Td>
-              <Td>Hotline</Td>
-              <Td>1800 96 96 90</Td>
-            </Tr>
-          </Tbody>
+              </td>
+              <td>Telephone</td>
+              <td>(28) 6256 3688</td>
+            </tr>
+            <tr>
+              <td>fwd.com.vn</td>
+              <td>Hotline</td>
+              <td>1800 96 96 90</td>
+            </tr>
+          </tbody>
         </FooterTable>
       </FooterWapper>
     </FooterContainer>
