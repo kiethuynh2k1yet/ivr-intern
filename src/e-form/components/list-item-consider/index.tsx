@@ -14,7 +14,7 @@ export default function ListItemConsider({ list }: ListDataProps) {
           <div key={index} style={{ marginTop: "10px" }}>
             <ListTitle>{i.title}</ListTitle>
             <StyledUL>
-              {i.list.map((c, i) => (
+              {i.list?.map((c, i) => (
                 <li key={i}>{c}</li>
               ))}
             </StyledUL>
