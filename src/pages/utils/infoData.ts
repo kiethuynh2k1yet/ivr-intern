@@ -154,7 +154,7 @@ export const contactData: InfoCardData[][] = [
   [
     {
       label: "Email",
-      value: "bichdiep@gmail.com",
+      value: `bichdiep@gmail.com`,
     },
   ],
 ];
@@ -186,6 +186,33 @@ export const addressData: InfoCardData[][] = [
     {
       label: "Số nhà",
       value: "222",
+    },
+  ],
+];
+
+export const periodicFeeData: InfoCardData[][] = [
+  [
+    {
+      label: "Định kỳ đóng phí sau điều chỉnh",
+      value: "Nửa năm",
+    },
+    {
+      label: "Phí bảo hiểm định kỳ sau khi điều chỉnh",
+      value: "5.212.212 đ",
+    },
+  ],
+  [
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
     },
   ],
 ];

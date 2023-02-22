@@ -1,10 +1,10 @@
 import InfoCard from "e-form/components/info-card/index";
 import InfoPersonal from "e-form/components/info-personal/index";
 import InfoPDF from "../info-pdf";
-import { updateList, confirmList } from "listData";
+import { updateList, confirmList } from "pages/utils/listData";
 import ListItem from "../list-item";
 import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
-import { InfoCardData } from "infoData";
+import { InfoCardData } from "pages/utils/infoData";
 interface InfoCard {
   infoData: InfoCardData[][];
   fatca: InfoCardData[][];

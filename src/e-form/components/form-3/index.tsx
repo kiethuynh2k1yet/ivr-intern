@@ -2,13 +2,13 @@ import React from "react";
 import { Form3Wrapper, Form3Title, BodyWrapper, Form3User } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
 import InfoAddress from "../info-address";
-import { confirmList } from "listData";
-import { contractData } from "contractData";
+import { confirmList } from "pages/utils/listData";
+import { contractData } from "pages/utils/contractData";
 import ListItem from "../list-item";
 import NoteForm from "../note";
 import Contract from "../contract";
 import InfoPDF from "../info-pdf";
-import { InfoCardData } from "infoData";
+import { InfoCardData } from "pages/utils/infoData";
 
 interface DataProps {
   addressData: InfoCardData[][];

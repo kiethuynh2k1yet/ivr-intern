@@ -8,7 +8,7 @@ import { ThemeProvider } from "styled-components";
 import { LightTheme } from "styles/theme";
 import ReactDOMServer from "react-dom/server";
 import jsPDF from "jspdf";
-import { base64convert, getImageBase64 } from "services";
+import { base64convert, getImageBase64 } from "pages/utils/services";
 import Form1 from "e-form/components/form-1";
 import {
   infoData,
@@ -17,7 +17,7 @@ import {
   policyData,
   jobData,
   contactData,
-} from "infoData";
+} from "pages/utils/infoData";
 
 interface ThemeWrapperProps {
   children: React.ReactNode;
@@ -102,7 +102,6 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     pdf.addFont("FWDCircularVietTT-Book.ttf", "FWD", "normal");
     pdf.addFont("FWDCircularVietTT-Bold.ttf", "FWD", "bold");
     pdf.setFont("FWD");
-
     pdf.html(template, {
       callback: function (doc) {
         let numberOfPages = doc.getNumberOfPages();
@@ -111,7 +110,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
         if (numberOfPages > 2) {
           doc.deletePage(numberOfPages);
         }
-        doc.save("FWD-gia-tri-quy-lien-ket-don-vi");
+        doc.save("FWD-e-form");
         setLoading(false);
       },
       x: 0,

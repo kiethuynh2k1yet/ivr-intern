@@ -3,10 +3,10 @@ import { Form2Wrapper, Form2Title, BodyWrapper, Form2User } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
 import InfoAddress from "../info-address";
 import ListItem from "../list-item";
-import { confirmList } from "listData";
-import { contractData } from "contractData";
+import { confirmList } from "pages/utils/listData";
+import { contractData } from "pages/utils/contractData";
 import Contract from "../contract";
-import { InfoCardData } from "infoData";
+import { InfoCardData } from "pages/utils/infoData";
 
 interface DataProps {
   addressData: InfoCardData[][];
