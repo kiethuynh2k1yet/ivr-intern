@@ -1,6 +1,6 @@
 import React from "react";
 import { ListContainer, ListTitle, StyledUL } from "./styled";
-import { ListData } from "listData";
+import { ListData } from "pages/utils/listData";
 interface ListDataProps {
   list: ListData[];
 }

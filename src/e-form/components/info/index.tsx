@@ -1,17 +1,16 @@
 import React from "react";
 import { Container, Wapper, TitleInfo } from "./styled";
-import { InfoListDataUser } from "pages/utils/infoListData";
+import { infoData } from "pages/utils/infoListData";
 import InfoCardContact from "../info-card-contact";
 
 interface InfoProps {
-  data: InfoListDataUser[][];
   dataUser: {
     fullname: string;
     code: string;
   };
 }
 
-const Info = ({ data, dataUser }: InfoProps) => {
+const Info = ({ dataUser }: InfoProps) => {
   return (
     <Container>
       <Wapper>
@@ -23,7 +22,7 @@ const Info = ({ data, dataUser }: InfoProps) => {
             <span style={{ color: "#E87722" }}>{dataUser.code}</span>
           </label>
         </TitleInfo>
-        <InfoCardContact />
+        <InfoCardContact title="Yêu cầu điều chỉnh thông tin cá nhân" data={infoData} />
       </Wapper>
     </Container>
   );
