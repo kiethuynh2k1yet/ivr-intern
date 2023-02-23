@@ -3,6 +3,7 @@ import { TableContainer, StyledTable, Title } from "./styled";
 
 interface TableDataProps {
   title: string;
+  heading: string[];
 }
 export default function TableGray({ title }: TableDataProps) {
   return (

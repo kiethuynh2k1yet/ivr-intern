@@ -3,25 +3,33 @@ import { TableContainer, StyledTable, Title } from "./styled";
 
 interface TableDataProps {
   title: string;
+  heading: string[];
+  content: string[][];
 }
-export default function TableOrange({ title }: TableDataProps) {
+export default function TableOrange({
+  title,
+  heading,
+  content,
+}: TableDataProps) {
   return (
     <TableContainer>
       <Title>{title}</Title>
       <StyledTable>
         <thead>
           <tr>
-            <th>STT</th>
-            <th>Sản phẩm bảo hiểm</th>
-            <th>Người được bảo hiểm</th>
+            {heading.map((head, headID) => (
+              <th key={headID}>{head}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>01</td>
-            <td>FWD Đón đầu thay đổi 3.0</td>
-            <td>Trần Minh Đan</td>
-          </tr>
+          {content.map((row, id) => (
+            <tr key={id}>
+              {row.map((row, index) => (
+                <td key={index} dangerouslySetInnerHTML={{ __html: row }} />
+              ))}
+            </tr>
+          ))}
         </tbody>
       </StyledTable>
     </TableContainer>

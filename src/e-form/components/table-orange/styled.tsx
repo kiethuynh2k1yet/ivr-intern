@@ -88,7 +88,7 @@ export const StyledTable = styled.table`
 
   tr:nth-child(even) {
     background-color: #f8f9f9;
-    color: #b3b6b8;
+    color: #183028;
     font-weight: 500;
     font-size: 14px;
   }
