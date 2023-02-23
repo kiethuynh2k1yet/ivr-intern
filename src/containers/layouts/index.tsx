@@ -1,12 +1,12 @@
 import Footer from "e-form/components/footer";
 import Header from "e-form/components/header";
 import Tosign from "e-form/components/tosign";
-import { InfoCardData } from "infoData";
 import React from "react";
 
 interface LayoutsProps {
   children: React.ReactNode;
   logo?: string;
+  
 }
 
 const Layouts = ({ children, logo }: LayoutsProps) => {

@@ -10,6 +10,11 @@ export const HeaderContainer = styled.div`
   margin: 0 50px;
   padding: 42px 0px 21px 0px;
   border-bottom: 1px solid #dbdfe1;
+
+  img {
+    width: 84px;
+    height: 42px;
+  }
 `;
 
 export const ContainerTitle = styled.div`

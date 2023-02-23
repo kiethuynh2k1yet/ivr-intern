@@ -39,17 +39,10 @@ export const Cell = styled.div<{ col: number }>`
   :first-child {
     margin-right: 8px;
   }
-  label {
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 125%;
-  }
+  
 
-  h6 {
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 125%;
-
-    color: #e87722;
+  img {
+    width: 60px;
+    height: 61px;
   }
 `;
