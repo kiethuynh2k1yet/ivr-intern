@@ -4,19 +4,25 @@ import InfoCard from "e-form/components/info-card/index";
 import { periodicFeeData } from "pages/utils/infoData";
 import { considerTime } from "pages/utils/listData";
 import { confirmList } from "pages/utils/listData";
-
-import ListItemConsider from "./../list-item-consider/index";
-import ListItem from "./../list-item/index";
+import ListItem from "../list-item";
+import Info from "e-form/components/info";
 export default function Form4() {
   return (
-    <Form4Wrapper>
-      <BodyWrapper>
-        <Form4User>
-          <InfoCard title="Định kỳ đóng phí" data={periodicFeeData} />
-        </Form4User>
-      </BodyWrapper>
-      <ListItemConsider list={considerTime} />
-      <ListItem list={confirmList} />
-    </Form4Wrapper>
+    <>
+      <Info
+        dataUser={{
+          fullname: "Bùi Bích Diệp",
+          code: "2345688",
+        }}
+      />
+      <Form4Wrapper>
+        <BodyWrapper>
+          <Form4User>
+            <InfoCard title="Định kỳ đóng phí" data={periodicFeeData} />
+          </Form4User>
+        </BodyWrapper>
+        <ListItem list={confirmList} />
+      </Form4Wrapper>
+    </>
   );
 }

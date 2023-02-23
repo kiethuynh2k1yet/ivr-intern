@@ -8,8 +8,6 @@ const Header = ({ logo }) => {
         <img
           src={logo ?? `${process.env.basePath}/images/logo.svg`}
           alt="logo"
-          width={132}
-          height={90}
         />
         <ContainerTitle>
           <h5>Sống đầy từ hôm nay</h5>
