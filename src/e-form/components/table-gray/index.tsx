@@ -12,19 +12,15 @@ export default function TableGray({ title }: TableDataProps) {
         <thead>
           <tr>
             <th>STT</th>
-            <th>STT</th>
-            <th>STT</th>
+            <th>Sản phẩm bảo hiểm</th>
+            <th>Người mua bảo hiểm</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>
-              <div>01</div>
-            </td>
-            <td>
-              <div>01</div>
-            </td>
             <td>01</td>
+            <td>FWD Đón đầu thay đổi 3.0</td>
+            <td>Trần Minh Đan</td>
           </tr>
           <tr>
             <td>01</td>

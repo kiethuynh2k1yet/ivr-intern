@@ -8,13 +8,45 @@ export const StyledTable = styled.table`
   width: 100%;
   border-spacing: 0;
   border-collapse: separate;
+  table-layout: auto;
 
   th,
   td {
     padding: 16px;
+    max-width: 100%;
+    white-space: nowrap;
+    text-align: left;
+    position: relative;
   }
 
-  tr td {
+  th:not(:first-child)::after {
+    content: "";
+    background-color: #ffffff;
+    position: absolute;
+    right: 100%;
+    top: 18px;
+    bottom: 18px;
+    width: 2px;
+  }
+
+  td:not(:first-child)::after {
+    content: "";
+    background-color: #edeff0;
+    position: absolute;
+    right: 100%;
+    top: 18px;
+    bottom: 18px;
+    width: 2px;
+  }
+
+  tr th:first-child {
+    width: 5%;
+  }
+  tr th:last-child {
+    width: 35%;
+  }
+
+  tr:first-child td {
     border-top: 1px solid #edeff0;
   }
 
@@ -49,15 +81,15 @@ export const StyledTable = styled.table`
   }
 
   tr {
-    color: #b3b6b8;
-    font-weight: 450;
+    color: #183028;
+    font-weight: 500;
     font-size: 14px;
   }
 
   tr:nth-child(even) {
     background-color: #f8f9f9;
     color: #b3b6b8;
-    font-weight: 450;
+    font-weight: 500;
     font-size: 14px;
   }
 `;
