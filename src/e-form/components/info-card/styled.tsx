@@ -32,7 +32,7 @@ export const Row = styled.div`
 
 export const Cell = styled.div<{ col: number }>`
   width: ${({ col }) => `calc(100% / ${col})`};
-  word-spacing:-0.5px;
+  word-spacing: -0.5px;
   label {
     font-weight: 500;
     font-size: 12px;
