@@ -32,7 +32,9 @@ export default function InfoCard({ title, data }: InfoCardProps) {
                 ) : (
                   <>
                     <label>{child.label}</label>
-                    <StyledHeading>{child.value}</StyledHeading>
+                    <StyledHeading
+                      dangerouslySetInnerHTML={{ __html: child.value }}
+                    />
                   </>
                 )}
               </Cell>
