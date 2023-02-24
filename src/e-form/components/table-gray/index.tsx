@@ -4,40 +4,28 @@ import { TableContainer, StyledTable, Title } from "./styled";
 interface TableDataProps {
   title: string;
   heading: string[];
+  content: string[][];
 }
-export default function TableGray({ title }: TableDataProps) {
+export default function TableGray({ title, heading, content }: TableDataProps) {
   return (
     <TableContainer>
       <Title>{title}</Title>
       <StyledTable>
         <thead>
           <tr>
-            <th>STT</th>
-            <th>Sản phẩm bảo hiểm</th>
-            <th>Người mua bảo hiểm</th>
+            {heading.map((head, headID) => (
+              <th key={headID}>{head}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>01</td>
-            <td>FWD Đón đầu thay đổi 3.0</td>
-            <td>Trần Minh Đan</td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>01</td>
-            <td>01</td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>01</td>
-            <td>01</td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>01</td>
-            <td>01</td>
-          </tr>
+          {content.map((row, id) => (
+            <tr key={id}>
+              {row.map((row, index) => (
+                <td key={index} dangerouslySetInnerHTML={{ __html: row }} />
+              ))}
+            </tr>
+          ))}
         </tbody>
       </StyledTable>
     </TableContainer>

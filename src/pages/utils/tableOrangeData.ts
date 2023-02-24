@@ -46,3 +46,12 @@ export const contentInsurance: string[][] = [
   ],
 ];
 
+export const shortHeading: string[] = [
+  "STT",
+  "Sản phẩm bảo hiểm",
+  "Người được bảo hiểm",
+];
+
+export const shortContent: string[][] = [
+  ["01", "FWD Đón đầu thay đổi 3.0", "Trần Minh Đan"],
+];
