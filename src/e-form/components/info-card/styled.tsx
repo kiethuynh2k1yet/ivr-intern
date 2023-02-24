@@ -37,13 +37,11 @@ export const Cell = styled.div<{ col: number }>`
     font-size: 12px;
     color: #636566;
   }
+`;
 
-  h6 {
-    font-weight: 700;
-    font-size: 14px;
-    padding-top: 6px;
-    color: #E87722;
-    font-style: normal;
-    margin:0;
-  }
+export const StyledHeading = styled.h6`
+  font-weight: 700;
+  font-size: 14px;
+  padding-top: 6px;
+  color: #e87722;
 `;

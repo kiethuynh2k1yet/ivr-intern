@@ -4,10 +4,12 @@ import { considerTime } from "pages/utils/listData";
 import { confirmList } from "pages/utils/listData";
 import { headingInsurance } from "pages/utils/tableData";
 import { contentInsurance } from "pages/utils/tableData";
+import { healthQuestion } from "pages/utils/healthData";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import TableOrange from "../table-orange";
 import TableGray from "../table-gray";
+import HealthCard from "../health-card";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
 import {infoProductHelp} from "pages/utils/infoListData"
@@ -46,6 +48,14 @@ export default function Form5() {
             />
           </Form5User>
         </BodyWrapper>
+      <BodyWrapper style={{ marginTop: "20px" }}>
+        <Form5User>
+          <HealthCard
+            title="Câu hỏi thông tin sức khỏe"
+            data={healthQuestion}
+          />
+        </Form5User>
+      </BodyWrapper>
         <ListItemConsider list={considerTime} />
         <ListItem list={confirmList} />
       </Form5Wrapper>
