@@ -6,7 +6,6 @@ import React from "react";
 interface LayoutsProps {
   children: React.ReactNode;
   logo?: string;
-  
 }
 
 const Layouts = ({ children, logo }: LayoutsProps) => {
@@ -14,7 +13,6 @@ const Layouts = ({ children, logo }: LayoutsProps) => {
     <div
       style={{
         backgroundColor: "gray",
-        
       }}
     >
       <div

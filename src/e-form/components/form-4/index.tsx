@@ -2,6 +2,7 @@ import React from "react";
 import { Form4Wrapper, BodyWrapper, Form4User, InfoFrom4 } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
 import { periodicFeeData } from "pages/utils/infoData";
+import { considerTime } from "pages/utils/listData";
 import { confirmList } from "pages/utils/listData";
 import ListItem from "../list-item";
 import Info from "e-form/components/info";

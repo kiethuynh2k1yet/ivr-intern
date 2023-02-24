@@ -17,20 +17,20 @@ const style = css`
     font-weight: 400;
     font-style: normal;
 
-    @media (max-width: 768px) {
-      font-size: 16px;
-      line-height: 22px;
-    }
+    // @media (max-width: 768px) {
+    //   font-size: 16px;
+    //   line-height: 22px;
+    // }
   }
 
   body {
     overflow-x: hidden;
   }
 
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
-  }
+  // code {
+  //   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  //     monospace;
+  // }
 
   *,
   :after,
@@ -38,17 +38,17 @@ const style = css`
     box-sizing: border-box;
   }
 
-  .tooltip-container {
-    padding: 0;
-    border-radius: 8px;
-    border: none;
-    box-shadow: (0px 16px 40px rgba(24, 48, 40, 0.1));
-  }
+  // .tooltip-container {
+  //   padding: 0;
+  //   border-radius: 8px;
+  //   border: none;
+  //   box-shadow: (0px 16px 40px rgba(24, 48, 40, 0.1));
+  // }
 
-  .tooltip-arrow[data-placement*="right"]::before {
-    border-color: transparent rgba(24, 48, 40, 0.1) transparent transparent;
-    border-width: 0.5rem 0.4rem 0.5rem 0;
-  }
+  // .tooltip-arrow[data-placement*="right"]::before {
+  //   border-color: transparent rgba(24, 48, 40, 0.1) transparent transparent;
+  //   border-width: 0.5rem 0.4rem 0.5rem 0;
+  // }
 
   h1,
   h2,
@@ -110,9 +110,9 @@ const style = css`
   //   line-height: 125%;
   // }
 
-  .tiny {
-    font-size: 10px;
-  }
+  // .tiny {
+  //   font-size: 10px;
+  // }
 
   input,
   textarea,
@@ -181,11 +181,11 @@ const style = css`
     } */
   }
 
-  .container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  // .container {
+  //   max-width: 1200px;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 
   // p {
   //   font-style: normal;
@@ -199,12 +199,12 @@ const style = css`
   //   }
   // }
 
-  hr {
-    border-style: solid;
-    margin: 20px 0px;
-    border-bottom-width: 0px;
-    color: ${({ theme }) => theme.color.page.border};
-  }
+  // hr {
+  //   border-style: solid;
+  //   margin: 20px 0px;
+  //   border-bottom-width: 0px;
+  //   color: ${({ theme }) => theme.color.page.border};
+  // }
 
   // img {
   //   max-width: 100%;
