@@ -23,7 +23,6 @@ const Layouts = ({ children, logo }: LayoutsProps) => {
           margin: "auto",
           display: "flex",
           flexDirection: "column",
-          position: "relative",
         }}
       >
         <Header logo={logo} />

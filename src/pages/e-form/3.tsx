@@ -34,7 +34,6 @@ const EForm3 = () => {
 
     // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
-    pdf.addImage(imageLoader[0], "SVG", 0, 0, 500, 500);
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",
       font.slice(font.indexOf(",") + 1)

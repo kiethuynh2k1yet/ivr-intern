@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 // import { rootAction } from "redux/reducers/root-reducer";
 import { ThemeProvider } from "styled-components";
 import { LightTheme } from "styles/theme";
+import ReactDOMServer from "react-dom/server";
 
 interface ThemeWrapperProps {
   children: React.ReactNode;

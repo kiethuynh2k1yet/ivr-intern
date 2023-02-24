@@ -38,11 +38,11 @@ export const Cell = styled.div<{ col: number }>`
     color: #636566;
   }
 
-  p {
+  h6 {
     font-weight: 700;
     font-size: 14px;
     padding-top: 6px;
-    color: #e87722;
+    color: #E87722;
     font-style: normal;
     margin:0;
   }
