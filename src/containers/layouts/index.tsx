@@ -30,7 +30,7 @@ const Layouts = ({ children, logo }: LayoutsProps) => {
         <Header logo={logo} />
         {children}
         <Tosign />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

@@ -5,11 +5,13 @@ import { considerTime } from "pages/utils/listData";
 import { confirmList } from "pages/utils/listData";
 import { headingInsurance } from "pages/utils/tableData";
 import { contentInsurance } from "pages/utils/tableData";
+import { healthQuestion } from "pages/utils/healthData";
 
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import TableOrange from "../table-orange";
 import TableGray from "../table-gray";
+import HealthCard from "../health-card";
 
 export default function Form5() {
   return (
@@ -29,6 +31,14 @@ export default function Form5() {
           <TableGray
             title="Sản phẩm không điều chỉnh"
             heading={headingInsurance}
+          />
+        </Form5User>
+      </BodyWrapper>
+      <BodyWrapper style={{ marginTop: "20px" }}>
+        <Form5User>
+          <HealthCard
+            title="Câu hỏi thông tin sức khỏe"
+            data={healthQuestion}
           />
         </Form5User>
       </BodyWrapper>

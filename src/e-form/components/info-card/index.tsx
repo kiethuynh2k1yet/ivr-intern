@@ -1,5 +1,12 @@
-import { InfoCardData } from "infoData";
-import { Cell, Content, InfoCardWrawpper, Row, Title } from "./styled";
+import { InfoCardData } from "pages/utils/infoData";
+import {
+  Cell,
+  Content,
+  InfoCardWrawpper,
+  Row,
+  StyledHeading,
+  Title,
+} from "./styled";
 
 interface InfoCardProps {
   title: string;
@@ -18,12 +25,14 @@ export default function InfoCard({ title, data }: InfoCardProps) {
                 {child.label === "Quốc gia" && child.value === "Việt Nam" ? (
                   <>
                     <label style={{ color: "#B3B6B8" }}>{child.label}</label>
-                    <h6 style={{ color: "#B3B6B8" }}>{child.value}</h6>
+                    <StyledHeading style={{ color: "#B3B6B8" }}>
+                      {child.value}
+                    </StyledHeading>
                   </>
                 ) : (
                   <>
                     <label>{child.label}</label>
-                    <h6>{child.value}</h6>
+                    <StyledHeading>{child.value}</StyledHeading>
                   </>
                 )}
               </Cell>

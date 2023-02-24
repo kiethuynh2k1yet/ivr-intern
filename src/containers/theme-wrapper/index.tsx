@@ -10,6 +10,8 @@ import ReactDOMServer from "react-dom/server";
 import jsPDF from "jspdf";
 import { base64convert, getImageBase64 } from "pages/utils/services";
 import Form1 from "e-form/components/form-1";
+import Form5 from "e-form/components/form-5";
+
 import {
   infoData,
   fatca,
@@ -74,6 +76,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
           contactData={contactData}
           image={imageLoader[1]}
         />
+        {/* <Form5 /> */}
       </Layout>
     );
 

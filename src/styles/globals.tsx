@@ -13,7 +13,7 @@ const style = css`
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     font-size: 14px;
-    line-height: 20px;
+    // line-height: 20px;
     font-weight: 400;
     font-style: normal;
 
@@ -200,10 +200,8 @@ const style = css`
   // }
 
   hr {
-    border-style: solid;
-    margin: 20px 0px;
-    border-bottom-width: 0px;
-    color: ${({ theme }) => theme.color.page.border};
+    border: 1px solid #dbdfe1;
+    margin: 16px 0px;
   }
 
   // img {
@@ -212,14 +210,14 @@ const style = css`
   //   display: block;
   // }
 
-  dl,
-  ol,
-  ul {
-    margin-top: 0;
-    margin: 0;
-    margin-bottom: 1rem;
-    color: ${({ theme }) => theme.color.text.body};
-  }
+  // dl,
+  // ol,
+  // ul {
+  //   margin-top: 0;
+  //   margin: 0;
+  //   margin-bottom: 1rem;
+  //   color: ${({ theme }) => theme.color.text.body};
+  // }
 
   .hide-mobile {
     @media ${device.mobile} {

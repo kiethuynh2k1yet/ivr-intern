@@ -45,3 +45,4 @@ export const contentInsurance: string[][] = [
     "30 năm",
   ],
 ];
+
