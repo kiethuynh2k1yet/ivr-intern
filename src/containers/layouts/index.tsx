@@ -18,7 +18,6 @@ const Layouts = ({ children, logo }: LayoutsProps) => {
       <div
         style={{
           width: 1190,
-          height: 1683,
           backgroundColor: "white",
           margin: "auto",
           display: "flex",
@@ -28,7 +27,7 @@ const Layouts = ({ children, logo }: LayoutsProps) => {
         <Header logo={logo} />
         {children}
         <Tosign />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );

@@ -199,12 +199,10 @@ const style = css`
   //   }
   // }
 
-  // hr {
-  //   border-style: solid;
-  //   margin: 20px 0px;
-  //   border-bottom-width: 0px;
-  //   color: ${({ theme }) => theme.color.page.border};
-  // }
+  hr {
+    margin: 16px 0px;
+    border: 1px solid #dbdfe1;
+  }
 
   // img {
   //   max-width: 100%;
