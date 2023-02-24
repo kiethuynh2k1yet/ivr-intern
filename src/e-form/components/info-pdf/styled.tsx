@@ -16,6 +16,7 @@ export const Title = styled.div`
 
 export const Content = styled.div`
   padding-top: 26px;
+  padding-bottom: 40px;
   padding-left: 16px;
 
   display: flex;

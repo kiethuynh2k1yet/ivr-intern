@@ -21,13 +21,6 @@ export default function InfoPDF({ title, data }: InfoCardProps) {
               ))}
             </Row>
           ))}
-        {/* {data.map((item) =>
-          item.map((item1) => ({
-            ...item1,
-            label: image ?? item1.label,
-          }))
-        )}
-        ; */}
       </Content>
     </InfoCardWrawpper>
   );

@@ -1,7 +1,11 @@
 import React from "react";
 import { HeaderWrapper, HeaderContainer, ContainerTitle } from "./styled";
 
-const Header = ({ logo }) => {
+interface headerProps {
+  logo?: string;
+}
+
+const Header = ({ logo }: headerProps) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
