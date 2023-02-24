@@ -7,7 +7,7 @@ import { confirmList } from "pages/utils/listData";
 import ListItem from "../list-item";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-import {infoData} from "pages/utils/infoListData"
+import {infoPayment} from "pages/utils/infoListData"
 
 export default function Form4() {
   return (
@@ -21,7 +21,7 @@ export default function Form4() {
         />
         <InfoCardContact
           title="Yêu cầu điều chỉnh thông tin cá nhân"
-          data={infoData}
+          data={infoPayment}
         />
       </InfoFrom4>
       <Form4Wrapper>

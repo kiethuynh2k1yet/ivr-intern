@@ -10,7 +10,7 @@ import TableOrange from "../table-orange";
 import TableGray from "../table-gray";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-import {infoPayment} from "pages/utils/infoListData"
+import {infoProductHelp} from "pages/utils/infoListData"
 
 export default function Form5() {
   return (
@@ -24,7 +24,7 @@ export default function Form5() {
         />
         <InfoCardContact
           title="Yêu cầu điều chỉnh thông tin cá nhân"
-          data={infoPayment}
+          data={infoProductHelp}
         />
       </InfoFrom5>
       <Form5Wrapper>
