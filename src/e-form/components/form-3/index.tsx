@@ -1,14 +1,15 @@
 import React from "react";
-import { Form3Wrapper, Form3Title, BodyWrapper, Form3User } from "./styled";
+import { Form3Wrapper, Form3Title, BodyWrapper, Form3User, InfoFrom3 } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
-import InfoAddress from "../info-address";
 import { confirmList } from "pages/utils/listData";
 import { contractData } from "pages/utils/contractData";
 import ListItem from "../list-item";
 import NoteForm from "../note";
 import Contract from "../contract";
-import InfoPDF from "../info-pdf";
 import { InfoCardData } from "pages/utils/infoData";
+import { infoDataUserAddress } from "pages/utils/infoListData";
+import InfoCardContact from "../info-card-contact";
+import Info from "../info";
 
 interface DataProps {
   addressData: InfoCardData[][];
@@ -19,14 +20,18 @@ interface DataProps {
 export default function Form3({ addressData, fatca, policyData }: DataProps) {
   return (
     <>
-      <InfoAddress
-        data={{
-          fullname: "Bùi Bích Diệp",
-          date: "22/01/2023",
-          request: "FWD20230110R0054",
-          code: "2345688",
-        }}
-      />
+      <InfoFrom3>
+        <Info
+          dataUser={{
+            fullname: "Bùi Bích Diệp",
+            code: "2345688",
+          }}
+        />
+        <InfoCardContact
+          title="Yêu cầu điều chỉnh thông tin cá nhân"
+          data={infoDataUserAddress}
+        />
+      </InfoFrom3>
       <Form3Wrapper>
         <Form3Title>Thông tin được yêu cầu điều chỉnh như sau:</Form3Title>
         <BodyWrapper>

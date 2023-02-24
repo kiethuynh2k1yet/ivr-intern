@@ -1,10 +1,13 @@
 import InfoCard from "e-form/components/info-card/index";
-import InfoPersonal from "e-form/components/info-personal/index";
 import InfoPDF from "../info-pdf";
 import { updateList, confirmList } from "pages/utils/listData";
 import ListItem from "../list-item";
-import { BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
+import { InfoFrom1, BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
 import { InfoCardData } from "pages/utils/infoData";
+import InfoCardContact from "../info-card-contact";
+import Info from "../info";
+import {infoDataUser} from "pages/utils/infoListData"
+
 interface InfoCard {
   infoData: InfoCardData[][];
   fatca: InfoCardData[][];
@@ -33,14 +36,18 @@ const Form1 = ({
 
   return (
     <>
-      <InfoPersonal
-        data={{
-          fullname: "Bùi Bích Diệp",
-          date: "22/01/2023",
-          request: "FWD20230110R0054",
-          code: "2345688",
-        }}
-      />
+      <InfoFrom1>
+        <Info
+          dataUser={{
+            fullname: "Bùi Bích Diệp",
+            code: "2345688",
+          }}
+        />
+        <InfoCardContact
+          title="Yêu cầu điều chỉnh thông tin cá nhân"
+          data={infoDataUser}
+        />
+      </InfoFrom1>
       <Form1Wrapper>
         <Form1Title>Thông tin được yêu cầu điều chỉnh như sau:</Form1Title>
         <BodyWrapper>
@@ -57,7 +64,6 @@ const Form1 = ({
             <InfoCard title="Thông tin liên lạc" data={contactData} />
           </Form1User>
         </BodyWrapper>
-
         <ListItem list={updateList} />
         <ListItem list={confirmList} />
       </Form1Wrapper>
