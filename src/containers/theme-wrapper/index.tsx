@@ -10,6 +10,9 @@ import ReactDOMServer from "react-dom/server";
 import jsPDF from "jspdf";
 import { base64convert, getImageBase64 } from "pages/utils/services";
 import Form1 from "e-form/components/form-1";
+import Form6 from "e-form/components/form-6";
+import Form5 from "e-form/components/form-5";
+
 import {
   infoData,
   fatca,
@@ -65,7 +68,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     const size = [1190.55, 1683.78];
     const template = ReactDOMServer.renderToString(
       <Layout logo={imageLoader[0]}>
-        <Form1
+        {/* <Form1
           infoData={infoData}
           fatca={fatca}
           documentData={documentData}
@@ -73,7 +76,9 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
           jobData={jobData}
           contactData={contactData}
           image={imageLoader[1]}
-        />
+        /> */}
+        {/* <Form6 /> */}
+        <Form5 />
       </Layout>
     );
 
@@ -87,7 +92,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     // const imgData =  `${process.env.basePath}/images/logo.png`;
     // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
-    pdf.addImage(imageLoader[0], 'SVG', 0 , 0, 500, 500);
+    // pdf.addImage(imageLoader[0], "SVG", 0, 0, 500, 500);
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",
       font.slice(font.indexOf(",") + 1)
@@ -115,9 +120,9 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
       y: 0,
     });
   }
-  // useEffect(() => {
-  //   callback();
-  // }, []);
+  useEffect(() => {
+    callback();
+  }, []);
   return (
     <ThemeProvider theme={LightTheme}>
       <Head>

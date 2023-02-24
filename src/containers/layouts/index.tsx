@@ -6,7 +6,6 @@ import React from "react";
 interface LayoutsProps {
   children: React.ReactNode;
   logo?: string;
-  
 }
 
 const Layouts = ({ children, logo }: LayoutsProps) => {
