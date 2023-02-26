@@ -1,5 +1,11 @@
 import React from "react";
-import { ListContainer, ListLabel, ListTitle, StyledUL } from "./styled";
+import {
+  ListContainer,
+  ListLabel,
+  ListTitle,
+  StyledUL,
+  StyledP,
+} from "./styled";
 import { ListData } from "pages/utils/listData";
 interface ListDataProps {
   list: ListData[];
@@ -18,6 +24,11 @@ export default function ListItemConsider({ list }: ListDataProps) {
                 <li key={i}>{c}</li>
               ))}
             </StyledUL>
+            {i.confirm ? (
+              <StyledP dangerouslySetInnerHTML={{ __html: i.confirm }} />
+            ) : (
+              ""
+            )}
           </div>
         ))}
       </div>
