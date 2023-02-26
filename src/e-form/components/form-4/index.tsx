@@ -2,12 +2,12 @@ import React from "react";
 import { Form4Wrapper, BodyWrapper, Form4User, InfoFrom4 } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
 import { periodicFeeData } from "pages/utils/infoData";
-import { considerTime } from "pages/utils/listData";
-import { confirmList } from "pages/utils/listData";
+import { confirmList, considerTime } from "pages/utils/listData";
 import ListItem from "../list-item";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-import {infoPayment} from "pages/utils/infoListData"
+import { infoPayment } from "pages/utils/infoListData";
+import ListItemConsider from "../list-item-consider";
 
 export default function Form4() {
   return (
@@ -30,6 +30,7 @@ export default function Form4() {
             <InfoCard title="Định kỳ đóng phí" data={periodicFeeData} />
           </Form4User>
         </BodyWrapper>
+        <ListItemConsider list={considerTime} />
         <ListItem list={confirmList} />
       </Form4Wrapper>
     </>
