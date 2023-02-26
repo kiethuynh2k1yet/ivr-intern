@@ -28,9 +28,6 @@ const EForm5 = () => {
 
     // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
-    pdf.addPage(size)
-    pdf.setPage(2);
-
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",
       font.slice(font.indexOf(",") + 1)
@@ -51,6 +48,18 @@ const EForm5 = () => {
         if (numberOfPages > 2) {
           doc.deletePage(numberOfPages);
         }
+
+        for (var i = 1; i <= numberOfPages; i++) {
+          pdf.setPage(i);
+          pdf.text(
+            "0" + String(i),
+            1050,
+            1563,
+            null,
+            null
+          );
+        }
+
         doc.save("FWD-e-form");
         setLoading(false);
       },
@@ -64,5 +73,4 @@ const EForm5 = () => {
 
   return <Form5 />;
 };
-
 export default EForm5;
