@@ -25,38 +25,26 @@ export const Content = styled.div`
 export const StyledUL = styled.ul`
   list-style: none;
   padding: 0;
+
+  
 `;
 
-export const ChilrenUL = styled.ul`
-  margin: 0;
-  list-style: lower-alpha;
-  padding: 0;
+export const StyledLi = styled.li`
+ font-weight: 500;
+    font-size: 12px;
+    color: #636566;
+    margin-bottom: 6px;
 `;
 
+export const ChildrenLi = styled.li`
+font-weight: 500;
+font-size: 10px;color: #636566;
+`
 export const Title = styled.div`
   font-weight: 700;
   font-size: 16px;
   color: #183028;
   margin-bottom: 10px;
-`;
-
-export const ChilrenLi = styled.li`
-  font-weight: 500;
-  font-size: 10px;
-  color: #636566;
-  margin-bottom: 10px;
-  padding: 0;
-`;
-
-export const StyledLi = styled.li`
-  font-weight: 500;
-  font-size: 12px;
-  color: #636566;
-
-  // &:before {
-  //   content: "";
-  //   margin-left: -9.5px;
-  // }
 `;
 
 export const RowChildren = styled.div`
@@ -67,8 +55,6 @@ export const RowChildren = styled.div`
     margin-top: 16px;
   }
 
-  // padding-left: 23px;
-  // padding-right: 23px;
 `;
 
 export const RowContent = styled.div`

@@ -15,7 +15,6 @@ import TableGray from "../table-gray";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
 import { infoProductHelp } from "pages/utils/infoListData";
-import { headingForm5 } from "pages/utils/tableOrangeData";
 
 interface DataProps {
   headingForm5: string[];
