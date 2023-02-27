@@ -6,7 +6,7 @@ import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import HealthCard from "../health-card";
 
-import { considerTime1,confirmList } from "pages/utils/listData";
+import { considerTime1, confirmList } from "pages/utils/listData";
 import { headingForm6, contentForm6 } from "pages/utils/tableOrangeData";
 import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
 import { healthQuestion } from "pages/utils/healthData";
@@ -44,11 +44,11 @@ export default function Form7() {
         </Form7User>
       </BodyWrapper>
 
-      <BodyWrapper style={{ marginTop: "20px" }}>
+      {/* <BodyWrapper style={{ marginTop: "20px" }}>
         <Form7User>
           <InfoPDF title="Chứng từ đăng tải" data={policyData} />
         </Form7User>
-      </BodyWrapper>
+      </BodyWrapper> */}
 
       <ListItemConsider list={considerTime1} />
       <ListItem list={confirmList} />

@@ -215,7 +215,7 @@ const style = css`
   ul {
     margin-top: 0;
     margin: 0;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     color: ${({ theme }) => theme.color.text.body};
   }
 

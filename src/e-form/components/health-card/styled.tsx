@@ -8,6 +8,12 @@ export const HealthContainer = styled.div`
   }
 `;
 
+export const StyledOL1 = styled.ol`
+  list-style-position: inside;
+  margin: 0;
+  padding: 10px;
+`;
+
 export const StyledOL = styled.ol`
   list-style-position: inside;
   margin: 0;
@@ -15,13 +21,10 @@ export const StyledOL = styled.ol`
 `;
 
 export const Content = styled.div`
+  padding: 16px;
   background: #f8f9f9;
   border-radius: 12px;
-  padding: 16px;
-  ol {
-    list-style-position: inside;
-    margin: 0;
-  }
+
   label {
     margin-top: 10px;
   }
@@ -40,13 +43,21 @@ export const ChilrenLi = styled.li`
   color: #636566;
   margin-bottom: 10px;
   padding: 0;
+  &:before {
+    content: "";
+    margin-left: -6.5px;
+  }
 `;
 
 export const StyledLi = styled.li`
   font-weight: 500;
   font-size: 12px;
   color: #636566;
-  padding: 0;
+
+  &:before {
+    content: "";
+    margin-left: -9.5px;
+  }
 `;
 
 export const RowChildren = styled.div`
