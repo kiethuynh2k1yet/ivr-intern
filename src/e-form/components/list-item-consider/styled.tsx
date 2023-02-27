@@ -31,5 +31,5 @@ export const StyledP = styled.p`
   font-weight: 500;
   font-size: 14px;
   color: #183028;
-  margin-bottom:0px;
+  margin-bottom: 0px;
 `;

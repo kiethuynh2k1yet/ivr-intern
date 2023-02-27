@@ -202,6 +202,10 @@ const style = css`
   hr {
     margin: 16px 0px;
     border: 1px solid #dbdfe1;
+
+    :last-child {
+      display: none;
+    }
   }
 
   // img {

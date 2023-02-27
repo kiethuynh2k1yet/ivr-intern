@@ -5,12 +5,30 @@ import TableGray from "../table-gray";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import InfoPDF from "../info-pdf";
-
 import { considerTime1, confirmList } from "pages/utils/listData";
-import { headingForm7, contentForm7 } from "pages/utils/tableOrangeData";
-import { headingForm5G, contentForm8G } from "pages/utils/tableGrayData";
 import { policyData } from "pages/utils/infoData";
-export default function Form8() {
+
+interface DataProps {
+  headingForm7: string[];
+  contentForm7: string[][];
+  headingForm5G: string[];
+  contentForm8G: string[][];
+  image?: string;
+}
+
+export default function Form8({
+  headingForm7,
+  contentForm7,
+  headingForm5G,
+  contentForm8G,
+  image,
+}: DataProps) {
+  const imgPolicy = policyData.map((item) =>
+    item.map((item1) => ({
+      ...item1,
+      label: image ?? item1.label,
+    }))
+  );
   return (
     <Form8Wrapper>
       <Form8Title>Thông tin được yêu cầu điều chỉnh như sau:</Form8Title>
@@ -35,7 +53,7 @@ export default function Form8() {
 
       <BodyWrapper style={{ marginTop: "20px" }}>
         <Form8User>
-          <InfoPDF title="Chứng từ đăng tải" data={policyData} />
+          <InfoPDF title="Chứng từ đăng tải" data={imgPolicy} />
         </Form8User>
       </BodyWrapper>
 

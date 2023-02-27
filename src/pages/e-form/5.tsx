@@ -4,6 +4,8 @@ import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
 import { base64convert, getImageBase64 } from "pages/utils/services";
 import jsPDF from "jspdf";
+import { headingForm5, contentForm5 } from "pages/utils/tableOrangeData";
+import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
 
 const EForm5 = () => {
   const [loading, setLoading] = useState(false);
@@ -15,7 +17,12 @@ const EForm5 = () => {
     const size = [1190.55, 1683.78];
     const template = ReactDOMServer.renderToString(
       <Layout logo={imageLoader[0]}>
-        <Form5 />
+        <Form5
+          headingForm5={headingForm5}
+          contentForm5={contentForm5}
+          headingForm5G={headingForm5G}
+          contentForm5G={contentForm5G}
+        />
       </Layout>
     );
 
@@ -28,7 +35,7 @@ const EForm5 = () => {
 
     // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
-    pdf.addPage(size)
+    pdf.addPage(size);
     pdf.setPage(2);
 
     pdf.addFileToVFS(
@@ -51,7 +58,7 @@ const EForm5 = () => {
         if (numberOfPages > 2) {
           doc.deletePage(numberOfPages);
         }
-        doc.save("FWD-e-form");
+        doc.save("FWD-huy-bo-san-pham-bo-tro");
         setLoading(false);
       },
       x: 0,
@@ -62,7 +69,14 @@ const EForm5 = () => {
     callback();
   }, []);
 
-  return <Form5 />;
+  return (
+    <Form5
+      headingForm5={headingForm5}
+      contentForm5={contentForm5}
+      headingForm5G={headingForm5G}
+      contentForm5G={contentForm5G}
+    />
+  );
 };
 
 export default EForm5;

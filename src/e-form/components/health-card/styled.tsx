@@ -8,18 +8,6 @@ export const HealthContainer = styled.div`
   }
 `;
 
-export const StyledOL1 = styled.ol`
-  list-style-position: inside;
-  margin: 0;
-  padding: 10px;
-`;
-
-export const StyledOL = styled.ol`
-  list-style-position: inside;
-  margin: 0;
-  padding: 0;
-`;
-
 export const Content = styled.div`
   padding: 16px;
   background: #f8f9f9;
@@ -28,6 +16,21 @@ export const Content = styled.div`
   label {
     margin-top: 10px;
   }
+
+  span {
+    margin-right: 4px;
+  }
+`;
+
+export const StyledUL = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+export const ChilrenUL = styled.ul`
+  margin: 0;
+  list-style: lower-alpha;
+  padding: 0;
 `;
 
 export const Title = styled.div`
@@ -43,10 +46,6 @@ export const ChilrenLi = styled.li`
   color: #636566;
   margin-bottom: 10px;
   padding: 0;
-  &:before {
-    content: "";
-    margin-left: -6.5px;
-  }
 `;
 
 export const StyledLi = styled.li`
@@ -54,10 +53,10 @@ export const StyledLi = styled.li`
   font-size: 12px;
   color: #636566;
 
-  &:before {
-    content: "";
-    margin-left: -9.5px;
-  }
+  // &:before {
+  //   content: "";
+  //   margin-left: -9.5px;
+  // }
 `;
 
 export const RowChildren = styled.div`
@@ -67,6 +66,9 @@ export const RowChildren = styled.div`
   &:not(:first-child) {
     margin-top: 16px;
   }
+
+  // padding-left: 23px;
+  // padding-right: 23px;
 `;
 
 export const RowContent = styled.div`

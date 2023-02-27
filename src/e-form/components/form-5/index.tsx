@@ -8,7 +8,6 @@ import {
 } from "./styled";
 import { considerUpdate } from "pages/utils/listData";
 import { confirmList } from "pages/utils/listData";
-import { headingForm5, contentForm5 } from "pages/utils/tableOrangeData";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import TableOrange from "../table-orange";
@@ -16,9 +15,20 @@ import TableGray from "../table-gray";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
 import { infoProductHelp } from "pages/utils/infoListData";
-import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
+import { headingForm5 } from "pages/utils/tableOrangeData";
 
-export default function Form5() {
+interface DataProps {
+  headingForm5: string[];
+  contentForm5: string[][];
+  headingForm5G: string[];
+  contentForm5G: string[][];
+}
+export default function Form5({
+  headingForm5,
+  contentForm5,
+  headingForm5G,
+  contentForm5G,
+}: DataProps) {
   return (
     <>
       <InfoFrom5>
