@@ -51,12 +51,13 @@ const EForm5 = () => {
 
         for (var i = 1; i <= numberOfPages; i++) {
           pdf.setPage(i);
+          
           pdf.text(
             "0" + String(i),
-            1050,
-            1563,
+            1130,
+            1565,
             null,
-            null
+            null,
           );
         }
 
