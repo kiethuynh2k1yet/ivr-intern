@@ -17,4 +17,7 @@ export const StyledUL = styled.ul`
   margin: 0;
   padding-top: 10px;
   padding-left: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #183028;
 `;

@@ -1,18 +1,22 @@
 import React from "react";
-import { Form5Wrapper, Form5Title, BodyWrapper, Form5User, InfoFrom5 } from "./styled";
-import { considerTime } from "pages/utils/listData";
+import {
+  Form5Wrapper,
+  Form5Title,
+  BodyWrapper,
+  Form5User,
+  InfoFrom5,
+} from "./styled";
+import { considerUpdate } from "pages/utils/listData";
 import { confirmList } from "pages/utils/listData";
-import { headingInsurance } from "pages/utils/tableData";
-import { contentInsurance } from "pages/utils/tableData";
-import { healthQuestion } from "pages/utils/healthData";
+import { headingForm5, contentForm5 } from "pages/utils/tableOrangeData";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import TableOrange from "../table-orange";
 import TableGray from "../table-gray";
-import HealthCard from "../health-card";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-import {infoProductHelp} from "pages/utils/infoListData"
+import { infoProductHelp } from "pages/utils/infoListData";
+import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
 
 export default function Form5() {
   return (
@@ -35,8 +39,8 @@ export default function Form5() {
           <Form5User>
             <TableOrange
               title="Hủy sản phẩm bổ trợ"
-              heading={headingInsurance}
-              content={contentInsurance}
+              heading={headingForm5}
+              content={contentForm5}
             />
           </Form5User>
         </BodyWrapper>
@@ -44,19 +48,13 @@ export default function Form5() {
           <Form5User>
             <TableGray
               title="Sản phẩm không điều chỉnh"
-              heading={headingInsurance}
+              heading={headingForm5G}
+              content={contentForm5G}
             />
           </Form5User>
         </BodyWrapper>
-      <BodyWrapper style={{ marginTop: "20px" }}>
-        <Form5User>
-          <HealthCard
-            title="Câu hỏi thông tin sức khỏe"
-            data={healthQuestion}
-          />
-        </Form5User>
-      </BodyWrapper>
-        <ListItemConsider list={considerTime} />
+
+        <ListItemConsider list={considerUpdate} />
         <ListItem list={confirmList} />
       </Form5Wrapper>
     </>

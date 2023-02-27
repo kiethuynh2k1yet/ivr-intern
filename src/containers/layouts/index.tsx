@@ -18,11 +18,8 @@ const Layouts = ({ children, logo }: LayoutsProps) => {
       <div
         style={{
           width: 1190,
-          height: 1683,
           backgroundColor: "white",
           margin: "auto",
-          display: "flex",
-          flexDirection: "column",
         }}
       >
         <Header logo={logo} />

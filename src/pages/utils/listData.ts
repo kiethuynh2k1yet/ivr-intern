@@ -1,6 +1,7 @@
 export interface ListData {
   title: string;
   list?: string[];
+  confirm?: string;
 }
 
 export const updateList: ListData[] = [
@@ -41,6 +42,23 @@ export const considerTime: ListData[] = [
   },
 ];
 
+export const considerTime1: ListData[] = [
+  {
+    title: "Những thay đổi trong thời gian cân nhắc",
+    list: [
+      "Quý khách vui lòng liên hệ Tư vấn tài chính hỗ trợ lập Bảng minh họa quyền lợi bảo hiểm đối với các yêu cầu thêm/hủy sản phẩm bổ trợ, tăng/giảm số tiền bảo hiểm",
+      "Nếu có thay đổi về phí bảo hiểm, chúng tôi sẽ thông báo chi tiết đến Quý khách trong vòng 03 ngày làm việc",
+    ],
+  },
+  {
+    title: "Những thay đổi sau thời gian cân nhắc",
+    list: [
+      "Sau khi nhận được yêu cầu của Quý khách, chúng tôi sẽ thẩm định và thông báo kết quả đến Quý khách trong vòng 03 ngày làm việc",
+      "Việc giảm số tiền bảo hiểm của các SP liên kết đầu tư có thể không ảnh hưởng dến Phí bảo hiểm định kỳ.",
+    ],
+  },
+];
+
 export const considerUpdate: ListData[] = [
   {
     title: "Những thay đổi trong thời gian cân nhắc",
@@ -54,9 +72,6 @@ export const considerUpdate: ListData[] = [
     list: [
       "Sau khi nhận được yêu cầu của Quý khách, chúng tôi sẽ thẩm định và thông báo kết quả đến Quý khách trong vòng 03 ngày làm việc",
     ],
-  },
-  {
-    title:
-      "Các sản phẩm bổ trợ được chọn ở trên đây sẽ được huỷ theo yêu cầu của Quý khách và các Quyền lợi kèm theo sẽ không còn tiếp tục, FWD sẽ gửi thông báo xác nhận đến Quý khách khi hoàn tất. Quý khách có thể yêu cầu bổ sung thêm sản phẩm bổ trợ khi có nhu cầu. Vui lòng liên hệ 1800969690 để được hỗ trợ.",
+    confirm: `Các sản phẩm bổ trợ được chọn ở trên đây sẽ được huỷ theo yêu cầu của Quý khách và các Quyền lợi kèm theo sẽ không còn tiếp tục, FWD sẽ gửi thông báo xác nhận đến Quý khách khi hoàn tất. <br/>Quý khách có thể yêu cầu bổ sung thêm sản phẩm bổ trợ khi có nhu cầu. Vui lòng liên hệ 1800969690 để được hỗ trợ.`,
   },
 ];

@@ -16,10 +16,20 @@ export const ListTitle = styled.label`
 export const StyledUL = styled.ul`
   margin: 0;
   padding-left: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #183028;
 `;
 
 export const ListLabel = styled.label`
   font-weight: 500;
   font-size: 14px;
   color: #183028;
+`;
+
+export const StyledP = styled.p`
+  font-weight: 500;
+  font-size: 14px;
+  color: #183028;
+  margin-bottom:0px;
 `;
