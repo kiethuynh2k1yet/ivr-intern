@@ -1,6 +1,6 @@
 import Footer from "e-form/components/footer";
 import Header from "e-form/components/header";
-import Signature from "e-form/components/signature";
+import Tosign from "e-form/components/tosign";
 import React from "react";
 
 interface LayoutsProps {
@@ -24,7 +24,7 @@ const Layouts = ({ children, logo }: LayoutsProps) => {
       >
         <Header logo={logo} />
         {children}
-        <Signature />
+        <Tosign />
         <Footer />
       </div>
     </div>
