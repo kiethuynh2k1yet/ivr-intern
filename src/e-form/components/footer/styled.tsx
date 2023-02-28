@@ -5,7 +5,7 @@ export const FooterContainer = styled.footer`
   margin: 0px 50px;
   padding: 16px 0 40px 0;
   border-top: 1px solid #dbdfe1;
-  background: red;
+  // background: red;
 `;
 
 export const FooterTable = styled.table`

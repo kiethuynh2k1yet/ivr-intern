@@ -53,7 +53,7 @@ export default function Form7({
         <BodyWrapper>
           <Form7User>
             <TableOrange
-              title="Hủy sản phẩm bổ trợ"
+              title="Sản phẩm bảo hiểm sau khi điều chỉnh"
               heading={headingForm6}
               content={contentForm6}
             />

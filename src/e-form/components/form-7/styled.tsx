@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Form7Wrapper = styled.div`
   width: 1090px;
-  margin: 0px 50px;
+  margin: 24px 50px;
   padding: 20px;
 
   background: #ffffff;
@@ -43,5 +43,5 @@ export const Form7User = styled.div`
 export const InfoFrom7 = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 25px 50px 24px;
+  padding: 25px 50px 0px;
 `;

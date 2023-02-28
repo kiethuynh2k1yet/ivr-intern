@@ -31,6 +31,7 @@ const Layouts = ({ children, logo, path }: LayoutsProps) => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
+          flex: "1",
         }}
       >
         <Header logo={logo} />

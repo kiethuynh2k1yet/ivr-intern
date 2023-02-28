@@ -52,7 +52,7 @@ export default function EForm7() {
     )) as string;
 
     // kích thước pdf
-    const size = [1190, 1684];
+    const size = [1190, 1684.75];
     const pdf = new jsPDF("p", "px", size);
     pdf.addPage(size);
 
@@ -71,17 +71,11 @@ export default function EForm7() {
     pdf.html(template, {
       callback: function (doc) {
         let numberOfPages = doc.getNumberOfPages();
-        // addFooters(pdf);
-
-        // const dataLength = priceSearch.chartList?.[0]?.lsFundDetail?.length ?? 0;
-        // let maxPage = Math.ceil(dataLength / 25) + 2;
-        // if (numberOfPages > 2) {
-        //   doc.deletePage(numberOfPages);
-        // }
         for (var i = 1; i <= numberOfPages; i++) {
           pdf.setPage(i);
 
           pdf.text("0" + String(i), 1130, 1565, null, null);
+          pdf.setFont("FWD");
         }
 
         doc.save("FWD-dieu-chinh-so-tien-bao-hiem-co-cau-hoi");
