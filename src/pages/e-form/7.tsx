@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
-import LayoutChild from "containers/layout-child";
 import { base64convert, getImageBase64 } from "pages/utils/services";
 import jsPDF from "jspdf";
 import Form7 from "e-form/components/form-7";

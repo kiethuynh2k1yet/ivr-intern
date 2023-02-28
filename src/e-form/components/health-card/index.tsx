@@ -12,13 +12,13 @@ import {
 } from "./styled";
 
 interface HealthCardProps {
-  title: string;
+  title?: string;
   data: HealthCardData[];
 }
 export default function HealthCard({ title, data }: HealthCardProps) {
   return (
     <HealthContainer>
-      <Title>{title}</Title>
+      {title ? <Title>{title}</Title> : ""}
       <Content>
         <StyledUL>
           {data.map((i, index) => (
