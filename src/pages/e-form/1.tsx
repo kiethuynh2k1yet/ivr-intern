@@ -14,7 +14,6 @@ import { base64convert, getImageBase64 } from "pages/utils/services";
 import jsPDF from "jspdf";
 
 const EForm1 = () => {
-
   const [loading, setLoading] = useState(false);
   async function callback() {
     const imageLoader = await Promise.all([
@@ -65,7 +64,7 @@ const EForm1 = () => {
         if (numberOfPages > 2) {
           doc.deletePage(numberOfPages);
         }
-        doc.save("FWD-e-form");
+        doc.save("FWD-yc-dieu-chinh-thong-tin-ca-nhan");
         setLoading(false);
       },
       x: 0,

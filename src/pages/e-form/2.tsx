@@ -1,5 +1,5 @@
 import Form2 from "e-form/components/form-2";
-import React, {useState, useCallback, useEffect} from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { addressData, fatca } from "pages/utils/infoData";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
@@ -7,7 +7,6 @@ import { base64convert, getImageBase64 } from "pages/utils/services";
 import jsPDF from "jspdf";
 
 const EForm2 = () => {
-
   const [loading, setLoading] = useState(false);
   async function callback() {
     const imageLoader = await Promise.all([
@@ -17,10 +16,7 @@ const EForm2 = () => {
     const size = [1190.55, 1683.78];
     const template = ReactDOMServer.renderToString(
       <Layout logo={imageLoader[0]}>
-        <Form2
-          addressData={addressData} 
-          fatca={fatca}
-        />
+        <Form2 addressData={addressData} fatca={fatca} />
       </Layout>
     );
 
@@ -53,7 +49,7 @@ const EForm2 = () => {
         if (numberOfPages > 2) {
           doc.deletePage(numberOfPages);
         }
-        doc.save("FWD-e-form");
+        doc.save("FWD-yc-dieu-chinh-dia-chi-lien-lac");
         setLoading(false);
       },
       x: 0,
@@ -65,6 +61,6 @@ const EForm2 = () => {
   }, []);
 
   return <Form2 addressData={addressData} fatca={fatca} />;
-}
+};
 
 export default EForm2;

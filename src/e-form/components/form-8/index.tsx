@@ -11,14 +11,32 @@ import TableGray from "../table-gray";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import InfoPDF from "../info-pdf";
-import Info from "e-form/components/info";
-import InfoCardContact from "../info-card-contact";
-import { infoPayInsurance } from "pages/utils/infoListData";
+
 import { considerTime1, confirmList } from "pages/utils/listData";
-import { headingForm7, contentForm7 } from "pages/utils/tableOrangeData";
-import { headingForm5G, contentForm8G } from "pages/utils/tableGrayData";
 import { policyData } from "pages/utils/infoData";
-const Form8 = () => {
+import { infoProductHelp } from "pages/utils/infoListData";
+
+interface DataProps {
+  headingForm7: string[];
+  contentForm7: string[][];
+  headingForm5G: string[];
+  contentForm8G: string[][];
+  image?: string;
+}
+
+export default function Form8({
+  headingForm7,
+  contentForm7,
+  headingForm5G,
+  contentForm8G,
+  image,
+}: DataProps) {
+  const imgPolicy = policyData.map((item) =>
+    item.map((item1) => ({
+      ...item1,
+      label: image ?? item1.label,
+    }))
+  );
   return (
     <>
       <InfoFrom8>
@@ -29,8 +47,8 @@ const Form8 = () => {
           }}
         />
         <InfoCardContact
-          title="Yêu cầu điều chỉnh số tiền bảo hiểm"
-          data={infoPayInsurance}
+          title="Yêu cầu điều chỉnh thông tin cá nhân"
+          data={infoProductHelp}
         />
       </InfoFrom8>
       <Form8Wrapper>
@@ -56,14 +74,10 @@ const Form8 = () => {
 
         <BodyWrapper style={{ marginTop: "20px" }}>
           <Form8User>
-            <InfoPDF title="Chứng từ đăng tải" data={policyData} />
+            <InfoPDF title="Chứng từ đăng tải" data={imgPolicy} />
           </Form8User>
         </BodyWrapper>
-
-        <ListItemConsider list={considerTime1} />
-        <ListItem list={confirmList} />
       </Form8Wrapper>
     </>
   );
 }
-export default Form8;

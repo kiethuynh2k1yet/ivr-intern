@@ -41,67 +41,72 @@ export const healthQuestion: HealthCardData[] = [
       "Ông/Bà có uống bia, rượu hoặc đồ uống có cồn khác không? Nếu có, nêu loại đồ uống, số lượng (trung bình hàng tuần) và thời gian (bao nhiêu năm)?",
     value: "Không",
   },
+
+ 
+];
+
+export const healthQuestion1: HealthCardData[] = [
   {
     label: "Ông/Bà đã bao giờ mắc bệnh hoặc đã được điều trị về:",
     children: [
       {
         label:
-          "bệnh tiểu đường, rối loạn tuyến giáp, tuyến thượng thận, tuyến yên hoặc bất kỳ chứng rối loạn nội tiết nào?",
+          "a. bệnh tiểu đường, rối loạn tuyến giáp, tuyến thượng thận, tuyến yên hoặc bất kỳ chứng rối loạn nội tiết nào?",
         value: "Không",
       },
       {
         label:
-          "hen suyễn, ho kéo dài, ho ra máu, bệnh phổi mãn tính, lao, đau ngực, khó thở, rối loạn hô hấp hoặc bất kỳ chứng rối loạn nào về phổi?",
+          "b. hen suyễn, ho kéo dài, ho ra máu, bệnh phổi mãn tính, lao, đau ngực, khó thở, rối loạn hô hấp hoặc bất kỳ chứng rối loạn nào về phổi?",
         value: "Không",
       },
       {
         label:
-          "tăng mỡ máu, cao huyết áp, nhồi máu cơ tim, thiếu máu cơ tim, tiếng thổi tim, sa van tim, nhịp tim bất thường, thở thiếu hơi, đau ngực, sốt, thấp khớp, bệnh hoặc rối loạn của tim hoặc mạch máu khác?",
+          "c. tăng mỡ máu, cao huyết áp, nhồi máu cơ tim, thiếu máu cơ tim, tiếng thổi tim, sa van tim, nhịp tim bất thường, thở thiếu hơi, đau ngực, sốt, thấp khớp, bệnh hoặc rối loạn của tim hoặc mạch máu khác?",
         value: "Không",
       },
       {
         label:
-          "động kinh, ngất xỉu, đột quỵ, liệt, run chân tay, đau đầu kéo dài, co giật, bất tỉnh, sa sút trí tuệ, suy nhược, chóng mặt kéo dài, viêm tuỷ sống, viêm não - màng não hoặc bất kỳ chứng rối loạn về tâm thần, thần kinh nào?",
+          "d. động kinh, ngất xỉu, đột quỵ, liệt, run chân tay, đau đầu kéo dài, co giật, bất tỉnh, sa sút trí tuệ, suy nhược, chóng mặt kéo dài, viêm tuỷ sống, viêm não - màng não hoặc bất kỳ chứng rối loạn về tâm thần, thần kinh nào?",
         value: "Không",
       },
       {
         label:
-          "viêm, loét dạ dày, tá tràng, xuất huyết tiêu hoá, đường rò, trĩ, viêm đại tràng mạn hoặc bất kỳ rối loạn tiêu hoá nào?",
+          "e. viêm, loét dạ dày, tá tràng, xuất huyết tiêu hoá, đường rò, trĩ, viêm đại tràng mạn hoặc bất kỳ rối loạn tiêu hoá nào?",
         value: "Không",
       },
       {
         label:
-          "vàng da, mang mầm bệnh hoặc viêm gan siêu vi B/C hoặc bất kỳ viêm gan nào, xơ gan, viêm gan mãn, rối loạn về gan mật?",
+          "f. vàng da, mang mầm bệnh hoặc viêm gan siêu vi B/C hoặc bất kỳ viêm gan nào, xơ gan, viêm gan mãn, rối loạn về gan mật?",
         value: "Không",
       },
       {
         label:
-          "có máu, đạm, đường trong nước tiểu, sỏi thận, phù, nhiễm trùng, bệnh hoặc rối loạn thận, bàng quang, hoặc bộ phận sinh dục?",
+          "g. có máu, đạm, đường trong nước tiểu, sỏi thận, phù, nhiễm trùng, bệnh hoặc rối loạn thận, bàng quang, hoặc bộ phận sinh dục?",
         value: "Không",
       },
       {
         label:
-          "thoát vị đĩa đệm, thấp khớp, gút, viêm khớp, đau/dị dạng/rối loạn về cơ, cột sống, tay chân, khớp hoặc bị chấn thương nặng?",
+          "h. thoát vị đĩa đệm, thấp khớp, gút, viêm khớp, đau/dị dạng/rối loạn về cơ, cột sống, tay chân, khớp hoặc bị chấn thương nặng?",
         value: "Không",
       },
       {
         label:
-          "thiếu máu, bệnh bạch cầu, dễ chảy máu dưới da hoặc bệnh bẩm sinh về máu hoặc bất kỳ rối loạn máu khác, được khuyên phải kiêng, không cho máu, hoặc không nhận truyền máu hoặc các sản phẩm từ máu do bị máu không đông, Lupus ban đỏ hoặc bất kỳ lý do nào?",
+          "i. thiếu máu, bệnh bạch cầu, dễ chảy máu dưới da hoặc bệnh bẩm sinh về máu hoặc bất kỳ rối loạn máu khác, được khuyên phải kiêng, không cho máu, hoặc không nhận truyền máu hoặc các sản phẩm từ máu do bị máu không đông, Lupus ban đỏ hoặc bất kỳ lý do nào?",
         value: "Không",
       },
       {
         label:
-          "chảy nước lỗ tai, chảy máu cam, chứng nhìn đôi, giảm thị lực, giảm thính lực, khiếm khuyết phát âm, khàn giọng hoặc lác mắt, nuốt khó hoặc bất kỳ chứng rối loạn nào về mắt, tai, mũi hoặc họng?",
+          "j. chảy nước lỗ tai, chảy máu cam, chứng nhìn đôi, giảm thị lực, giảm thính lực, khiếm khuyết phát âm, khàn giọng hoặc lác mắt, nuốt khó hoặc bất kỳ chứng rối loạn nào về mắt, tai, mũi hoặc họng?",
         value: "Không",
       },
       {
         label:
-          "ung thư, u, u nang, nổi hạch cổ, hạch bẹn, hạch hàm hoặc bất kỳ khối u nào, nhiễm chất độc da cam, nhiễm hoá chất, sốt kéo dài?",
+          "k. ung thư, u, u nang, nổi hạch cổ, hạch bẹn, hạch hàm hoặc bất kỳ khối u nào, nhiễm chất độc da cam, nhiễm hoá chất, sốt kéo dài?",
         value: "Không",
       },
       {
         label:
-          "dị dạng hoặc thương tật mất khả năng hoạt động, phẫu thuật hoặc tai nạn hoặc bất kỳ bệnh lý nào khác không được nêu ở trên?",
+          "l. dị dạng hoặc thương tật mất khả năng hoạt động, phẫu thuật hoặc tai nạn hoặc bất kỳ bệnh lý nào khác không được nêu ở trên?",
         value: "Không",
       },
     ],
@@ -136,36 +141,39 @@ export const healthQuestion: HealthCardData[] = [
       "Trong một (1) năm tới, Ông/Bà có dự định đi tới (các) quốc gia nào khác ngoài nơi Ông/Bà đang sinh sống không? Nếu có, hãy nêu tên quốc gia, thời gian và mục đích đi.",
     value: "Không",
   },
+];
+
+export const healthQuestion2: HealthCardData[] =[
   {
     label: "Câu hỏi dành cho Người Được Bảo Hiểm là nữ",
     children: [
       {
-        label: "Hiện Bà có mang thai không? Nếu có, được bao nhiêu tháng?",
+        label: "a. Hiện Bà có mang thai không? Nếu có, được bao nhiêu tháng?",
         value: "Không",
       },
       {
         label:
-          "Bà đã bao giờ bị biến chứng trong (các) lần mang thai trước kia chưa? Nếu có, nêu rõ thời gian và tính chất của biến chứng đó.",
+          "b. Bà đã bao giờ bị biến chứng trong (các) lần mang thai trước kia chưa? Nếu có, nêu rõ thời gian và tính chất của biến chứng đó.",
         value: "Không",
       },
       {
         label:
-          "Bà đã bao giờ được phát hiện là có, hoặc nhận thấy có các cục u ở vú hoặc (các) bệnh về vú? Nếu có, xin nêu chi tiết.",
+          "c. Bà đã bao giờ được phát hiện là có, hoặc nhận thấy có các cục u ở vú hoặc (các) bệnh về vú? Nếu có, xin nêu chi tiết.",
         value: "Không",
       },
       {
         label:
-          "Bà đã bao giờ được làm xét nghiệm Phết tế bào âm đạo để tầm soát ung thư (Pap Smear) cho kết quả bất thường hoặc được bác sỹ yêu cầu làm lại xét nghiệm này trong vòng sáu (6) tháng tới không? Nếu có, xin nêu chi tiết.",
+          "d. Bà đã bao giờ được làm xét nghiệm Phết tế bào âm đạo để tầm soát ung thư (Pap Smear) cho kết quả bất thường hoặc được bác sỹ yêu cầu làm lại xét nghiệm này trong vòng sáu (6) tháng tới không? Nếu có, xin nêu chi tiết.",
         value: "Không",
       },
       {
         label:
-          "Bà đã bao giờ bị rối loạn kinh nguyệt một cách thường xuyên/bất thường, đau bụng kinh hoặc rong kinh liên tục chưa? Nếu có, xin nêu chi tiết.",
+          "e. Bà đã bao giờ bị rối loạn kinh nguyệt một cách thường xuyên/bất thường, đau bụng kinh hoặc rong kinh liên tục chưa? Nếu có, xin nêu chi tiết.",
         value: "Không",
       },
       {
         label:
-          "Bà đã bao giờ được yêu cầu làm xét nghiệm chụp X-quang cho khối u ở ngực, xét nghiệm sinh thiết, phẫu thuật ngực, siêu âm vùng chậu hoặc khám bệnh phụ khoa (không bao gồm kiểm tra sức khoẻ định kỳ) chưa? Nếu có, xin nêu chi tiết.",
+          "f. Bà đã bao giờ được yêu cầu làm xét nghiệm chụp X-quang cho khối u ở ngực, xét nghiệm sinh thiết, phẫu thuật ngực, siêu âm vùng chậu hoặc khám bệnh phụ khoa (không bao gồm kiểm tra sức khoẻ định kỳ) chưa? Nếu có, xin nêu chi tiết.",
         value: "Không",
       },
     ],
@@ -183,4 +191,4 @@ export const healthQuestion: HealthCardData[] = [
       },
     ],
   },
-];
+]

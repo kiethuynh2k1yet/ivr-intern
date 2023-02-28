@@ -1,12 +1,12 @@
 import Form4 from "e-form/components/form-4";
-import React,{useState, useEffect, useCallback} from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
 import { base64convert, getImageBase64 } from "pages/utils/services";
 import jsPDF from "jspdf";
+import { periodicFeeData } from "pages/utils/infoData";
 
 const EForm4 = () => {
-
   const [loading, setLoading] = useState(false);
   async function callback() {
     const imageLoader = await Promise.all([
@@ -16,7 +16,7 @@ const EForm4 = () => {
     const size = [1190.55, 1683.78];
     const template = ReactDOMServer.renderToString(
       <Layout logo={imageLoader[0]}>
-        <Form4 />
+        <Form4 periodicFeeData={periodicFeeData} />
       </Layout>
     );
 
@@ -29,7 +29,7 @@ const EForm4 = () => {
 
     // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
-    pdf.addPage(size)
+    pdf.addPage(size);
     pdf.setPage(2);
 
     pdf.addFileToVFS(
@@ -52,7 +52,7 @@ const EForm4 = () => {
         if (numberOfPages > 2) {
           doc.deletePage(numberOfPages);
         }
-        doc.save("FWD-e-form");
+        doc.save("FWD-dieu-chinh-dinh-ki-dong-phi");
         setLoading(false);
       },
       x: 0,
@@ -63,7 +63,7 @@ const EForm4 = () => {
     callback();
   }, []);
 
-  return <Form4 />;
-}
+  return <Form4 periodicFeeData={periodicFeeData} />;
+};
 
 export default EForm4;
