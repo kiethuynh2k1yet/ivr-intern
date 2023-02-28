@@ -73,9 +73,15 @@ export default function EForm7() {
         let numberOfPages = doc.getNumberOfPages();
         for (var i = 1; i <= numberOfPages; i++) {
           pdf.setPage(i);
-
+          pdf.addFont("FWDCircularVietTT-Book.ttf", "FWD", "normal");
+          pdf.addFont("FWDCircularVietTT-Bold.ttf", "FWD", "bold");
+          pdf.setFont("FWD", "bold");
+          pdf.setFontSize(16);
+          pdf.setTextColor("#636566");
           pdf.text("0" + String(i), 1130, 1565, null, null);
-          pdf.setFont("FWD");
+          if (i > 3) {
+            doc.deletePage(numberOfPages);
+          }
         }
 
         doc.save("FWD-dieu-chinh-so-tien-bao-hiem-co-cau-hoi");
