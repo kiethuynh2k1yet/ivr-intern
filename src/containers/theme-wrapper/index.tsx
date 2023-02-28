@@ -45,7 +45,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   //     document.removeEventListener("click", listenter);
   //   };
   // }, [dispath]);
-  
+  const path = "";
   return (
     <ThemeProvider theme={LightTheme}>
       <Head>

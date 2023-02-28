@@ -5,6 +5,7 @@ export const HealthContainer = styled.div`
     font-weight: 700;
     font-size: 14px;
     color: #e87722;
+    margin-top: 6px;
   }
 `;
 
@@ -31,7 +32,6 @@ export const StyledLi = styled.li`
   font-weight: 500;
   font-size: 12px;
   color: #636566;
-  margin-bottom: 6px;
   line-height: 125%;
 `;
 

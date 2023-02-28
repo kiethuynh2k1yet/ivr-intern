@@ -23,17 +23,19 @@ export default function HealthCard({ title, data }: HealthCardProps) {
         <StyledUL>
           {data.map((i, index) => (
             <>
-              <StyledLi>
+              <StyledLi key={index}>
                 <span>{index + 1}.</span>
                 {i.label}
+                <h6>{i.value}</h6>
               </StyledLi>
-              <h6>{i.value}</h6>
               {i.children ? (
                 <ul style={{ padding: 0, listStyle: "none" }}>
                   {i.children?.map((i, index) => (
                     <RowChildren key={index}>
-                      <ChildrenLi>{i.label}</ChildrenLi>
-                      <h6>{i.value}</h6>
+                      <ChildrenLi>
+                        {i.label}
+                        <h6>{i.value}</h6>
+                      </ChildrenLi>
                     </RowChildren>
                   ))}
                 </ul>

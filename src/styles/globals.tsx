@@ -200,10 +200,11 @@ const style = css`
   // }
 
   hr {
-    margin: 16px 0px;
     background-color: #dbdfe1;
+    border: none;
     height: 1px;
-    border: 0;
+    margin-top: 16px;
+    margin-bottom: 16px;
     :last-child {
       display: none;
     }
