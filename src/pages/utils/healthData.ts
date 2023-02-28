@@ -41,6 +41,11 @@ export const healthQuestion: HealthCardData[] = [
       "Ông/Bà có uống bia, rượu hoặc đồ uống có cồn khác không? Nếu có, nêu loại đồ uống, số lượng (trung bình hàng tuần) và thời gian (bao nhiêu năm)?",
     value: "Không",
   },
+
+ 
+];
+
+export const healthQuestion1: HealthCardData[] = [
   {
     label: "Ông/Bà đã bao giờ mắc bệnh hoặc đã được điều trị về:",
     children: [
@@ -136,6 +141,9 @@ export const healthQuestion: HealthCardData[] = [
       "Trong một (1) năm tới, Ông/Bà có dự định đi tới (các) quốc gia nào khác ngoài nơi Ông/Bà đang sinh sống không? Nếu có, hãy nêu tên quốc gia, thời gian và mục đích đi.",
     value: "Không",
   },
+];
+
+export const healthQuestion2: HealthCardData[] =[
   {
     label: "Câu hỏi dành cho Người Được Bảo Hiểm là nữ",
     children: [
@@ -183,4 +191,4 @@ export const healthQuestion: HealthCardData[] = [
       },
     ],
   },
-];
+]
