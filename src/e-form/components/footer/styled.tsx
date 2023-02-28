@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FooterContainer = styled.div`
   width: 100%;
   bottom: 0px;
+  position: absolute;
 `;
 
 export const FooterWapper = styled.div`

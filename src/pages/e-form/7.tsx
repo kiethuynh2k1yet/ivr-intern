@@ -1,7 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
 import Form7 from "e-form/components/form-7";
-import Header from "e-form/components/header";
-import Footer from "e-form/components/footer";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
 import { base64convert, getImageBase64 } from "pages/utils/services";
@@ -54,62 +52,7 @@ const EForm7 = () => {
         for (var i = 1; i <= numberOfPages; i++) {
           pdf.setPage(i);
           pdf.text("0" + String(i), 1130, 1565, null, null);
-          // const pageSize = pdf.internal.pageSize;
-          // const pageWidth = pageSize.width ? pageSize.width : pageSize.getWidth();
-          // const pageHeight = pageSize.height ? pageSize.height : pageSize.getHeight();
-          // const header = ReactDOMServer.renderToString(
-          //   <Layout logo={imageLoader[0]}>
-          //    <Header/>
-          //   </Layout>
-          // );
-          // const footer = ReactDOMServer.renderToString(
-          //   <Layout logo={imageLoader[0]}>
-          //    <Footer/>
-          //   </Layout>
-          // );;
-          // pdf.setPage(2);
-          // // Header
-          // pdf.fromHTML
-          // // Footer
-          // pdf.html(footer);
-
-          // pdf.setPage(3);
-          // // Header
-          // pdf.text(header, 40, 15, { baseline: 'top' });
-          // // Footer
-          // pdf.text(footer, pageWidth / 2 - (pdf.getTextWidth(footer) / 2), pageHeight - 15, { baseline: 'bottom' });
         }
-        
-
-        // pdf.autoTable(columns, rows, {
-        //   startY: doc.autoTable() + 70,
-
-        //   margin: { horizontal: 10 },
-        //   styles: { overflow: "linebreak" },
-        //   bodyStyles: { valign: "top" },
-        //   columnStyles: { email: { columnWidth: "wrap" } },
-        //   theme: "striped",
-        //   showHead: "everyPage",
-        //   didDrawPage: function (data) {
-        //     // Header
-        //     doc.setFontSize(20);
-        //     doc.setTextColor(40);
-        //     doc.text("Report", data.settings.margin.left, 22);
-
-        //     // Footer
-        //     var str = "Page " + doc.getNumberOfPages();
-
-        //     doc.setFontSize(10);
-
-        //     // jsPDF 1.4+ uses getWidth, <1.4 uses .width
-        //     var pageSize = doc.internal.pageSize;
-        //     var pageHeight = pageSize.height
-        //       ? pageSize.height
-        //       : pageSize.getHeight();
-        //     doc.text(str, data.settings.margin.left, pageHeight - 10);
-        //   },
-        // });
-
         doc.save("FWD-e-form");
         setLoading(false);
       },

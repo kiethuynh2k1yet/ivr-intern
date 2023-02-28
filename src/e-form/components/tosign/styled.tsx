@@ -10,7 +10,7 @@ export const Contract = styled.div`
   flex: 1;
   flex-direction: column;
   text-align: start;
-  padding: 0px 50px 42px;
+  padding: 0px 50px 131px;
 
   h5 {
     font-style: normal;
