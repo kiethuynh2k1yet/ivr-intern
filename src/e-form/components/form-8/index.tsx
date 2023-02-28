@@ -79,9 +79,6 @@ export default function Form8({
             <InfoPDF title="Chứng từ đăng tải" data={imgPolicy} />
           </Form8User>
         </BodyWrapper>
-
-        <ListItemConsider list={considerTime1} />
-        <ListItem list={confirmList} />
       </Form8Wrapper>
     </>
   );
