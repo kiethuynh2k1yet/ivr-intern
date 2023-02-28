@@ -4,44 +4,52 @@ import {
   HealthContainer,
   Title,
   Content,
+  StyledUL,
   StyledLi,
-  ChilrenLi,
-  StyledOL,
-  StyledOL1,
+  ChildrenLi,
   RowContent,
   RowChildren,
 } from "./styled";
 
 interface HealthCardProps {
-  title: string;
+  title?: string;
   data: HealthCardData[];
 }
 export default function HealthCard({ title, data }: HealthCardProps) {
   return (
     <HealthContainer>
-      <Title>{title}</Title>
+      {title ? <Title>{title}</Title> : ""}
       <Content>
-        <StyledOL1>
-          {data.map((i) => (
+        <StyledUL>
+          {data.map((i, index) => (
             <>
-              <StyledLi>{i.label}</StyledLi>
+              <StyledLi>
+                <span>{index + 1}.</span>
+                {i.label}
+              </StyledLi>
               <h6>{i.value}</h6>
               {i.children ? (
-                <StyledOL type="a">
+                <ul style={{ padding: 0, listStyle: "none" }}>
                   {i.children?.map((i, index) => (
                     <RowChildren key={index}>
-                      <ChilrenLi>{i.label}</ChilrenLi>
+                      <ChildrenLi>{i.label}</ChildrenLi>
                       <h6>{i.value}</h6>
                     </RowChildren>
                   ))}
+                </ul>
+              ) : (
+                ""
+              )}
 
+              {i.content ? (
+                <>
                   {i.content?.map((i, index) => (
                     <RowContent key={index}>
                       <label>{i.label}</label>
                       <h6>{i.value}</h6>
                     </RowContent>
                   ))}
-                </StyledOL>
+                </>
               ) : (
                 ""
               )}
@@ -49,7 +57,7 @@ export default function HealthCard({ title, data }: HealthCardProps) {
               <hr />
             </>
           ))}
-        </StyledOL1>
+        </StyledUL>
       </Content>
     </HealthContainer>
   );

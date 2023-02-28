@@ -12,7 +12,19 @@ import { confirmList } from "pages/utils/listData";
 import { headingForm6, contentForm6 } from "pages/utils/tableOrangeData";
 import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
 
-export default function Form6() {
+interface DataProps {
+  headingForm6: string[];
+  contentForm6: string[][];
+  headingForm5G: string[];
+  contentForm5G: string[][];
+}
+
+export default function Form6({
+  headingForm6,
+  contentForm6,
+  headingForm5G,
+  contentForm5G,
+}: DataProps) {
   return (
     <>
     <InfoFrom6>

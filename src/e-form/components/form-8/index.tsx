@@ -15,8 +15,6 @@ import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
 import { infoPayInsurance } from "pages/utils/infoListData";
 import { considerTime1, confirmList } from "pages/utils/listData";
-import { headingForm7, contentForm7 } from "pages/utils/tableOrangeData";
-import { headingForm5G, contentForm8G } from "pages/utils/tableGrayData";
 import { policyData } from "pages/utils/infoData";
 const Form8 = () => {
   return (
