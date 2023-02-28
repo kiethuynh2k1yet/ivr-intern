@@ -8,12 +8,14 @@ interface DataProps {
 }
 export default function Form71({ healthQuestion1 }: DataProps) {
   return (
-    <Form7Wrapper style={{ marginTop: "20px" }}>
-      <BodyWrapper>
-        <Form7User>
-          <HealthCard data={healthQuestion1} />
-        </Form7User>
-      </BodyWrapper>
-    </Form7Wrapper>
+    <>
+      <Form7Wrapper style={{ marginTop: "20px" }}>
+        <BodyWrapper>
+          <Form7User>
+            <HealthCard data={healthQuestion1} />
+          </Form7User>
+        </BodyWrapper>
+      </Form7Wrapper>
+    </>
   );
 }

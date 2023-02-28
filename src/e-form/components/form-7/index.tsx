@@ -15,8 +15,6 @@ import InfoCardContact from "../info-card-contact";
 
 import { HealthCardData } from "pages/utils/healthData";
 import { infoProductHelp } from "pages/utils/infoListData";
-import Header from "../header";
-import Footer from "../footer";
 
 interface DataProps {
   headingForm6: string[];

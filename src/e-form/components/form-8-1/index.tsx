@@ -12,9 +12,11 @@ import { considerTime1, confirmList } from "pages/utils/listData";
 
 export default function Form81() {
   return (
-    <Form8Wrapper>
-      <ListItemConsider list={considerTime1} />
-      <ListItem list={confirmList} />
-    </Form8Wrapper>
+    <>
+      <Form8Wrapper>
+        <ListItemConsider list={considerTime1} />
+        <ListItem list={confirmList} />
+      </Form8Wrapper>
+    </>
   );
 }

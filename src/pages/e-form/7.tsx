@@ -14,7 +14,6 @@ import {
 } from "pages/utils/healthData";
 import { headingForm6, contentForm6 } from "pages/utils/tableOrangeData";
 import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
-import { usePathname } from "next/navigation";
 
 export default function EForm7() {
   const [loading, setLoading] = useState(false);
@@ -53,7 +52,7 @@ export default function EForm7() {
     )) as string;
 
     // kích thước pdf
-    const size = [1190.55, 1684];
+    const size = [1190, 1684];
     const pdf = new jsPDF("p", "px", size);
     pdf.addPage(size);
 
@@ -79,6 +78,12 @@ export default function EForm7() {
         // if (numberOfPages > 2) {
         //   doc.deletePage(numberOfPages);
         // }
+        for (var i = 1; i <= numberOfPages; i++) {
+          pdf.setPage(i);
+
+          pdf.text("0" + String(i), 1130, 1565, null, null);
+        }
+
         doc.save("FWD-dieu-chinh-so-tien-bao-hiem-co-cau-hoi");
         setLoading(false);
       },

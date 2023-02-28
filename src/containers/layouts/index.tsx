@@ -14,24 +14,30 @@ interface LayoutsProps {
 }
 
 const Layouts = ({ children, logo, path }: LayoutsProps) => {
+  const router = usePathname();
   return (
     <div
       style={{
+        height: "auto",
         backgroundColor: "gray",
       }}
     >
       <div
         style={{
-          width: 1190,
-          height: "auto",
+          width: "1190px",
+          height: "1684px",
           backgroundColor: "white",
           margin: "auto",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
         }}
       >
         <Header logo={logo} />
         {children}
 
         {path ?? <Tosign />}
+        {/* {router ? "" : <Tosign />} */}
         <Footer />
       </div>
     </div>

@@ -15,7 +15,7 @@ export default function EForm8() {
       getImageBase64(`${process.env.basePath}/images/pdf.svg`),
     ]);
     const path = "";
-    const size = [1190.55, 1684];
+    const size = [1190.55, 1684.75];
     const template = ReactDOMServer.renderToString(
       <>
         <Layout logo={imageLoader[0]} path={path}>
@@ -43,8 +43,8 @@ export default function EForm8() {
     // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
 
-    pdf.addPage(size);
-    pdf.setPage(2);
+    // pdf.addPage(size);
+    // pdf.setPage(2);
 
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",
