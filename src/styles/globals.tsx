@@ -201,8 +201,9 @@ const style = css`
 
   hr {
     margin: 16px 0px;
-    border: 1px solid #dbdfe1;
-
+    background-color: #dbdfe1;
+    height: 1px;
+    border: 0;
     :last-child {
       display: none;
     }
