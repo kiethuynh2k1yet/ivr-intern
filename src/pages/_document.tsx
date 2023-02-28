@@ -62,7 +62,7 @@ class MyDocument extends Document {
           />
           <link
             rel="preload"
-            href={`${process.env.basePath}/font/FWDCircularVietTT-Black.ttf`}
+            href={`${process.env.basePath}/font/FWDCircularVietTT-Bold.ttf`}
             as="font"
             crossOrigin=""
           />
@@ -71,7 +71,7 @@ class MyDocument extends Document {
               __html:
                 `@font-face{font-family:"FWD";src:url("${process.env.basePath}/font/FWDCircularVietTT-Book.ttf");src: url("${process.env.basePath}/font/FWDCircularVietTT-Book.ttf") format("truetype"), url("${process.env.basePath}/font/FWDCircularVietTT-Book.eot"), url("${process.env.basePath}/font/FWDCircularVietTT-Book.eot?#iefix") format("embedded-opentype");font-weight:400;font-display:swap;}` +
                 `@font-face{font-family:"FWD";src:url("${process.env.basePath}/font/FWDCircularVietTT-Medium.ttf");src: url("${process.env.basePath}/font/FWDCircularVietTT-Medium.ttf") format("truetype"), url("${process.env.basePath}/font/FWDCircularVietTT-Medium.eot"), url("${process.env.basePath}/font/FWDCircularVietTT-Medium.eot?#iefix") format("embedded-opentype");font-weight:500;font-display:swap;}` +
-                `@font-face{font-family:"FWD";src:url("${process.env.basePath}/font/FWDCircularVietTT-Black.ttf");src: url("${process.env.basePath}/font/FWDCircularVietTT-Black.ttf") format("truetype"), url("${process.env.basePath}/font/FWDCircularVietTT-Black.eot"), url("${process.env.basePath}/font/FWDCircularVietTT-Black.eot?#iefix") format("embedded-opentype");font-weight:700;font-display:swap;}`,
+                `@font-face{font-family:"FWD";src:url("${process.env.basePath}/font/FWDCircularVietTT-Bold.ttf");src: url("${process.env.basePath}/font/FWDCircularVietTT-Bold.ttf") format("truetype"), url("${process.env.basePath}/font/FWDCircularVietTT-Bold.eot"), url("${process.env.basePath}/font/FWDCircularVietTT-Bold.eot?#iefix") format("embedded-opentype");font-weight:700;font-display:swap;}`,
             }}
           />
         </Head>
