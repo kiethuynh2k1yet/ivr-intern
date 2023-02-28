@@ -46,9 +46,3 @@ export const Form6User = styled.div`
     margin-bottom: 12px;
   }
 `;
-
-export const InfoFrom6 = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 50px 24px;
-`;

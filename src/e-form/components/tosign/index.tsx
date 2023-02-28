@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Contract } from "./styled";
+import { Container, Contract, Space } from "./styled";
 
 interface ToSignProps {}
 
@@ -14,6 +14,7 @@ const Tosign = ({}: ToSignProps) => {
       </h5>
       <h6>Phòng Quản Lý Hợp Đồng</h6>
       <h4>FWD Việt Nam</h4>
+      <Space></Space>
     </Contract>
   );
 };

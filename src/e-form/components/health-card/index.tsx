@@ -26,8 +26,9 @@ export default function HealthCard({ title, data }: HealthCardProps) {
               <StyledLi>
                 <span>{index + 1}.</span>
                 {i.label}
-              </StyledLi>
+              {/* Thay đổi chổ này */}
               <h6>{i.value}</h6>
+              </StyledLi>
               {i.children ? (
                 <ul style={{ padding: 0, listStyle: "none" }}>
                   {i.children?.map((i, index) => (
@@ -54,7 +55,7 @@ export default function HealthCard({ title, data }: HealthCardProps) {
                 ""
               )}
 
-              <hr />
+              {/* <hr /> */}
             </>
           ))}
         </StyledUL>

@@ -96,5 +96,5 @@ export const Title = styled.div`
   font-weight: 700;
   font-size: 16px;
   color: #183028;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
 `;

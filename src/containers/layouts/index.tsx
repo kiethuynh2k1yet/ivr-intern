@@ -30,6 +30,7 @@ const Layouts = ({ children, logo, path }: LayoutsProps) => {
           margin: "auto",
           display: "flex",
           flexDirection: "column",
+          flex: "1",
           justifyContent: "space-between",
         }}
       >

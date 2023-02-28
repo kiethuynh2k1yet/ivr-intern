@@ -5,11 +5,12 @@ export const HealthContainer = styled.div`
     font-weight: 700;
     font-size: 14px;
     color: #e87722;
+    padding-top: 6px;
   }
 `;
 
 export const Content = styled.div`
-  padding: 16px;
+  padding: 0px 16px 16px;
   background: #f8f9f9;
   border-radius: 12px;
 
@@ -25,21 +26,26 @@ export const Content = styled.div`
 export const StyledUL = styled.ul`
   list-style: none;
   padding: 0;
-
-  
 `;
 
 export const StyledLi = styled.li`
- font-weight: 500;
-    font-size: 12px;
-    color: #636566;
-    margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  color: #636566;
+  line-height: 125%;
+  // Thêm css
+  border-bottom: 1px solid #dbdfe1;
+  padding-bottom: 16px;
+  padding-top: 16px;
 `;
 
 export const ChildrenLi = styled.li`
-font-weight: 500;
-font-size: 10px;color: #636566;
-`
+  font-weight: 500;
+  font-size: 10px;
+  color: #636566;
+  line-height: 125%;
+`;
+
 export const Title = styled.div`
   font-weight: 700;
   font-size: 16px;
@@ -54,7 +60,6 @@ export const RowChildren = styled.div`
   &:not(:first-child) {
     margin-top: 16px;
   }
-
 `;
 
 export const RowContent = styled.div`

@@ -15,7 +15,7 @@ export const Title = styled.h1`
   font-size: 16px;
   line-height: 125%;
   color: #ffffff;
-  padding-bottom: 16px;
+  padding-bottom: 12px;
 `;
 
 export const Row = styled.div`
