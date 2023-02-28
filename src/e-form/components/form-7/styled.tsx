@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-export const InfoFrom7 =styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 50px 24px;
-`;
+
 
 export const Form7Wrapper = styled.div`
   width: 1090px;

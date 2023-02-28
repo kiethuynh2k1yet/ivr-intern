@@ -11,7 +11,8 @@ import TableGray from "../table-gray";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import InfoPDF from "../info-pdf";
-
+import Info from "e-form/components/info";
+import InfoCardContact from "../info-card-contact";
 import { considerTime1, confirmList } from "pages/utils/listData";
 import { policyData } from "pages/utils/infoData";
 import { infoProductHelp } from "pages/utils/infoListData";
