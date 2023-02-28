@@ -10,7 +10,7 @@ export const Contract = styled.div`
   flex: 1;
   flex-direction: column;
   text-align: start;
-  margin: 0px 50px 42px;
+  padding: 0px 50px 0px;
 
   h5 {
     font-style: normal;
@@ -37,4 +37,9 @@ export const Contract = styled.div`
     color: #183028;
     margin-bottom: 8px;
   }
+`;
+
+export const Space = styled.div`
+  min-height: 24px;
+  flex: 1;
 `;

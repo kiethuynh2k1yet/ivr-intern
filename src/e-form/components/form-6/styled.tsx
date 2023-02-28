@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const InfoFrom6 =styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 50px 24px;
+`;
+
 export const Form6Wrapper = styled.div`
   width: 1090px;
   margin: 0px 50px;
@@ -39,10 +45,4 @@ export const Form6User = styled.div`
   :not(:last-child) {
     margin-bottom: 12px;
   }
-`;
-
-export const InfoFrom6 = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 50px 24px;
 `;

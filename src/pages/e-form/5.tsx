@@ -58,7 +58,20 @@ const EForm5 = () => {
         if (numberOfPages > 2) {
           doc.deletePage(numberOfPages);
         }
-        doc.save("FWD-huy-bo-san-pham-bo-tro");
+
+        for (var i = 1; i <= numberOfPages; i++) {
+          pdf.setPage(i);
+          
+          pdf.text(
+            "0" + String(i),
+            1130,
+            1565,
+            null,
+            null,
+          );
+        }
+
+        doc.save("FWD-e-form");
         setLoading(false);
       },
       x: 0,
@@ -78,5 +91,4 @@ const EForm5 = () => {
     />
   );
 };
-
 export default EForm5;

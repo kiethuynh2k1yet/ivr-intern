@@ -63,15 +63,23 @@ export default function EForm8() {
         let numberOfPages = doc.getNumberOfPages();
         // const dataLength = priceSearch.chartList?.[0]?.lsFundDetail?.length ?? 0;
         // let maxPage = Math.ceil(dataLength / 25) + 2;
-        // if (numberOfPages > 2) {
-        //   doc.deletePage(numberOfPages);
-        // }
+        if (numberOfPages > 2) {
+          doc.deletePage(numberOfPages);
+        }
+
         for (var i = 1; i <= numberOfPages; i++) {
           pdf.setPage(i);
-
-          pdf.text("0" + String(i), 1130, 1565, null, null);
+          
+          pdf.text(
+            "0" + String(i),
+            1130,
+            1565,
+            null,
+            null,
+          );
         }
-        doc.save("FWD-dieu-chinh-so-tien-bao-hiem-ko-cau-hoi");
+
+        doc.save("FWD-e-form");
         setLoading(false);
       },
       x: 0,
@@ -90,3 +98,4 @@ export default function EForm8() {
     />
   );
 }
+

@@ -71,11 +71,25 @@ export default function EForm7() {
     pdf.html(template, {
       callback: function (doc) {
         let numberOfPages = doc.getNumberOfPages();
+        // addFooters(pdf);
+
+        // const dataLength = priceSearch.chartList?.[0]?.lsFundDetail?.length ?? 0;
+        // let maxPage = Math.ceil(dataLength / 25) + 2;
+        // if (numberOfPages > 3) {
+        //   doc.deletePage(numberOfPages);
+        // }
+
         for (var i = 1; i <= numberOfPages; i++) {
           pdf.setPage(i);
-
+          pdf.addFont("FWDCircularVietTT-Book.ttf", "FWD", "normal");
+          pdf.addFont("FWDCircularVietTT-Bold.ttf", "FWD", "bold");
+          pdf.setFont("FWD", "bold");
+          pdf.setFontSize(16);
+          pdf.setTextColor("#636566");
           pdf.text("0" + String(i), 1130, 1565, null, null);
-          pdf.setFont("FWD");
+          if (i > 3) {
+            doc.deletePage(numberOfPages);
+          }
         }
 
         doc.save("FWD-dieu-chinh-so-tien-bao-hiem-co-cau-hoi");

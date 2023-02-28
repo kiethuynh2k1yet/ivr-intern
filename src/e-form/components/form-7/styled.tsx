@@ -11,7 +11,7 @@ export const Form7Wrapper = styled.div`
 `;
 
 export const Form7Title = styled.h6`
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 
   font-weight: 700;
   font-size: 20px;
