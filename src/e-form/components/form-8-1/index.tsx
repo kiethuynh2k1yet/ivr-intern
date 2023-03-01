@@ -13,7 +13,7 @@ import { considerTime1, confirmList } from "pages/utils/listData";
 export default function Form81() {
   return (
     <>
-      <Form8Wrapper>
+      <Form8Wrapper style={{ marginTop: "20px" }}>
         <ListItemConsider list={considerTime1} />
         <ListItem list={confirmList} />
       </Form8Wrapper>

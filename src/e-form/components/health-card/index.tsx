@@ -20,14 +20,15 @@ export default function HealthCard({ title, data }: HealthCardProps) {
     <HealthContainer>
       {title ? <Title>{title}</Title> : ""}
       <Content>
-        <StyledUL>
-          {data.map((i, index) => (
-            <>
+        {data.map((i, index) => (
+          <React.Fragment key={index}>
+            <StyledUL>
               <StyledLi key={index}>
                 <span>{index + 1}.</span>
                 {i.label}
                 <h6>{i.value}</h6>
               </StyledLi>
+
               {i.children ? (
                 <ul style={{ padding: 0, listStyle: "none" }}>
                   {i.children?.map((i, index) => (
@@ -55,11 +56,10 @@ export default function HealthCard({ title, data }: HealthCardProps) {
               ) : (
                 ""
               )}
-
-              {/* <hr /> */}
-            </>
-          ))}
-        </StyledUL>
+            </StyledUL>
+            <hr />
+          </React.Fragment>
+        ))}
       </Content>
     </HealthContainer>
   );

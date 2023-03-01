@@ -10,7 +10,7 @@ export const HealthContainer = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 0px 16px 16px;
+  padding: 16px;
   background: #f8f9f9;
   border-radius: 12px;
 
@@ -33,10 +33,6 @@ export const StyledLi = styled.li`
   font-size: 12px;
   color: #636566;
   line-height: 125%;
-  // Thêm css
-  border-bottom: 1px solid #dbdfe1;
-  padding-bottom: 16px;
-  padding-top: 16px;
 `;
 
 export const ChildrenLi = styled.li`

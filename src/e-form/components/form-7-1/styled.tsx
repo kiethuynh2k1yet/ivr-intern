@@ -8,6 +8,8 @@ export const Form7Wrapper = styled.div`
   background: #ffffff;
   border: 1px solid #dbdfe1;
   border-radius: 16px;
+
+  
 `;
 
 export const Form7Title = styled.h6`
