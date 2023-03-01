@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const HeaderWrapper = styled.div`
-  width: 100%;
-`;
-
 export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
@@ -36,4 +32,4 @@ export const ContainerTitle = styled.div`
     color: #636566;
     title-spacing: 1px;
   }
-`;    
+`;

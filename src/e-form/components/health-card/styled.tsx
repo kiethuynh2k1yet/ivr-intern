@@ -5,7 +5,7 @@ export const HealthContainer = styled.div`
     font-weight: 700;
     font-size: 14px;
     color: #e87722;
-    padding-top: 6px;
+    margin-top: 6px;
   }
 `;
 

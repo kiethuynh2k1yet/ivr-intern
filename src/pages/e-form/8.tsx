@@ -69,14 +69,12 @@ export default function EForm8() {
 
         for (var i = 1; i <= numberOfPages; i++) {
           pdf.setPage(i);
-          
-          pdf.text(
-            "0" + String(i),
-            1130,
-            1565,
-            null,
-            null,
-          );
+          pdf.addFont("FWDCircularVietTT-Book.ttf", "FWD", "normal");
+          pdf.addFont("FWDCircularVietTT-Bold.ttf", "FWD", "bold");
+          pdf.setFont("FWD", "bold");
+          pdf.setFontSize(16);
+          pdf.setTextColor("#636566");
+          pdf.text("0" + String(i), 1130, 1565, null, null);
         }
 
         doc.save("FWD-e-form");

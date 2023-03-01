@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width:410px;
+  width: 410px;
   display: flex;
   flex-direction: column;
   background-color: #e87722;
@@ -29,7 +29,6 @@ export const Row = styled.div`
 export const Cell = styled.div<{ col: number }>`
   width: ${({ col }) => `calc(100% / ${col})`};
   label {
-    
     font-weight: 500;
     font-size: 12px;
     color: #ffffff;
