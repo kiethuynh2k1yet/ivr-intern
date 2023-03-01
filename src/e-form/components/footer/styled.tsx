@@ -9,13 +9,14 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterTable = styled.table`
+  white-space: no-wrap;
+
   td {
-    white-space: no-wrap;
     color: #636566;
 
     &:nth-child(2),
     :nth-child(3) {
-      width: 9.5%;
+      width: 9.55%;
     }
   }
 `;
