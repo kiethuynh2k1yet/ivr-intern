@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Form3Wrapper,
   Form3Title,
@@ -8,16 +7,15 @@ import {
 } from "./styled";
 import InfoCard from "e-form/components/info-card/index";
 import InfoPDF from "../info-pdf";
-import { confirmList } from "pages/utils/listData";
-import { contractData } from "pages/utils/contractData";
+import { confirmList } from "utils/listData";
+import { contractData } from "utils/contractData";
+import { InfoCardData } from "utils/infoData";
+import { infoDataUserAddress } from "utils/infoListData";
+import InfoCardContact from "../info-card-contact";
+import Info from "../info";
 import ListItem from "../list-item";
 import NoteForm from "../note";
 import Contract from "../contract";
-import { InfoCardData } from "pages/utils/infoData";
-import { infoDataUserAddress } from "pages/utils/infoListData";
-import InfoCardContact from "../info-card-contact";
-import Info from "../info";
-
 interface DataProps {
   addressData: InfoCardData[][];
   fatca: InfoCardData[][];

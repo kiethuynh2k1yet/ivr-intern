@@ -8,9 +8,9 @@ import {
   policyData,
   jobData,
   contactData,
-} from "pages/utils/infoData";
+} from "utils/infoData";
 import Layout from "containers/layouts";
-import { base64convert, getImageBase64 } from "pages/utils/services";
+import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
 
 const EForm1 = () => {

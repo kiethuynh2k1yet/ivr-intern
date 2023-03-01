@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  Form8Wrapper,
-  Form8Title,
-  BodyWrapper,
-  Form8User,
-  InfoFrom8,
-} from "./styled";
+import { considerTime1, confirmList } from "utils/listData";
+
+import { Form8Wrapper } from "./styled";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
-import { considerTime1, confirmList } from "pages/utils/listData";
 
 export default function Form81() {
   return (

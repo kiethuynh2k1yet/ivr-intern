@@ -1,12 +1,18 @@
+import {
+  InfoFrom1,
+  BodyWrapper,
+  Form1Title,
+  Form1User,
+  Form1Wrapper,
+} from "./styled";
 import InfoCard from "e-form/components/info-card/index";
 import InfoPDF from "../info-pdf";
-import { updateList, confirmList } from "pages/utils/listData";
+import { updateList, confirmList } from "utils/listData";
+import { infoDataUser } from "utils/infoListData";
 import ListItem from "../list-item";
-import { InfoFrom1, BodyWrapper, Form1Title, Form1User, Form1Wrapper } from "./styled";
-import { InfoCardData } from "pages/utils/infoData";
+import { InfoCardData } from "utils/infoData";
 import InfoCardContact from "../info-card-contact";
 import Info from "../info";
-import {infoDataUser} from "pages/utils/infoListData"
 
 interface InfoCard {
   infoData: InfoCardData[][];

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Form3 from "e-form/components/form-3";
-import { addressData, fatca, policyData } from "pages/utils/infoData";
+import { addressData, fatca, policyData } from "utils/infoData";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
-import { base64convert, getImageBase64 } from "pages/utils/services";
+import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
 
 const EForm3 = () => {

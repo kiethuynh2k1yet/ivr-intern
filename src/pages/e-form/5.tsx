@@ -2,10 +2,10 @@ import React, { useState, useEffect, useCallback } from "react";
 import Form5 from "e-form/components/form-5";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
-import { base64convert, getImageBase64 } from "pages/utils/services";
+import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
-import { headingForm5, contentForm5 } from "pages/utils/tableOrangeData";
-import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
+import { headingForm5, contentForm5 } from "utils/tableOrangeData";
+import { headingForm5G, contentForm5G } from "utils/tableGrayData";
 
 const EForm5 = () => {
   const [loading, setLoading] = useState(false);

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Form2Wrapper,
   Form2Title,
@@ -6,15 +5,15 @@ import {
   Form2User,
   InfoFrom2,
 } from "./styled";
-import InfoCard from "e-form/components/info-card/index";
-import ListItem from "../list-item";
-import { confirmList } from "pages/utils/listData";
-import { contractData } from "pages/utils/contractData";
-import Contract from "../contract";
-import { InfoCardData } from "pages/utils/infoData";
-import { infoDataUserAddress } from "pages/utils/infoListData";
+import { confirmList } from "utils/listData";
+import { contractData } from "utils/contractData";
+import { InfoCardData } from "utils/infoData";
+import { infoDataUserAddress } from "utils/infoListData";
 import InfoCardContact from "../info-card-contact";
 import Info from "../info";
+import InfoCard from "e-form/components/info-card/index";
+import Contract from "../contract";
+import ListItem from "../list-item";
 
 interface DataProps {
   addressData: InfoCardData[][];

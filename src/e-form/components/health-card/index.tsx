@@ -1,5 +1,5 @@
 import React from "react";
-import { HealthCardData } from "pages/utils/healthData";
+import { HealthCardData } from "utils/healthData";
 import {
   HealthContainer,
   Title,

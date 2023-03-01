@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
-import { base64convert, getImageBase64 } from "pages/utils/services";
+import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
 import Form6 from "e-form/components/form-6";
-import { headingForm6, contentForm6 } from "pages/utils/tableOrangeData";
-import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
+import { headingForm6, contentForm6 } from "utils/tableOrangeData";
+import { headingForm5G, contentForm5G } from "utils/tableGrayData";
 
 export default function EForm6() {
   const [loading, setLoading] = useState(false);

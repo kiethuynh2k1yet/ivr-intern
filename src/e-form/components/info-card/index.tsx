@@ -1,4 +1,4 @@
-import { InfoCardData } from "pages/utils/infoData";
+import { InfoCardData } from "utils/infoData";
 import {
   Cell,
   Content,
@@ -31,7 +31,7 @@ export default function InfoCard({ title, data }: InfoCardProps) {
                   </>
                 ) : (
                   <>
-                    <label>{child.label}</label>
+                    <label dangerouslySetInnerHTML={{ __html: child.label }} />
                     <StyledHeading
                       dangerouslySetInnerHTML={{ __html: child.value }}
                     />

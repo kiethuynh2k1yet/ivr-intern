@@ -1,13 +1,13 @@
 import React from "react";
 import { Form7Wrapper, BodyWrapper, Form7User } from "./styled";
-import { HealthCardData } from "pages/utils/healthData";
-import { policyData } from "pages/utils/infoData";
+import { HealthCardData } from "utils/healthData";
+import { policyData } from "utils/infoData";
+import { confirmList, considerUpdate } from "utils/listData";
 
 import HealthCard from "e-form/components/health-card";
 import InfoPDF from "../info-pdf";
 import ListItemConsider from "../list-item-consider";
 import ListItem from "./../list-item/index";
-import { confirmList, considerUpdate } from "pages/utils/listData";
 
 interface DataProps {
   healthQuestion2: HealthCardData[];

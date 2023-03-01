@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Form8Wrapper,
   Form8Title,
@@ -6,15 +5,15 @@ import {
   Form8User,
   InfoFrom8,
 } from "./styled";
+
+import { policyData } from "utils/infoData";
+import { infoProductHelp } from "utils/infoListData";
+
 import TableOrange from "../table-orange";
 import TableGray from "../table-gray";
-
 import InfoPDF from "../info-pdf";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-
-import { policyData } from "pages/utils/infoData";
-import { infoProductHelp } from "pages/utils/infoListData";
 
 interface DataProps {
   headingForm7: string[];

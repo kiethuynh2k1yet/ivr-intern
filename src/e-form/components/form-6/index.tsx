@@ -1,17 +1,22 @@
 import React from "react";
-import { Form6Wrapper, Form6Title, BodyWrapper, Form6User, InfoFrom6 } from "./styled";
+import {
+  Form6Wrapper,
+  Form6Title,
+  BodyWrapper,
+  Form6User,
+  InfoFrom6,
+} from "./styled";
+
+import { infoProductHelp } from "utils/infoListData";
+import { considerTime } from "utils/listData";
+import { confirmList } from "utils/listData";
+
 import TableOrange from "../table-orange";
 import TableGray from "../table-gray";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-import { infoProductHelp } from "pages/utils/infoListData";
-import { considerTime } from "pages/utils/listData";
-import { confirmList } from "pages/utils/listData";
-import { headingForm6, contentForm6 } from "pages/utils/tableOrangeData";
-import { headingForm5G, contentForm5G } from "pages/utils/tableGrayData";
-
 interface DataProps {
   headingForm6: string[];
   contentForm6: string[][];
@@ -27,7 +32,7 @@ export default function Form6({
 }: DataProps) {
   return (
     <>
-    <InfoFrom6>
+      <InfoFrom6>
         <Info
           dataUser={{
             fullname: "Bùi Bích Diệp",

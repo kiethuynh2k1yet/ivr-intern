@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
-import { base64convert, getImageBase64 } from "pages/utils/services";
+import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
 import Form8 from "e-form/components/form-8";
 import Form81 from "e-form/components/form-8-1";
-import { headingForm7, contentForm7 } from "pages/utils/tableOrangeData";
-import { headingForm5G, contentForm8G } from "pages/utils/tableGrayData";
+import { headingForm7, contentForm7 } from "utils/tableOrangeData";
+import { headingForm5G, contentForm8G } from "utils/tableGrayData";
 export default function EForm8() {
   const [loading, setLoading] = useState(false);
   async function callback() {
@@ -96,4 +96,3 @@ export default function EForm8() {
     />
   );
 }
-

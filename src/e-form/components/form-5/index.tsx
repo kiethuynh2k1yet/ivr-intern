@@ -6,15 +6,16 @@ import {
   Form5User,
   InfoFrom5,
 } from "./styled";
-import { considerUpdate } from "pages/utils/listData";
-import { confirmList } from "pages/utils/listData";
+import { considerUpdate } from "utils/listData";
+import { confirmList } from "utils/listData";
+import { infoProductHelp } from "utils/infoListData";
+
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import TableOrange from "../table-orange";
 import TableGray from "../table-gray";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-import { infoProductHelp } from "pages/utils/infoListData";
 
 interface DataProps {
   headingForm5: string[];

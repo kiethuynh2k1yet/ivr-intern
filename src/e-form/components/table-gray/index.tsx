@@ -1,4 +1,3 @@
-import React from "react";
 import { TableContainer, StyledTable, Title } from "./styled";
 
 interface TableDataProps {

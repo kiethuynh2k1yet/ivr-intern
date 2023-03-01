@@ -204,8 +204,9 @@ export const periodicFeeData: InfoCardData[][] = [
   ],
   [
     {
-      label: "",
-      value: "",
+      // label: "",
+      label: `<span style="visibility: hidden">Định kỳ đóng phí sau điều chỉnh</span>`,
+      value: `<span style="visibility: hidden">5.212.212 đ</span>`,
     },
     {
       label: "",

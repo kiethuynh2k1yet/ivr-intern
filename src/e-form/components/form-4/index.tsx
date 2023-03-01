@@ -1,13 +1,14 @@
 import React from "react";
 import { Form4Wrapper, BodyWrapper, Form4User, InfoFrom4 } from "./styled";
+import { confirmList, considerTime } from "utils/listData";
+import { infoPayment } from "utils/infoListData";
+import { InfoCardData } from "utils/infoData";
+
 import InfoCard from "e-form/components/info-card/index";
-import { confirmList, considerTime } from "pages/utils/listData";
 import ListItem from "../list-item";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-import { infoPayment } from "pages/utils/infoListData";
 import ListItemConsider from "../list-item-consider";
-import { InfoCardData } from "pages/utils/infoData";
 
 interface DataProps {
   periodicFeeData: InfoCardData[][];

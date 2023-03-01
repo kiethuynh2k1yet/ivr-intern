@@ -2,9 +2,9 @@ import Form4 from "e-form/components/form-4";
 import React, { useState, useEffect, useCallback } from "react";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
-import { base64convert, getImageBase64 } from "pages/utils/services";
+import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
-import { periodicFeeData } from "pages/utils/infoData";
+import { periodicFeeData } from "utils/infoData";
 
 const EForm4 = () => {
   const [loading, setLoading] = useState(false);

@@ -1,9 +1,9 @@
 import Form2 from "e-form/components/form-2";
-import React, { useState, useCallback, useEffect } from "react";
-import { addressData, fatca } from "pages/utils/infoData";
+import React, { useState, useEffect } from "react";
+import { addressData, fatca } from "utils/infoData";
 import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
-import { base64convert, getImageBase64 } from "pages/utils/services";
+import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
 
 const EForm2 = () => {

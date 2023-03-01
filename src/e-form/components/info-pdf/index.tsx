@@ -1,4 +1,4 @@
-import { InfoCardData } from "pages/utils/infoData";
+import { InfoCardData } from "utils/infoData";
 import { Cell, Content, InfoCardWrawpper, Row, Title } from "./styled";
 
 interface InfoCardProps {

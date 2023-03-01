@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ListContainer,
   ListLabel,
@@ -6,7 +5,7 @@ import {
   StyledUL,
   StyledP,
 } from "./styled";
-import { ListData } from "pages/utils/listData";
+import { ListData } from "utils/listData";
 interface ListDataProps {
   list: ListData[];
 }

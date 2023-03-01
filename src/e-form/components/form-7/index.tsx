@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Form7Wrapper,
   Form7Title,
@@ -6,15 +5,15 @@ import {
   Form7User,
   InfoFrom7,
 } from "./styled";
+
+import { HealthCardData } from "utils/healthData";
+import { infoProductHelp } from "utils/infoListData";
+
 import TableOrange from "../table-orange";
 import TableGray from "../table-gray";
-
 import HealthCard from "../health-card";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
-
-import { HealthCardData } from "pages/utils/healthData";
-import { infoProductHelp } from "pages/utils/infoListData";
 
 interface DataProps {
   headingForm6: string[];

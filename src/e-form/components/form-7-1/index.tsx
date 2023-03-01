@@ -1,6 +1,6 @@
 import React from "react";
 import { Form7Wrapper, Form7Title, BodyWrapper, Form7User } from "./styled";
-import { HealthCardData } from "pages/utils/healthData";
+import { HealthCardData } from "utils/healthData";
 import HealthCard from "e-form/components/health-card";
 
 interface DataProps {
