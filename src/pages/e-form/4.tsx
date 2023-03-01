@@ -13,7 +13,7 @@ const EForm4 = () => {
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
       getImageBase64(`${process.env.basePath}/images/pdf.svg`),
     ]);
-    const size = [1190.55, 1683.78];
+    const size = [1190.55, 1684.75];
     const template = ReactDOMServer.renderToString(
       <Layout logo={imageLoader[0]}>
         <Form4 periodicFeeData={periodicFeeData} />
@@ -29,8 +29,6 @@ const EForm4 = () => {
 
     // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
-    pdf.addPage(size);
-    pdf.setPage(2);
 
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",

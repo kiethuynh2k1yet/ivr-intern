@@ -20,7 +20,7 @@ const EForm1 = () => {
       getImageBase64(`${process.env.basePath}/images/logo.svg`),
       getImageBase64(`${process.env.basePath}/images/pdf.svg`),
     ]);
-    const size = [1190.55, 1683.78];
+    const size = [1190.55, 1684.75];
     const template = ReactDOMServer.renderToString(
       <Layout logo={imageLoader[0]}>
         <Form1

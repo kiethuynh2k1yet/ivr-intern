@@ -35,8 +35,6 @@ export default function EForm6() {
 
     // kích thước pdf
     const pdf = new jsPDF("p", "px", size);
-    pdf.addPage(size);
-    pdf.setPage(2);
 
     pdf.addFileToVFS(
       "FWDCircularVietTT-Book.ttf",
@@ -55,7 +53,7 @@ export default function EForm6() {
         let numberOfPages = doc.getNumberOfPages();
         // const dataLength = priceSearch.chartList?.[0]?.lsFundDetail?.length ?? 0;
         // let maxPage = Math.ceil(dataLength / 25) + 2;
-        if (numberOfPages > 2) {
+        if (numberOfPages > 1) {
           doc.deletePage(numberOfPages);
         }
         doc.save("FWD-dieu-chinh-so-tien-bao-hiem");
