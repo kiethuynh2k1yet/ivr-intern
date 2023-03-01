@@ -1,11 +1,12 @@
+import React from "react";
+
 import Footer from "e-form/components/footer";
 import Form7 from "e-form/components/form-7";
 import Form71 from "e-form/components/form-7-1";
 
 import Header from "e-form/components/header";
 import Tosign from "e-form/components/tosign";
-import { usePathname } from "next/navigation";
-import React from "react";
+import { Container } from "./styled";
 
 interface LayoutsProps {
   children: React.ReactNode;
@@ -14,7 +15,6 @@ interface LayoutsProps {
 }
 
 const Layouts = ({ children, logo, path }: LayoutsProps) => {
-  const router = usePathname();
   return (
     <div
       style={{
@@ -22,26 +22,14 @@ const Layouts = ({ children, logo, path }: LayoutsProps) => {
         backgroundColor: "gray",
       }}
     >
-      <div
-        style={{
-          width: "1190px",
-          height: "1684px",
-          backgroundColor: "white",
-          margin: "auto",
-          display: "flex",
-          flexDirection: "column",
-          flex: "1",
-          justifyContent: "space-between",
-          flex: "1",
-        }}
-      >
+      <Container>
         <Header logo={logo} />
         {children}
 
         {path ?? <Tosign />}
         {/* {router ? "" : <Tosign />} */}
         <Footer />
-      </div>
+      </Container>
     </div>
   );
 };
