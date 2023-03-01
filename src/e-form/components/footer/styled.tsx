@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   // margin-top: auto;
-  margin:auto 50px 0 50px;
+  margin: auto 50px 0 50px;
   padding: 16px 0 40px 0;
   border-top: 1px solid #dbdfe1;
   // background: red;
@@ -10,6 +10,7 @@ export const FooterContainer = styled.footer`
 
 export const FooterTable = styled.table`
   td {
+    white-space: no-wrap;
     color: #636566;
 
     &:nth-child(2),
