@@ -49,12 +49,13 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   return (
     <ThemeProvider theme={LightTheme}>
       <Head>
-        <link rel="icon" href={`${process.env.basePath}/favicon.ico`} />
+        {/* <link rel="icon" href={`${process.env.basePath}/favicon.ico`} /> */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content={LightTheme.color.text.body} />
-        <meta name="description" content="Customer portal" />
-
-        <title>Intern</title>
+        <meta name="description" content=" FWD đã nhận được Phiếu yêu cầu điều chỉnh địa chỉ liên lạc của Quý khách cho hợp đồng bảo hiểm số 2345688" />
+        <link rel="icon" href={`${process.env.basePath}/images/logo.png`} />
+        
+        <title>Kính gửi Quý khách Bùi Bích Diệp</title>
       </Head>
       {children}
       <Layout>{component}</Layout>
