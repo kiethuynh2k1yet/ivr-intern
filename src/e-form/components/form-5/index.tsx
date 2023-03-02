@@ -9,7 +9,7 @@ import {
 import { considerUpdate } from "utils/listData";
 import { confirmList } from "utils/listData";
 import { infoProductHelp } from "utils/infoListData";
-
+import Head from "next/head";
 import ListItemConsider from "./../list-item-consider/index";
 import ListItem from "./../list-item/index";
 import TableOrange from "../table-orange";
@@ -31,6 +31,17 @@ export default function Form5({
 }: DataProps) {
   return (
     <>
+      <Head>
+        <meta property="og:title" content="Kính gửi Quý khách Bùi Bích Diệp" />
+        <meta
+          property="og:description"
+          content=" FWD đã nhận được Phiếu yêu cầu điều chỉnh địa chỉ liên lạc của Quý khách cho hợp đồng bảo hiểm số 2345688"
+        />
+        <meta
+          property="og:image"
+          content={`${process.env.basePath}/images/logo.png`}
+        />
+      </Head>
       <InfoFrom5>
         <Info
           dataUser={{

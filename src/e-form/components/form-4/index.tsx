@@ -9,6 +9,7 @@ import ListItem from "../list-item";
 import Info from "e-form/components/info";
 import InfoCardContact from "../info-card-contact";
 import ListItemConsider from "../list-item-consider";
+import Head from "next/head";
 
 interface DataProps {
   periodicFeeData: InfoCardData[][];
@@ -17,6 +18,17 @@ interface DataProps {
 export default function Form4({ periodicFeeData }: DataProps) {
   return (
     <>
+      <Head>
+        <meta property="og:title" content="Kính gửi Quý khách Bùi Bích Diệp" />
+        <meta
+          property="og:description"
+          content=" FWD đã nhận được Phiếu yêu cầu điều chỉnh địa chỉ liên lạc của Quý khách cho hợp đồng bảo hiểm số 2345688"
+        />
+        <meta
+          property="og:image"
+          content={`${process.env.basePath}/images/logo.png`}
+        />
+      </Head>
       <InfoFrom4>
         <Info
           dataUser={{

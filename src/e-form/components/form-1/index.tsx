@@ -13,6 +13,7 @@ import ListItem from "../list-item";
 import { InfoCardData } from "utils/infoData";
 import InfoCardContact from "../info-card-contact";
 import Info from "../info";
+import Head from "next/head";
 
 interface InfoCard {
   infoData: InfoCardData[][];
@@ -42,6 +43,18 @@ const Form1 = ({
 
   return (
     <>
+      <Head>
+        {/* <title>Kính gửi Quý khách Bùi Bích Diệp</title> */}
+        <meta property="og:title" content="Kính gửi Quý khách Bùi Bích Diệp" />
+        <meta
+          property="og:description"
+          content=" FWD đã nhận được Phiếu yêu cầu điều chỉnh địa chỉ liên lạc của Quý khách cho hợp đồng bảo hiểm số 2345688"
+        />
+        <meta
+          property="og:image"
+          content={`${process.env.basePath}/images/logo.png`}
+        />
+      </Head>
       <InfoFrom1>
         <Info
           dataUser={{
