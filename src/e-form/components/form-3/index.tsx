@@ -41,6 +41,7 @@ export default function Form3({
     <>
       <Head>
         <meta property="og:title" content="Kính gửi Quý khách Bùi Bích Diệp" />
+        <meta property="og:url" content="https://fwd-cpr.bitelle.com/ivrweb/e-form/3?para"/>
         <meta
           property="og:description"
           content=" FWD đã nhận được Phiếu yêu cầu điều chỉnh địa chỉ liên lạc của Quý khách cho hợp đồng bảo hiểm số 2345688"
