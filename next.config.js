@@ -12,7 +12,53 @@ const nextConfig = {
     return [];
   },
   async redirects() {
-    return [];
+    return [
+      // {
+      //   source: "/ivrweb/e-form/1",
+      //   destination: "/ivrweb/e-form/1?id=123456",
+      //   permanent: false,
+      // },
+      // {
+      //   source: "/ivrweb/e-form/2",
+      //   destination: "/ivrweb/e-form/2?id=123456",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/ivrweb/e-form/3",
+      //   destination: "/ivrweb/e-form/3?id=123456",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/ivrweb/e-form/4",
+      //   destination: "/ivrweb/e-form/4?id=123456",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/ivrweb/e-form/5",
+      //   destination: "/ivrweb/e-form/5?id=123456",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/ivrweb/e-form/6",
+      //   destination: "/ivrweb/e-form/6?id=123456",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/ivrweb/e-form/7",
+      //   destination: "/ivrweb/e-form/7?id=123456",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/ivrweb/e-form/8",
+      //   destination: "/ivrweb/e-form/8?id=123456",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/ivrweb/e-form/9",
+      //   destination: "/ivrweb/e-form/9?id=123456",
+      //   permanent: true,
+      // },
+    ];
   },
   styledComponents: true,
 };

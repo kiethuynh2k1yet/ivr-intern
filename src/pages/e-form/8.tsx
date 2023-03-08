@@ -7,6 +7,7 @@ import Form8 from "e-form/components/form-8";
 import Form81 from "e-form/components/form-8-1";
 import { headingForm7, contentForm7 } from "utils/tableOrangeData";
 import { headingForm5G, contentForm8G } from "utils/tableGrayData";
+import { GetServerSideProps } from "next";
 export default function EForm8() {
   const [loading, setLoading] = useState(false);
   async function callback() {
@@ -95,4 +96,19 @@ export default function EForm8() {
       contentForm8G={contentForm8G}
     />
   );
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const isAuthenticated = true;
+
+  if(!isAuthenticated){
+    return {
+      redirect: {
+        source: "/ivrweb/e-form/2",
+        destination: "/ivrweb/e-form/2?id=123456",
+        permanent: true,
+      }
+    }
+  }
+  return {props: {}}
 }

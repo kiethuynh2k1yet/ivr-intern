@@ -5,6 +5,7 @@ import ReactDOMServer from "react-dom/server";
 import Layout from "containers/layouts";
 import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
+import { GetServerSideProps } from "next";
 
 const EForm2 = () => {
   const [loading, setLoading] = useState(false);
@@ -62,5 +63,20 @@ const EForm2 = () => {
 
   return <Form2 addressData={addressData} fatca={fatca} />;
 };
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const isAuthenticated = true;
+
+  if(!isAuthenticated){
+    return {
+      redirect: {
+        source: "/ivrweb/e-form/2",
+        destination: "/ivrweb/e-form/2?id=123456",
+        permanent: true,
+      }
+    }
+  }
+  return {props: {}}
+}
 
 export default EForm2;

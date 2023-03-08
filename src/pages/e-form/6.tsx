@@ -6,6 +6,7 @@ import jsPDF from "jspdf";
 import Form6 from "e-form/components/form-6";
 import { headingForm6, contentForm6 } from "utils/tableOrangeData";
 import { headingForm5G, contentForm5G } from "utils/tableGrayData";
+import { GetServerSideProps } from "next";
 
 export default function EForm6() {
   const [loading, setLoading] = useState(false);
@@ -75,4 +76,19 @@ export default function EForm6() {
       contentForm5G={contentForm5G}
     />
   );
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const isAuthenticated = true;
+
+  if(!isAuthenticated){
+    return {
+      redirect: {
+        source: "/ivrweb/e-form/2",
+        destination: "/ivrweb/e-form/2?id=123456",
+        permanent: true,
+      }
+    }
+  }
+  return {props: {}}
 }

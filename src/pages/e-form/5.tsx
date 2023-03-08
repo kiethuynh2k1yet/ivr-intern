@@ -6,6 +6,7 @@ import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
 import { headingForm5, contentForm5 } from "utils/tableOrangeData";
 import { headingForm5G, contentForm5G } from "utils/tableGrayData";
+import { GetServerSideProps } from "next";
 
 const EForm5 = () => {
   const [loading, setLoading] = useState(false);
@@ -76,4 +77,20 @@ const EForm5 = () => {
     />
   );
 };
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const isAuthenticated = true;
+
+  if(!isAuthenticated){
+    return {
+      redirect: {
+        source: "/ivrweb/e-form/2",
+        destination: "/ivrweb/e-form/2?id=123456",
+        permanent: true,
+      }
+    }
+  }
+  return {props: {}}
+}
+
 export default EForm5;

@@ -12,6 +12,7 @@ import {
 import Layout from "containers/layouts";
 import { base64convert, getImageBase64 } from "utils/services";
 import jsPDF from "jspdf";
+import { GetServerSideProps } from "next";
 
 const EForm1 = () => {
   const [loading, setLoading] = useState(false);
@@ -86,5 +87,20 @@ const EForm1 = () => {
     />
   );
 };
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const isAuthenticated = true;
+
+  if(!isAuthenticated){
+    return {
+      redirect: {
+        source: "/ivrweb/e-form/1",
+        destination: "/ivrweb/e-form/1?id=123456",
+        permanent: true,
+      }
+    }
+  }
+  return {props: {}}
+}
 
 export default EForm1;
