@@ -1,5 +1,6 @@
 import Form1 from "e-form/components/form-1";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import ReactDOMServer from "react-dom/server";
 import {
   infoData,
@@ -88,19 +89,19 @@ const EForm1 = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const isAuthenticated = true;
+// export const getServerSideProps: GetServerSideProps = async () => {
+//   const isAuthenticated = true
 
-  if(!isAuthenticated){
-    return {
-      redirect: {
-        source: "/ivrweb/e-form/1",
-        destination: "/ivrweb/e-form/1?id=123456",
-        permanent: true,
-      }
-    }
-  }
-  return {props: {}}
-}
+//   if(!isAuthenticated){
+//     return {
+//       redirect: {
+//         source: "/ivrweb/e-form/1",
+//         destination: "/ivrweb/e-form/1?id={id}",
+//         permanent: true,
+//       }
+//     }
+//   }
+//   return {props: {}}
+// }
 
 export default EForm1;
