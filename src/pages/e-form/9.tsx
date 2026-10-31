@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import { makeid } from "pages/middleware";
+import { makeid } from "utils/middleware";
 import { valuesIn } from "lodash";
 // import {nextConfig} from "pages/middleware"
 

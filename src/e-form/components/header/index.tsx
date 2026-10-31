@@ -8,6 +8,7 @@ interface headerProps {
 const Header = ({ logo }: headerProps) => {
   return (
     <HeaderContainer>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={logo ?? `${process.env.basePath}/images/logo.svg`} alt="logo" />
       <ContainerTitle>
         <h5>Sống đầy từ hôm nay</h5>

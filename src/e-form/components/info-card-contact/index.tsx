@@ -14,7 +14,7 @@ const InfoCardContact = ({ title, data }: InfoContactProps) => {
         data.map((row, index) => (
           <Row key={index}>
             {row.map((cell, i) => (
-              <Cell key={i} col={row.length}>
+              <Cell key={i} $col={row.length}>
                 <>
                   <label>{cell.label}</label>
                   <h6>{cell.value}</h6>

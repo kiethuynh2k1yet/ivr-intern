@@ -30,8 +30,8 @@ export const Row = styled.div`
   }
 `;
 
-export const Cell = styled.div<{ col: number }>`
-  width: ${({ col }) => `calc(100% / ${col})`};
+export const Cell = styled.div<{ $col: number }>`
+  width: ${({ $col }) => `calc(100% / ${$col})`};
   label {
     font-weight: 500;
     font-size: 12px;

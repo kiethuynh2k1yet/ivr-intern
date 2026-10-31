@@ -21,7 +21,7 @@ export default function InfoCard({ title, data }: InfoCardProps) {
         {data.map((row, index) => (
           <Row key={index}>
             {row.map((child, i) => (
-              <Cell key={i} col={row.length}>
+              <Cell key={i} $col={row.length}>
                 {child.label === "Quốc gia" && child.value === "Việt Nam" ? (
                   <>
                     <label style={{ color: "#B3B6B8" }}>{child.label}</label>

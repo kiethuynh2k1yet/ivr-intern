@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import store from "redux/store";
 import { GlobalStyle } from "../styles/globals";
+import { SessionProvider } from "next-auth/react"
 
 function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   useEffect(() => {
@@ -15,13 +16,15 @@ function App({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   }, []);
 
   return (
-    <Provider store={store}>
-      <ThemeWrapper component={<Component {...pageProps} />}>
-        <GlobalStyle />
-        {/* thông báo  */}
-        <ToastContainer />
-      </ThemeWrapper>
-    </Provider>
+    <SessionProvider session={session}>
+      <Provider store={store}>
+        <ThemeWrapper component={<Component {...pageProps} />}>
+          <GlobalStyle />
+          {/* thông báo  */}
+          <ToastContainer />
+        </ThemeWrapper>
+      </Provider>
+    </SessionProvider>
   );
 }
 
